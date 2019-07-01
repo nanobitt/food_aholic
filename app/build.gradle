@@ -1,0 +1,57 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
+    defaultConfig {
+        applicationId "com.vpapps.fooddelivery"
+        minSdkVersion 16
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        manifestPlaceholders = [onesignal_app_id: "asd789as-8s89-adew-7694-64as6d48q4e",
+                                // Project number pulled from dashboard, local value is ignored.
+                                onesignal_google_project_number: "REMOTE"]
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildTypes.each{
+        it.buildConfigField 'String', 'SERVER_URL', SERVER_URL
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testImplementation 'junit:junit:4.12'
+    implementation project(path: ':checkbox')
+    implementation project(path: ':IRBottomNavigationLib')
+    implementation 'com.android.support:appcompat-v7:27.1.0'
+    implementation 'com.android.support:recyclerview-v7:27.1.0'
+    implementation 'com.android.support:design:27.1.0'
+    implementation 'com.android.support:cardview-v7:27.1.0'
+    implementation 'com.google.android.gms:play-services-ads:15.0.1'
+    implementation 'com.google.android.gms:play-services-gcm:15.0.1'
+    implementation 'com.google.firebase:firebase-core:16.0.0'
+    implementation 'com.google.android.ads.consent:consent-library:1.0.6'
+    implementation 'com.squareup.okhttp3:okhttp:3.11.0'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'
+    implementation 'uk.co.chrisjenx:calligraphy:2.3.0'
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+    implementation 'com.tiagosantos:enchantedviewpager:1.1.0'
+    implementation 'com.onesignal:OneSignal:3.9.1'
+    implementation 'com.github.castorflex.smoothprogressbar:library-circular:1.3.0'
+    implementation 'com.romandanylyk:pageindicatorview:1.0.1@aar'
+    implementation 'com.thoughtbot:expandablerecyclerview:1.3'
+}
+apply plugin: 'com.google.gms.google-services'
