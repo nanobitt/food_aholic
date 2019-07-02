@@ -2,6 +2,8 @@ package com.vpapps.Foodaholic;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -19,6 +21,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.vpapps.adapter.AdapterOrderList;
 import com.vpapps.asyncTask.LoadOderList;
@@ -48,6 +51,10 @@ public class FragmentOrderList extends Fragment {
     LinearLayout ll_empty;
     String errr_msg;
     AppCompatButton button_try;
+
+    //For Refreshing
+    Handler handler;
+    Runnable runnable;
 
     @Nullable
     @Override
@@ -88,6 +95,18 @@ public class FragmentOrderList extends Fragment {
 //                startActivity(intent);
 //            }
 //        }));
+
+        final int delay = 15000;
+        runnable = new Runnable() {
+            @Override
+            public void run() {
+                loadOrderListApi();
+                handler.postDelayed(this, delay);
+
+            }
+        };
+        handler = new Handler(Looper.getMainLooper());
+        handler.postDelayed(runnable, delay);
 
         loadOrderListApi();
 
@@ -135,6 +154,7 @@ public class FragmentOrderList extends Fragment {
         }
         return super.onOptionsItemSelected(item);
     }
+
 
     private void loadOrderListApi() {
         if (Constant.isLogged) {
@@ -204,5 +224,11 @@ public class FragmentOrderList extends Fragment {
             Constant.isCancelOrder = false;
         }
         super.onResume();
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        handler.removeCallbacks(runnable);
     }
 }

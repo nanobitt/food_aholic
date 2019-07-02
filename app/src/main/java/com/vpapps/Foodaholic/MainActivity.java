@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         spaceNavigationView = findViewById(R.id.space);
         spaceNavigationView.initWithSaveInstanceState(savedInstanceState);
         spaceNavigationView.addSpaceItem(new SpaceItem(getString(R.string.home), R.mipmap.home));
-        spaceNavigationView.addSpaceItem(new SpaceItem(getString(R.string.categories), R.mipmap.cat));
+        spaceNavigationView.addSpaceItem(new SpaceItem(getString(R.string.hotel_list), R.mipmap.cat));
         spaceNavigationView.addSpaceItem(new SpaceItem(getString(R.string.orderlist), R.mipmap.list));
         spaceNavigationView.addSpaceItem(new SpaceItem(getString(R.string.profile), R.mipmap.profile));
 
@@ -110,9 +110,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         toolbar.setTitle(getString(R.string.app_name));
                         break;
                     case 1:
+                        /***
                         FragmentCat fcat = new FragmentCat();
                         loadFrag(fcat, getString(R.string.categories), fm);
-                        toolbar.setTitle(getString(R.string.categories));
+                        toolbar.setTitle(getString(R.string.hotel_list));
+                        break;
+                         ***/
+                        Intent intent_hotel = new Intent(MainActivity.this, HotelByLatestActivity.class);
+                        intent_hotel.putExtra("type", getString(R.string.hotel_list));
+                        startActivity(intent_hotel);
                         break;
                     case 2:
                         FragmentOrderList forder = new FragmentOrderList();
