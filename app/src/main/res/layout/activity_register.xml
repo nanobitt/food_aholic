@@ -385,7 +385,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
-            android:background="@drawable/bg_corner_pink"
+            android:background="@color/maroon"
             android:paddingLeft="40dp"
             android:paddingRight="40dp"
             android:text="@string/register"
@@ -424,7 +424,7 @@
             android:layout_height="3dp"
             android:layout_gravity="center"
             android:layout_marginTop="5dp"
-            android:background="@color/pink" />
+            android:background="@color/maroon" />
 
     </LinearLayout>
 

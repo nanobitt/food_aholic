@@ -34,6 +34,6 @@
         android:paddingRight="20dp"
         android:text="@string/close"
         android:textColor="@color/white"
-        android:background="@drawable/bg_corner_pink" />
+        android:background="@color/maroon" />
 
 </LinearLayout>

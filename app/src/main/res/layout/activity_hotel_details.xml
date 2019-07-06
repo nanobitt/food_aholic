@@ -26,7 +26,7 @@
                 android:id="@+id/collapsing"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:contentScrim="@color/colorPrimary"
+                app:contentScrim="@color/maroon"
                 app:expandedTitleMarginEnd="64dp"
                 app:expandedTitleMarginStart="10dp"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed"
@@ -36,7 +36,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="240dp"
                     android:layout_marginTop="?attr/actionBarSize"
-                    android:background="@color/bg">
+                    android:background="@color/maroon">
 
                     <ImageView
                         android:id="@+id/iv_details"
@@ -170,7 +170,7 @@
                                 android:layout_height="20dp"
                                 android:layout_marginLeft="5dp"
                                 android:layout_marginStart="5dp"
-                                android:background="@drawable/bg_round_pink"
+                                android:background="@color/maroon"
                                 android:padding="4dp"
                                 android:src="@mipmap/edit" />
 
@@ -194,7 +194,7 @@
                     android:id="@+id/toolbar_rest_details"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
-                    android:background="@color/colorPrimary"
+                    android:background="@color/maroon"
                     android:theme="@style/AppTheme.AppBarOverlay"
                     app:layout_collapseMode="pin"
                     app:popupTheme="@style/AppTheme.PopupOverlay" />

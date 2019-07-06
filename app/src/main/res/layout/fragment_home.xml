@@ -30,7 +30,7 @@
             app:piv_interactiveAnimation="true"
             app:piv_padding="4dp"
             app:piv_radius="5dp"
-            app:piv_selectedColor="@color/colorPrimary"
+            app:piv_selectedColor="@color/maroon"
             app:piv_unselectedColor="@color/black"
             app:piv_viewPager="@id/vp_home" />
 
@@ -54,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
-                android:text="@string/latest"
+                android:text="@string/recommended_restaurants"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 
@@ -64,7 +64,7 @@
                 android:layout_height="45dp"
                 android:text="@string/view_all"
                 android:textColor="@color/white"
-                app:backgroundTint="@color/colorPrimary" />
+                app:backgroundTint="@color/maroon" />
 
         </LinearLayout>
 
@@ -120,7 +120,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
-                android:text="@string/top_rated"
+                android:text="@string/food_offer"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 
@@ -130,7 +130,7 @@
                 android:layout_height="45dp"
                 android:text="@string/view_all"
                 android:textColor="@color/white"
-                app:backgroundTint="@color/colorPrimary" />
+                app:backgroundTint="@color/maroon" />
 
         </LinearLayout>
 

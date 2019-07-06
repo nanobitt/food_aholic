@@ -40,7 +40,7 @@
                 android:src="@mipmap/fav"
                 app:riv_corner_radius="50dp"
                 android:padding="5dp"
-                android:background="@drawable/bg_round_red"/>
+                android:background="@color/maroon"/>
 
         </RelativeLayout>
 

@@ -24,6 +24,6 @@
         android:layout_height="wrap_content"
         android:text="@string/reload"
         android:textColor="@color/white"
-        app:backgroundTint="@color/colorPrimaryDark"/>
+        app:backgroundTint="@color/maroon"/>
 
 </LinearLayout>

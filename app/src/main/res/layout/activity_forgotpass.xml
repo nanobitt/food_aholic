@@ -124,6 +124,6 @@
         android:layout_marginTop="40dp"
         android:layout_centerInParent="true"
         android:layout_below="@+id/rl"
-        android:background="@drawable/bg_corner_pink"/>
+        android:background="@color/maroon"/>
 
 </RelativeLayout>
