@@ -29,11 +29,11 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_alignParentBottom="true"
-        app:centre_button_color="@color/colorPrimary"
+        app:centre_button_color="@color/maroon"
         app:centre_button_icon="@mipmap/cart"
         app:active_centre_button_icon_color="@color/white"
         app:inactive_centre_button_icon_color="@color/white"
-        app:active_item_color="@color/colorPrimary"
+        app:active_item_color="@color/maroon"
         app:space_background_color="@color/bg_bottom_bar"/>
 
 </RelativeLayout>

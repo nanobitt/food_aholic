@@ -10,7 +10,7 @@
         android:id="@+id/toolbar_setting"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimary"
+        android:background="@color/maroon"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         android:theme="@style/AppTheme.AppBarOverlay"/>
 
@@ -59,7 +59,7 @@
                         android:layout_marginStart="8dp"
                         android:text="@string/show_personalized_ad"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:textColor="@color/red"
+                        android:textColor="@color/maroon"
                         android:textSize="12sp" />
 
                 </LinearLayout>

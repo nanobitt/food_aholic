@@ -44,7 +44,7 @@
             android:textColor="@color/white"
             android:textSize="10sp"
             android:text="@string/cancel"
-            android:background="@drawable/bg_round_cancel"/>
+            android:background="@color/maroon"/>
 
         <TextView
             android:id="@+id/tv_orderlist_status"
