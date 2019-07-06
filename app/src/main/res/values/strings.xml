@@ -47,7 +47,7 @@
     <string name="error_login">Error in Login</string>
     <string name="logout_success">Logout Successful</string>
     <string name="home">Home</string>
-    <string name="hotel_list">Hotel List</string>
+    <string name="hotel_list">Restaurant List</string>
     <string name="profile">Profile</string>
     <string name="rateapp">Rate App</string>
     <string name="shareapp">Share App</string>
