@@ -2,7 +2,7 @@
     <string name="app_name">Food-Aholic</string>
     <string name="header_title">Food-Aholic</string>
 
-    <string name="privacy_policy_url">http://example.com</string>
+    <string name="privacy_policy_url">http://food-aholic.com/privacy_policy</string>
 
     <string name="currency">Tk</string>
 
@@ -161,4 +161,6 @@
     <string name="no">No</string>
     <string name="filter">Search Filter</string>
     <string name="ok">OK</string>
+    <string name="food_offer">Food Offer</string>
+    <string name="recommended_restaurants">Recommended Restaurant</string>
 </resources>
