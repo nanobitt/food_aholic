@@ -58,4 +58,5 @@
     <color name="bg_cart_total">#E2E2E2</color>
     <color name="bg_cart_list">#F0F0F0</color>
     <color name="pending">#8720f1</color>
+    <color name="maroon">#BF1E2E</color>
 </resources>
