@@ -38,7 +38,7 @@ public class SettingActivity extends AppCompatActivity {
     LinearLayout ll_consent, ll_adView;
     SwitchCompat switch_consent, switch_noti;
     Boolean isNoti = true, isLoaded = false;
-    TextView textView_privacy, textView_about, textView_moreapp;
+    TextView textView_privacy, textView_about, textView_moreapp, textView_faq;
     View view_settings;
 
     @Override
@@ -76,6 +76,7 @@ public class SettingActivity extends AppCompatActivity {
         textView_moreapp = findViewById(R.id.textView_moreapp);
         textView_about = findViewById(R.id.textView_about);
         textView_privacy = findViewById(R.id.textView_privacy);
+        textView_faq = findViewById(R.id.textView_faq);
         ll_adView = findViewById(R.id.ll_adView_settings);
         view_settings = findViewById(R.id.view_settings);
         methods.showBannerAd(ll_adView);

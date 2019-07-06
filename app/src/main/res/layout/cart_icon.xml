@@ -12,7 +12,8 @@
         android:layout_marginTop="10dp"
         android:padding="2dp"
         android:layout_centerHorizontal="true"
-        android:src="@mipmap/cart"/>
+        android:src="@mipmap/cart"
+        />
 
     <TextView
         android:id="@+id/textView_menu_no"
@@ -23,7 +24,7 @@
         android:layout_marginLeft="18dp"
         android:layout_marginStart="18dp"
         android:layout_marginTop="3dp"
-        android:background="@color/maroon"
+        android:background="@drawable/bg_circle_green"
         android:text="2"
         android:textStyle="bold"
         android:textColor="@color/white"
