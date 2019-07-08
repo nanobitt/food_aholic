@@ -60,6 +60,8 @@ public class Constant implements Serializable{
 	public static final String URL_CHECKOUT_3 = "&order_comment=";
 	public static final String URL_CHECKOUT_4 = "&cat_ids=";
 
+	public static final String URL_OFFER_AND_PROMOTIONS = SERVER_URL + "api_offer_and_promotion.php";
+
 	public static final String TAG_ROOT = "FOOD_APP";
 	public static final String TAG_FEATURED_REST = "featured_restaurant";
 	public static final String TAG_LATEST_REST = "latest_restaurant";

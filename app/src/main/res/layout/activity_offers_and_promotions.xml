@@ -15,12 +15,12 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_hotel_bycat"
+        android:id="@+id/rv_offer_and_promotions"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginStart="5dp"
-        android:layout_below="@+id/toolbar_about" />
+        android:layout_below="@+id/toolbar_offer_and_promotions" />
 
 </RelativeLayout>

@@ -123,6 +123,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     case 3:
                         Intent offer_intent = new Intent(MainActivity.this, OffersAndPromotionsActivity.class);
                         startActivity(offer_intent);
+                        spaceNavigationView.changeCurrentItem(-1);
                         break;
                 }
             }
