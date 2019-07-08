@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         spaceNavigationView.addSpaceItem(new SpaceItem(getString(R.string.home), R.mipmap.home));
         spaceNavigationView.addSpaceItem(new SpaceItem(getString(R.string.hotel_list), R.mipmap.cat));
         spaceNavigationView.addSpaceItem(new SpaceItem(getString(R.string.orderlist), R.mipmap.list));
-        spaceNavigationView.addSpaceItem(new SpaceItem(getString(R.string.profile), R.mipmap.profile));
+        spaceNavigationView.addSpaceItem(new SpaceItem(getString(R.string.offers), R.mipmap.profile));
 
         spaceNavigationView.setSpaceOnClickListener(new SpaceOnClickListener() {
             @Override
@@ -110,12 +110,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         toolbar.setTitle(getString(R.string.app_name));
                         break;
                     case 1:
-                        /***
-                        FragmentCat fcat = new FragmentCat();
-                        loadFrag(fcat, getString(R.string.categories), fm);
-                        toolbar.setTitle(getString(R.string.hotel_list));
-                        break;
-                         ***/
+
                         Intent intent_hotel = new Intent(MainActivity.this, HotelByLatestActivity.class);
                         intent_hotel.putExtra("type", getString(R.string.hotel_list));
                         startActivity(intent_hotel);
@@ -126,9 +121,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         toolbar.setTitle(getString(R.string.orderlist));
                         break;
                     case 3:
-                        FragmentProfile fprof = new FragmentProfile();
-                        loadFrag(fprof, getString(R.string.profile), fm);
-                        toolbar.setTitle(getString(R.string.profile));
+                        Intent offer_intent = new Intent(MainActivity.this, OffersAndPromotionsActivity.class);
+                        startActivity(offer_intent);
                         break;
                 }
             }
@@ -209,6 +203,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Intent intent_hotel = new Intent(MainActivity.this, HotelByLatestActivity.class);
                 intent_hotel.putExtra("type", getString(R.string.hotel_list));
                 startActivity(intent_hotel);
+                break;
+
+            case R.id.nav_profile:
+                FragmentProfile profileFragment = new FragmentProfile();
+                loadFrag(profileFragment, getString(R.string.profile), fm);
+                spaceNavigationView.changeCurrentItem(-1);
                 break;
             case R.id.nav_rate:
                 final String appName = getPackageName();//your application package name i.e play store application url

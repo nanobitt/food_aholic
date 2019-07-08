@@ -9,67 +9,52 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
-        android:name="com.vpapps.Foodaholic.MyApplication"
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/app_icon"
-        android:roundIcon="@mipmap/app_icon_round"
         android:label="@string/app_name"
+        android:roundIcon="@mipmap/app_icon_round"
         android:supportsRtl="true"
-
         android:theme="@style/AppTheme">
-
-        <activity android:name="com.vpapps.Foodaholic.SplashActivity">
+        <activity android:name=".OffersAndPromotionsActivity"></activity>
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
-            android:name="com.vpapps.Foodaholic.LoginActivity"
+            android:name=".LoginActivity"
             android:configChanges="screenSize|orientation"
             android:screenOrientation="portrait"
-
             android:windowSoftInputMode="adjustResize" />
-
         <activity
-            android:name="com.vpapps.Foodaholic.RegisterActivity"
+            android:name=".RegisterActivity"
             android:windowSoftInputMode="adjustPan" />
-
         <activity
-            android:name="com.vpapps.Foodaholic.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/title_activity_main" />
-
-        <activity android:name="com.vpapps.Foodaholic.AboutActivity" />
-
-        <activity android:name="com.vpapps.Foodaholic.ProfileEditActivity"
-            android:windowSoftInputMode="adjustPan"/>
-
-        <activity android:name="com.vpapps.Foodaholic.HotelByCatActivity" />
-
-        <activity android:name="com.vpapps.Foodaholic.HotelDetailsActivity" />
-
-        <activity android:name="com.vpapps.Foodaholic.CartActivity"/>
-
-        <activity android:name="com.vpapps.Foodaholic.CheckOut"
+        <activity android:name=".AboutActivity" />
+        <activity
+            android:name=".ProfileEditActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".HotelByCatActivity" />
+        <activity android:name=".HotelDetailsActivity" />
+        <activity android:name=".CartActivity" />
+        <activity
+            android:name=".CheckOut"
             android:windowSoftInputMode="adjustResize" />
-
-        <activity android:name="com.vpapps.Foodaholic.OrderDetailsActivity"/>
-
-        <activity android:name="com.vpapps.Foodaholic.SettingActivity"/>
-
-        <activity android:name="com.vpapps.Foodaholic.ForgotPasswordActivity"/>
-
-        <activity android:name="com.vpapps.Foodaholic.HotelByLatestActivity"/>
-        <activity android:name="com.vpapps.Foodaholic.HotelBySearchActivity"/>
-        <activity android:name="com.vpapps.Foodaholic.FavouriteActivity"/>
+        <activity android:name=".OrderDetailsActivity" />
+        <activity android:name=".SettingActivity" />
+        <activity android:name=".ForgotPasswordActivity" />
+        <activity android:name=".HotelByLatestActivity" />
+        <activity android:name=".HotelBySearchActivity" />
+        <activity android:name=".FavouriteActivity" />
 
         <meta-data
             android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
-
-        <!-- Activity required to show ad overlays. -->
+            android:value="@integer/google_play_services_version" /> <!-- Activity required to show ad overlays. -->
         <activity
             android:name="com.google.android.gms.ads.AdActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
@@ -82,7 +67,6 @@
                 <action android:name="com.onesignal.NotificationExtender" />
             </intent-filter>
         </service>
-
     </application>
 
 </manifest>

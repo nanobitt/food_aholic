@@ -161,6 +161,7 @@
     <string name="no">No</string>
     <string name="filter">Search Filter</string>
     <string name="ok">OK</string>
-    <string name="food_offer">Food Offer</string>
+    <string name="offers">Offers</string>
     <string name="recommended_restaurants">Recommended Restaurant</string>
+    <string name="offer_and_promotions">Offer and Promotions</string>
 </resources>

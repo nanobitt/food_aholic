@@ -131,6 +131,13 @@ public class Constant implements Serializable{
 	public static final String TAG_CART_MENU_ID = "menu_id";
 	public static final String TAG_CART_COUNT = "cart_items";
 
+	public static final String TAG_OFFER_ID = "id";
+	public static final String TAG_OFFER_HEADING = "offer_heading";
+	public static final String TAG_OFFER_DESCRIPTION = "offer_description";
+	public static final String TAG_OFFER_IMAGE_LINK = "image_link";
+	public static final String TAG_OFFER_POST_DATE = "post_date";
+
+
 	public static final String SHARED_PREF_LOGIN="login";
 	public static final String SHARED_PREF_EMAIL="email";
 	public static final String SHARED_PREF_PASSWORD="password";
@@ -176,4 +183,6 @@ public class Constant implements Serializable{
 	public static int menuCount = 0;
 
 	public static int adShow = 3;
+
+
 }
