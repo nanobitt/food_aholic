@@ -78,7 +78,7 @@ public class OffersAndPromotionsActivity extends AppCompatActivity {
                 pbar.dismiss();
                 //Toast.makeText(OffersAndPromotionsActivity.this, offerAndPromotions.get(0).getDescription(), Toast.LENGTH_LONG).show();
 
-                AdapterOffersAndPromotions adapterOffersAndPromotions = new AdapterOffersAndPromotions(offerAndPromotions);
+                AdapterOffersAndPromotions adapterOffersAndPromotions = new AdapterOffersAndPromotions(OffersAndPromotionsActivity.this, offerAndPromotions);
                 rv_offer_and_promotions.setAdapter(adapterOffersAndPromotions);
             }
         });

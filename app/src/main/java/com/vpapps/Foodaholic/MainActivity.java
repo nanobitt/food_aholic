@@ -56,6 +56,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     //    LinearLayout ll_adView_main;
     SpaceNavigationView spaceNavigationView;
 
+    int lastClick = 0;
+
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
@@ -88,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
 
         spaceNavigationView = findViewById(R.id.space);
-        spaceNavigationView.initWithSaveInstanceState(savedInstanceState);
+        //spaceNavigationView.initWithSaveInstanceState(savedInstanceState);
         spaceNavigationView.addSpaceItem(new SpaceItem(getString(R.string.home), R.mipmap.home));
         spaceNavigationView.addSpaceItem(new SpaceItem(getString(R.string.hotel_list), R.mipmap.cat));
         spaceNavigationView.addSpaceItem(new SpaceItem(getString(R.string.orderlist), R.mipmap.list));
@@ -108,22 +110,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         FragmentHome f1 = new FragmentHome();
                         loadFrag(f1, getString(R.string.home), fm);
                         toolbar.setTitle(getString(R.string.app_name));
+                        lastClick = 0;
                         break;
                     case 1:
 
                         Intent intent_hotel = new Intent(MainActivity.this, HotelByLatestActivity.class);
                         intent_hotel.putExtra("type", getString(R.string.hotel_list));
                         startActivity(intent_hotel);
+                        lastClick = 1;
                         break;
                     case 2:
                         FragmentOrderList forder = new FragmentOrderList();
                         loadFrag(forder, getString(R.string.orderlist), fm);
                         toolbar.setTitle(getString(R.string.orderlist));
+                        lastClick = 2;
                         break;
                     case 3:
+
                         Intent offer_intent = new Intent(MainActivity.this, OffersAndPromotionsActivity.class);
                         startActivity(offer_intent);
-                        spaceNavigationView.changeCurrentItem(-1);
                         break;
                 }
             }
@@ -291,6 +296,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 requestPermissions(new String[]{"android.permission.WRITE_EXTERNAL_STORAGE"}, 1);
             }
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        spaceNavigationView.changeCurrentItem(lastClick);
     }
 
     @Override

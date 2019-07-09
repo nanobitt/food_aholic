@@ -80,6 +80,7 @@ public class Constant implements Serializable{
 	public static final String TAG_REST_SUNDAY = "restaurant_open_sun";
 	public static final String TAG_REST_TOTAL_RATE = "total_rate";
 	public static final String TAG_REST_AVG_RATE = "rate_avg";
+	public static final String TAG_REST_ROOT = "restaurant";
 
 	public static final String TAG_NONVEG="Non Veg";
 	public static final String TAG_VEG="Veg";

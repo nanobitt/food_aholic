@@ -39,6 +39,18 @@
             android:textColor="@color/text_menu_title"
             android:textSize="14sp"
             android:layout_marginTop="@dimen/dp_10" />
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/button_order_now"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="15dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="@string/order_now"
+            android:textColor="@color/white"
+            android:background="@color/maroon"/>
 
     </LinearLayout>
 
