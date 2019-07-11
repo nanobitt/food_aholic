@@ -1,11 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.46@aar">
     <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/723e3ce184b89ed6ce88d42d2e11e0c4/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/47ce0e8306322e0c1ef655c4063aae1e/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/723e3ce184b89ed6ce88d42d2e11e0c4/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/723e3ce184b89ed6ce88d42d2e11e0c4/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/47ce0e8306322e0c1ef655c4063aae1e/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/47ce0e8306322e0c1ef655c4063aae1e/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

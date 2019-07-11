@@ -73,11 +73,11 @@ public class SettingActivity extends AppCompatActivity {
         ll_consent = findViewById(R.id.ll_consent);
         switch_noti = findViewById(R.id.switch_noti);
         switch_consent = findViewById(R.id.switch_consent);
-        textView_moreapp = findViewById(R.id.textView_moreapp);
+        //textView_moreapp = findViewById(R.id.textView_moreapp);
         textView_about = findViewById(R.id.textView_about);
         textView_privacy = findViewById(R.id.textView_privacy);
         ll_adView = findViewById(R.id.ll_adView_settings);
-        view_settings = findViewById(R.id.view_settings);
+        //view_settings = findViewById(R.id.view_settings);
         textView_Faq = findViewById(R.id.textView_faq);
         methods.showBannerAd(ll_adView);
 
@@ -126,12 +126,13 @@ public class SettingActivity extends AppCompatActivity {
             }
         });
 
-        textView_moreapp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.play_more_apps))));
-            }
-        });
+//        textView_moreapp.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//               startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.play_more_apps))));
+//            }
+//        });
 
         textView_Faq.setOnClickListener(new View.OnClickListener() {
             @Override

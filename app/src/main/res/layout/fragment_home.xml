@@ -107,65 +107,65 @@
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
-            <View
-                android:layout_width="3dp"
-                android:layout_height="match_parent"
-                android:layout_marginEnd="10dp"
-                android:layout_marginRight="10dp"
-                android:background="@color/colorPrimary" />
+            <!--<View-->
+                <!--android:layout_width="3dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_marginEnd="10dp"-->
+                <!--android:layout_marginRight="10dp"-->
+                <!--android:background="@color/colorPrimary" />-->
 
-            <TextView
-                android:id="@+id/tv2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:text="@string/offers"
-                android:textColor="@color/black"
-                android:textSize="18sp" />
+            <!--<TextView-->
+                <!--android:id="@+id/tv2"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:text="@string/offers"-->
+                <!--android:textColor="@color/black"-->
+                <!--android:textSize="18sp" />-->
 
-            <android.support.v7.widget.AppCompatButton
-                android:id="@+id/button_home_toprated"
-                android:layout_width="wrap_content"
-                android:layout_height="45dp"
-                android:text="@string/view_all"
-                android:textColor="@color/white"
-                app:backgroundTint="@color/maroon" />
+            <!--<android.support.v7.widget.AppCompatButton-->
+                <!--android:id="@+id/button_home_toprated"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="45dp"-->
+                <!--android:text="@string/view_all"-->
+                <!--android:textColor="@color/white"-->
+                <!--app:backgroundTint="@color/maroon" />-->
 
         </LinearLayout>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:paddingBottom="10dp"
-            android:paddingLeft="10dp"
-            android:paddingStart="10dp"
-            android:paddingTop="10dp">
+        <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginBottom="20dp"-->
+            <!--android:paddingBottom="10dp"-->
+            <!--android:paddingLeft="10dp"-->
+            <!--android:paddingStart="10dp"-->
+            <!--android:paddingTop="10dp">-->
 
-            <TextView
-                android:id="@+id/textView_toprated_empty"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_centerInParent="true"
-                android:gravity="center"
-                android:text="@string/no_data_found"
-                android:textColor="@color/black70"
-                android:textSize="16sp" />
+            <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+                <!--&lt;!&ndash;android:id="@+id/textView_toprated_empty"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_height="match_parent"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_centerInParent="true"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:gravity="center"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:text="@string/no_data_found"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:textColor="@color/black70"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:textSize="16sp" />&ndash;&gt;-->
 
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/rv_home_toprated"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+            <!--&lt;!&ndash;<android.support.v7.widget.RecyclerView&ndash;&gt;-->
+                <!--&lt;!&ndash;android:id="@+id/rv_home_toprated"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_height="wrap_content" />&ndash;&gt;-->
 
-            <View
-                android:layout_width="30dp"
-                android:layout_height="200dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:background="@drawable/bg_gradient_white" />
+            <!--&lt;!&ndash;<View&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_width="30dp"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_height="200dp"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_alignParentEnd="true"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_alignParentRight="true"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:background="@drawable/bg_gradient_white" />&ndash;&gt;-->
 
-        </RelativeLayout>
+        <!--</RelativeLayout>-->
 
     </LinearLayout>
 

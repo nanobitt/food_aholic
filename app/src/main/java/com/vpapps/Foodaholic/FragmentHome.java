@@ -78,11 +78,11 @@ public class FragmentHome extends Fragment {
                         Constant.itemRestaurant = arrayList_lat.get(position);
                         startActivity(intent_lat);
                         break;
-                    case "top":
-                        Intent intent_top = new Intent(getActivity(), HotelDetailsActivity.class);
-                        Constant.itemRestaurant = arrayList_toprated.get(position);
-                        startActivity(intent_top);
-                        break;
+//                    case "top":
+//                        Intent intent_top = new Intent(getActivity(), HotelDetailsActivity.class);
+//                        Constant.itemRestaurant = arrayList_toprated.get(position);
+//                        startActivity(intent_top);
+//                        break;
                     case "feat":
                         Intent intent = new Intent(getActivity(), HotelDetailsActivity.class);
                         Constant.itemRestaurant = arrayList_feat.get(position);
@@ -97,7 +97,7 @@ public class FragmentHome extends Fragment {
 
         arrayList_feat = new ArrayList<>();
         arrayList_lat = new ArrayList<>();
-        arrayList_toprated = new ArrayList<>();
+       //arrayList_toprated = new ArrayList<>();
 
         pagerAdapter = new ImagePagerAdapter();
 
@@ -108,25 +108,25 @@ public class FragmentHome extends Fragment {
         LinearLayoutManager llm_latest = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
 
         button_more_latest = rootView.findViewById(R.id.button_home_latest);
-        button_more_toprated = rootView.findViewById(R.id.button_home_toprated);
+       // button_more_toprated = rootView.findViewById(R.id.button_home_toprated);
         textView_latest_empty = rootView.findViewById(R.id.textView_latest_empty);
-        textView_toprated_empty = rootView.findViewById(R.id.textView_toprated_empty);
+        //textView_toprated_empty = rootView.findViewById(R.id.textView_toprated_empty);
 
         TextView tv1 = rootView.findViewById(R.id.tv1);
-        TextView tv2 = rootView.findViewById(R.id.tv2);
+        //TextView tv2 = rootView.findViewById(R.id.tv2);
         tv1.setTypeface(tv1.getTypeface(), Typeface.BOLD);
-        tv2.setTypeface(tv2.getTypeface(), Typeface.BOLD);
+        //tv2.setTypeface(tv2.getTypeface(), Typeface.BOLD);
 
         recyclerView_latest = rootView.findViewById(R.id.rv_home_latest);
         recyclerView_latest.setLayoutManager(llm_latest);
         recyclerView_latest.setItemAnimator(new DefaultItemAnimator());
         recyclerView_latest.setHasFixedSize(true);
 
-        LinearLayoutManager llm_toprated = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
-        recyclerView_toprated = rootView.findViewById(R.id.rv_home_toprated);
-        recyclerView_toprated.setLayoutManager(llm_toprated);
-        recyclerView_toprated.setItemAnimator(new DefaultItemAnimator());
-        recyclerView_toprated.setHasFixedSize(true);
+//        LinearLayoutManager llm_toprated = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
+//        //recyclerView_toprated = rootView.findViewById(R.id.rv_home_toprated);
+//        recyclerView_toprated.setLayoutManager(llm_toprated);
+//        recyclerView_toprated.setItemAnimator(new DefaultItemAnimator());
+//        recyclerView_toprated.setHasFixedSize(true);
 
         if (methods.isNetworkAvailable()) {
             loadHomeApi();
@@ -145,17 +145,17 @@ public class FragmentHome extends Fragment {
             }
         });
 
-        button_more_toprated.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Constant.arrayList_latest.clear();
-                Constant.arrayList_latest.addAll(arrayList_toprated);
-                Intent intent = new Intent(getActivity(), HotelByLatestActivity.class);
-                intent.putExtra("type", getString(R.string.top_rated
-                ));
-                startActivity(intent);
-            }
-        });
+//        button_more_toprated.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Constant.arrayList_latest.clear();
+//                Constant.arrayList_latest.addAll(arrayList_toprated);
+//                Intent intent = new Intent(getActivity(), HotelByLatestActivity.class);
+//                intent.putExtra("type", getString(R.string.top_rated
+//                ));
+//                startActivity(intent);
+//            }
+//        });
 
         viewPager_home.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -296,7 +296,7 @@ public class FragmentHome extends Fragment {
                         textView_latest_empty.setVisibility(View.VISIBLE);
                     }
 
-                    loadTopRatedApi();
+                    //loadTopRatedApi();
                 }
             }
         });
@@ -304,44 +304,44 @@ public class FragmentHome extends Fragment {
         loadHome.execute(Constant.URL_HOME);
     }
 
-    private void loadTopRatedApi() {
-        LoadHotel loadHotel = new LoadHotel(new HomeListener() {
-            @Override
-            public void onStart() {
-                progressDialog.show();
-            }
-
-            @Override
-            public void onEnd(String success, ArrayList<ItemRestaurant> arrayList_latest, ArrayList<ItemRestaurant> arrayList_featured) {
-                if (getActivity() != null) {
-                    if (progressDialog.isShowing()) {
-                        progressDialog.dismiss();
-                    }
-
-                    if (success.equals("true")) {
-                        arrayList_toprated.addAll(arrayList_latest);
-                        adapterTopRatedHome = new AdapterLatestHome(getActivity(), arrayList_toprated, new ClickListener() {
-                            @Override
-                            public void onClick(int position) {
-                                methods.showInterAd(position, "top");
-                            }
-                        });
-                        recyclerView_toprated.setAdapter(adapterTopRatedHome);
-                    } else {
-                        Toast.makeText(getActivity(), getString(R.string.error_server), Toast.LENGTH_SHORT).show();
-                    }
-
-                    if (arrayList_toprated.size() > 0) {
-                        textView_toprated_empty.setVisibility(View.GONE);
-                    } else {
-                        textView_toprated_empty.setVisibility(View.VISIBLE);
-                    }
-                }
-            }
-        });
-
-        loadHotel.execute(Constant.URL_TOP_RATED);
-    }
+//    private void loadTopRatedApi() {
+//        LoadHotel loadHotel = new LoadHotel(new HomeListener() {
+//            @Override
+//            public void onStart() {
+//                progressDialog.show();
+//            }
+//
+//            @Override
+//            public void onEnd(String success, ArrayList<ItemRestaurant> arrayList_latest, ArrayList<ItemRestaurant> arrayList_featured) {
+//                if (getActivity() != null) {
+//                    if (progressDialog.isShowing()) {
+//                        progressDialog.dismiss();
+//                    }
+//
+//                    if (success.equals("true")) {
+//                        arrayList_toprated.addAll(arrayList_latest);
+//                        adapterTopRatedHome = new AdapterLatestHome(getActivity(), arrayList_toprated, new ClickListener() {
+//                            @Override
+//                            public void onClick(int position) {
+//                                methods.showInterAd(position, "top");
+//                            }
+//                        });
+//                        recyclerView_toprated.setAdapter(adapterTopRatedHome);
+//                    } else {
+//                        Toast.makeText(getActivity(), getString(R.string.error_server), Toast.LENGTH_SHORT).show();
+//                    }
+//
+//                    if (arrayList_toprated.size() > 0) {
+//                        textView_toprated_empty.setVisibility(View.GONE);
+//                    } else {
+//                        textView_toprated_empty.setVisibility(View.VISIBLE);
+//                    }
+//                }
+//            }
+//        });
+//
+//        loadHotel.execute(Constant.URL_TOP_RATED);
+//    }
 
     private class ImagePagerAdapter extends PagerAdapter {
 

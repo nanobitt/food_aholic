@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         spaceNavigationView.addSpaceItem(new SpaceItem(getString(R.string.home), R.mipmap.home));
         spaceNavigationView.addSpaceItem(new SpaceItem(getString(R.string.hotel_list), R.mipmap.cat));
         spaceNavigationView.addSpaceItem(new SpaceItem(getString(R.string.orderlist), R.mipmap.list));
-        spaceNavigationView.addSpaceItem(new SpaceItem(getString(R.string.offers), R.mipmap.profile));
+        spaceNavigationView.addSpaceItem(new SpaceItem(getString(R.string.offers), R.mipmap.restaurant));
 
         spaceNavigationView.setSpaceOnClickListener(new SpaceOnClickListener() {
             @Override
