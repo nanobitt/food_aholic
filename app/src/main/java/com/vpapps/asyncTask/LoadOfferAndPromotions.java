@@ -29,6 +29,7 @@ public class LoadOfferAndPromotions extends AsyncTask<String, String, Boolean> {
     protected void onPreExecute() {
         super.onPreExecute();
         offerAndPromotionListener.onStart();
+
     }
 
     @Override

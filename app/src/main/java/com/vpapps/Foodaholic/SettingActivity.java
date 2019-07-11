@@ -38,7 +38,7 @@ public class SettingActivity extends AppCompatActivity {
     LinearLayout ll_consent, ll_adView;
     SwitchCompat switch_consent, switch_noti;
     Boolean isNoti = true, isLoaded = false;
-    TextView textView_privacy, textView_about, textView_moreapp;
+    TextView textView_privacy, textView_about, textView_moreapp, textView_Faq;
     View view_settings;
 
     @Override
@@ -78,6 +78,7 @@ public class SettingActivity extends AppCompatActivity {
         textView_privacy = findViewById(R.id.textView_privacy);
         ll_adView = findViewById(R.id.ll_adView_settings);
         view_settings = findViewById(R.id.view_settings);
+        textView_Faq = findViewById(R.id.textView_faq);
         methods.showBannerAd(ll_adView);
 
         if (adConsent.isUserFromEEA()) {
@@ -129,6 +130,14 @@ public class SettingActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.play_more_apps))));
+            }
+        });
+
+        textView_Faq.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SettingActivity.this, FaqActivity.class);
+                startActivity(intent);
             }
         });
 

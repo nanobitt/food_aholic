@@ -62,6 +62,8 @@ public class Constant implements Serializable{
 
 	public static final String URL_OFFER_AND_PROMOTIONS = SERVER_URL + "api_offer_and_promotion.php";
 
+	public static final String URL_FAQ = SERVER_URL + "api_faq.php";
+
 	public static final String TAG_ROOT = "FOOD_APP";
 	public static final String TAG_FEATURED_REST = "featured_restaurant";
 	public static final String TAG_LATEST_REST = "latest_restaurant";
@@ -139,6 +141,9 @@ public class Constant implements Serializable{
 	public static final String TAG_OFFER_DESCRIPTION = "offer_description";
 	public static final String TAG_OFFER_IMAGE_LINK = "image_link";
 	public static final String TAG_OFFER_POST_DATE = "post_date";
+
+	public static final String TAG_FAQ_QUES = "faq_question";
+	public static final String TAG_FAQ_ANS = "faq_ans";
 
 
 	public static final String SHARED_PREF_LOGIN="login";

@@ -16,7 +16,8 @@
         android:roundIcon="@mipmap/app_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".OffersAndPromotionsActivity"></activity>
+        <activity android:name=".FaqActivity"></activity>
+        <activity android:name=".OffersAndPromotionsActivity" />
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
