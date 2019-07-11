@@ -119,6 +119,14 @@ public class SettingActivity extends AppCompatActivity {
             }
         });
 
+//        textView_faq.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent i = new Intent(SettingActivity.this,faq.class);
+//                startActivity(i);
+//            }
+//        });
+
         textView_privacy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
