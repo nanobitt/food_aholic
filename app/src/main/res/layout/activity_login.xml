@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <!--&lt;!&ndash;android:background="@drawable/bg_login"&ndash;&gt;-->
-    <!--&lt;!&ndash;android:fillViewport="true"&ndash;&gt;-->
-    <!--tools:context="com.vpapps.Foodaholic.LoginActivity">-->
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_login"
+    android:fillViewport="true"
+    tools:context="com.nanobit.Foodaholic.LoginActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:text="@string/FoodAholic"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="28sp"
             android:textStyle="bold" />
 
@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/signin_to_continue"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="14sp" />
 
         <!--Email-->
@@ -55,9 +55,9 @@
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColorHint="@android:color/black"
+                    android:textColorHint="@android:color/white"
                     android:theme="@style/TextLabel"
-                    app:backgroundTint="@color/black">
+                    app:backgroundTint="@color/white">
 
                     <android.support.v7.widget.AppCompatEditText
                         android:id="@+id/et_login_email"
@@ -68,7 +68,7 @@
                         android:inputType="textEmailAddress"
                         android:maxLines="1"
                         android:padding="5dp"
-                        android:textColor="@android:color/black"
+                        android:textColor="@android:color/white"
                         android:textSize="16sp" />
 
                 </android.support.design.widget.TextInputLayout>
@@ -85,18 +85,18 @@
                 <View
                     android:layout_width="1dp"
                     android:layout_height="5dp"
-                    android:background="@color/black" />
+                    android:background="@color/white" />
 
                 <View
                     android:layout_width="0dp"
                     android:layout_height="1dp"
                     android:layout_weight="1"
-                    android:background="@color/black" />
+                    android:background="@color/white" />
 
                 <View
                     android:layout_width="1dp"
                     android:layout_height="5dp"
-                    android:background="@color/black" />
+                    android:background="@color/white" />
 
             </LinearLayout>
 
@@ -126,9 +126,9 @@
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColorHint="@android:color/black"
+                    android:textColorHint="@android:color/white"
                     android:theme="@style/TextLabel"
-                    app:backgroundTint="@color/black">
+                    app:backgroundTint="@color/white">
 
                     <android.support.v7.widget.AppCompatEditText
                         android:id="@+id/et_login_password"
@@ -139,7 +139,7 @@
                         android:inputType="textPassword"
                         android:maxLines="1"
                         android:padding="5dp"
-                        android:textColor="@android:color/black"
+                        android:textColor="@android:color/white"
                         android:textSize="16sp" />
 
                 </android.support.design.widget.TextInputLayout>
@@ -156,18 +156,18 @@
                 <View
                     android:layout_width="1dp"
                     android:layout_height="5dp"
-                    android:background="@color/black" />
+                    android:background="@color/white" />
 
                 <View
                     android:layout_width="0dp"
                     android:layout_height="1dp"
                     android:layout_weight="1"
-                    android:background="@color/black" />
+                    android:background="@color/white" />
 
                 <View
                     android:layout_width="1dp"
                     android:layout_height="5dp"
-                    android:background="@color/black" />
+                    android:background="@color/white" />
 
             </LinearLayout>
 
@@ -191,7 +191,7 @@
                 android:id="@+id/cb_rememberme"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                app:color_checked="@color/black"
+                app:color_checked="@color/white"
                 app:color_tick="@color/maroon" />
 
             <TextView
@@ -200,7 +200,7 @@
                 android:layout_marginLeft="7dp"
                 android:layout_marginStart="7dp"
                 android:text="@string/remember_me"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="14sp" />
 
         </LinearLayout>
@@ -245,7 +245,7 @@
             android:background="?attr/selectableItemBackground"
             android:padding="5dp"
             android:text="@string/forgot_password"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="14sp" />
 
         <LinearLayout
@@ -260,7 +260,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/dnt_have_acc"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="12sp"/>
 
             <TextView

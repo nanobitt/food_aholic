@@ -21,75 +21,113 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_runtime_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_runtime_1_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_livedata_core_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_livedata_core_1_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_runtime_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_runtime_1_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_viewmodel_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_viewmodel_1_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_27_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_27_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_appcompat_v7_27_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_appcompat_v7_27_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_cardview_v7_27_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_cardview_v7_27_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_1_1_3_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_1_1_3_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_customtabs_26_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_customtabs_26_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_design_27_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_design_27_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_exifinterface_27_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_exifinterface_27_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_recyclerview_v7_27_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_recyclerview_v7_27_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_compat_27_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_compat_27_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_ui_27_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_ui_27_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_utils_27_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_utils_27_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_fragment_27_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_fragment_27_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_media_compat_27_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_media_compat_27_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_v4_27_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_v4_27_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_vector_drawable_27_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_vector_drawable_27_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_core_2_2_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_core_2_2_2_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_idling_resource_2_2_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_idling_resource_2_2_2_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_exposed_instrumentation_api_publish_0_5_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_exposed_instrumentation_api_publish_0_5_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_rules_0_5_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_rules_0_5_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_runner_0_5_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_runner_0_5_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_transition_27_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_transition_27_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_CymChad_BaseRecyclerViewAdapterHelper_2_9_46_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_CymChad_BaseRecyclerViewAdapterHelper_2_9_46_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_castorflex_smoothprogressbar_library_circular_1_3_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_castorflex_smoothprogressbar_library_circular_1_3_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_ads_consent_consent_library_1_0_6_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_ads_consent_consent_library_1_0_6_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_ads_15_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_ads_15_0_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_ads_base_15_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_ads_base_15_0_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_ads_identifier_15_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_ads_identifier_15_0_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_ads_lite_15_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_ads_lite_15_0_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_base_15_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_base_15_0_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_basement_15_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_basement_15_0_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_gass_15_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_gass_15_0_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_gcm_15_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_gcm_15_0_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_iid_15_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_iid_15_0_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_location_12_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_location_12_0_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_base_15_0_4_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_base_15_0_4_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_stats_15_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_stats_15_0_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_tasks_15_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_tasks_15_0_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_analytics_16_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_analytics_16_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_analytics_impl_16_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_analytics_impl_16_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_common_16_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_common_16_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_core_16_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_core_16_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_iid_16_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_iid_16_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_iid_interop_16_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_iid_interop_16_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_measurement_connector_16_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_measurement_connector_16_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_measurement_connector_impl_16_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_measurement_connector_impl_16_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_messaging_12_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_messaging_12_0_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_makeramen_roundedimageview_2_3_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_makeramen_roundedimageview_2_3_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_onesignal_OneSignal_3_9_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_onesignal_OneSignal_3_9_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_romandanylyk_pageindicatorview_1_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_romandanylyk_pageindicatorview_1_0_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_picasso_picasso_2_71828_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_picasso_picasso_2_71828_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_thoughtbot_expandablerecyclerview_1_3_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_thoughtbot_expandablerecyclerview_1_3_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_tiagosantos_enchantedviewpager_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_tiagosantos_enchantedviewpager_1_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__it_sysdata_mobile_fancyaccordionview_1_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__it_sysdata_mobile_fancyaccordionview_1_0_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__uk_co_chrisjenx_calligraphy_2_3_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__uk_co_chrisjenx_calligraphy_2_3_0_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IRBottomNavigationLib/IRBottomNavigationLib.iml" beforeDir="false" afterPath="$PROJECT_DIR$/IRBottomNavigationLib/IRBottomNavigationLib.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/vpapps/Foodaholic/ExampleInstrumentedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/nanobit/Foodaholic/ExampleInstrumentedTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/Foodaholic/AboutActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/Foodaholic/AboutActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/Foodaholic/CartActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/Foodaholic/CartActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/Foodaholic/CheckOut.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/Foodaholic/CheckOut.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/Foodaholic/FaqActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/Foodaholic/FaqActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/Foodaholic/FavouriteActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/Foodaholic/FavouriteActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/Foodaholic/ForgotPasswordActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/Foodaholic/ForgotPasswordActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/Foodaholic/FragmentCat.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/Foodaholic/FragmentCat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/Foodaholic/FragmentHome.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/Foodaholic/FragmentHome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/Foodaholic/FragmentOrderList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/Foodaholic/FragmentOrderList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/Foodaholic/FragmentProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/Foodaholic/FragmentProfile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/Foodaholic/HotelByCatActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/Foodaholic/HotelByCatActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/Foodaholic/HotelByLatestActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/Foodaholic/HotelByLatestActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/Foodaholic/HotelBySearchActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/Foodaholic/HotelBySearchActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/Foodaholic/HotelDetailsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/Foodaholic/HotelDetailsActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/Foodaholic/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/Foodaholic/LoginActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/Foodaholic/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/Foodaholic/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/Foodaholic/MyApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/Foodaholic/MyApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/Foodaholic/OffersAndPromotionsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/Foodaholic/OffersAndPromotionsActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/Foodaholic/OrderDetailsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/Foodaholic/OrderDetailsActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/Foodaholic/ProfileEditActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/Foodaholic/ProfileEditActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/Foodaholic/RegisterActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/Foodaholic/RegisterActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/Foodaholic/SettingActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/Foodaholic/SettingActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/Foodaholic/SplashActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/Foodaholic/SplashActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/adapter/AdapterCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/adapter/AdapterCart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/adapter/AdapterCat.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/adapter/AdapterCat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/adapter/AdapterCheckOut.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/adapter/AdapterCheckOut.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/adapter/AdapterFaqExpandable.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/adapter/AdapterFaqExpandable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/adapter/AdapterHotelList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/adapter/AdapterHotelList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/adapter/AdapterLatestHome.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/adapter/AdapterLatestHome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/adapter/AdapterMenuExpandable.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/adapter/AdapterMenuExpandable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/adapter/AdapterOffersAndPromotions.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/adapter/AdapterOffersAndPromotions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/adapter/AdapterOrderDetailsMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/adapter/AdapterOrderDetailsMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/adapter/AdapterOrderList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/adapter/AdapterOrderList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/adapter/AdapterReview.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/adapter/AdapterReview.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/asyncTask/LoadAbout.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/asyncTask/LoadAbout.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/asyncTask/LoadAddMenu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/asyncTask/LoadCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/asyncTask/LoadCart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/asyncTask/LoadCat.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/asyncTask/LoadCat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/asyncTask/LoadCheckOut.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/asyncTask/LoadCheckOut.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/asyncTask/LoadDeleteMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/asyncTask/LoadDeleteMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/asyncTask/LoadFaq.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/asyncTask/LoadFaq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/asyncTask/LoadHome.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/asyncTask/LoadHome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/asyncTask/LoadHotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/asyncTask/LoadHotel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/asyncTask/LoadLoginLocal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/asyncTask/LoadLoginLocal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/asyncTask/LoadMenuCat.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/asyncTask/LoadMenuCat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/asyncTask/LoadOderList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/asyncTask/LoadOderList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/asyncTask/LoadOfferAndPromotions.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/asyncTask/LoadOrderCancel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/asyncTask/LoadOrderCancel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/asyncTask/LoadProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/asyncTask/LoadProfile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/asyncTask/LoadProfileUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/asyncTask/LoadProfileUpdate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/asyncTask/LoadRating.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/asyncTask/LoadRating.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/asyncTask/LoadRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/asyncTask/LoadRegister.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/asyncTask/LoadSingleHotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/asyncTask/LoadSingleHotel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/interfaces/AboutListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/interfaces/AboutListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/interfaces/AdConsentListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/interfaces/AdConsentListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/interfaces/CartListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/interfaces/CartListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/interfaces/CategoryListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/interfaces/CategoryListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/interfaces/ClickListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/interfaces/ClickListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/interfaces/FaqListenser.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/interfaces/FaqListenser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/interfaces/HomeListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/interfaces/HomeListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/interfaces/InterAdListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/interfaces/InterAdListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/interfaces/LoginListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/interfaces/LoginListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/interfaces/MenuCatListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/interfaces/MenuListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/interfaces/MenuListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/interfaces/OfferAndPromotionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/interfaces/OfferAndPromotionListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/interfaces/OrderCancelListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/interfaces/OrderCancelListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/interfaces/OrderListListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/interfaces/OrderListListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/interfaces/RatingListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/interfaces/RatingListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/interfaces/SingleHotelListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/items/ItemAbout.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/items/ItemAbout.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/items/ItemCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/items/ItemCart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/items/ItemCat.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/items/ItemCat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/items/ItemExpandedMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/items/ItemExpandedMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/items/ItemFaq.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/items/ItemMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/items/ItemMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/items/ItemMenuCat.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/items/ItemMenuCat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/items/ItemOfferAndPromotion.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/items/ItemOfferAndPromotion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/items/ItemOrderList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/items/ItemOrderList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/items/ItemOrderMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/items/ItemOrderMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/items/ItemRestaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/items/ItemRestaurant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/items/ItemReview.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/items/ItemReview.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/items/ItemUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/items/ItemUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/sharedPref/SharePref.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/sharedPref/SharePref.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/utils/AdConsent.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/utils/AdConsent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/utils/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/utils/Constant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/utils/DBHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/utils/DBHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/utils/JsonUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/utils/JsonUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/utils/Methods.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/utils/Methods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/utils/NotificationExtenderExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/utils/NotificationExtenderExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/utils/RecyclerItemClickListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/utils/RecyclerItemClickListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vpapps/utils/SharedPref.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nanobit/utils/SharedPref.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bg_login.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_login.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bg_nav.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_nav.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/shadow.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/shadow.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_order_details.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_order_details.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_register.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_register.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/app_bar_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/app_bar_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/vpapps/Foodaholic/ExampleUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/nanobit/Foodaholic/ExampleUnitTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -110,11 +148,26 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
           <provider editor-type-id="android-designer2" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-632">
-              <caret line="232" column="61" lean-forward="true" selection-start-line="232" selection-start-column="61" selection-end-line="232" selection-end-column="61" />
-              <folding>
-                <element signature="e#896#916#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-3829">
+              <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="51" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -160,6 +213,7 @@
       <find>top</find>
       <find>moreapp</find>
       <find>view_settings</find>
+      <find>black</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -192,10 +246,10 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/vpapps/Foodaholic/FragmentHome.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/vpapps/Foodaholic/SettingActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/vpapps/Foodaholic/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
       </list>
     </option>
   </component>
@@ -211,6 +265,46 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="food_aholic" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="food_aholic" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="food_aholic" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="com" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="food_aholic" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="com" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="nanobit" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="food_aholic" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="food_aholic" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -223,45 +317,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="AndroidView">
-        <subPane>
-          <expand>
-            <path>
-              <item name="food_aholic" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="food_aholic" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="manifests" type="f94875db:AndroidManifestsGroupNode" />
-            </path>
-            <path>
-              <item name="food_aholic" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-            </path>
-            <path>
-              <item name="food_aholic" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
-            <path>
-              <item name="food_aholic" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="menu" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
-            <path>
-              <item name="food_aholic" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -367,7 +422,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.24498567" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.2320917" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
@@ -382,15 +437,15 @@
       <window_info anchor="bottom" id="Terminal" order="4" />
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="6" />
-      <window_info anchor="bottom" id="Build" order="7" visible="true" weight="0.34993616" />
+      <window_info active="true" anchor="bottom" id="Build" order="7" visible="true" weight="0.29246488" />
       <window_info anchor="bottom" id="Android Profiler" order="8" />
-      <window_info anchor="bottom" id="Find" order="9" />
+      <window_info anchor="bottom" id="Find" order="9" weight="0.32950193" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Gradle" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info anchor="right" id="Fabric" order="4" />
-      <window_info active="true" anchor="right" id="Preview" order="5" visible="true" weight="0.2743553" />
+      <window_info anchor="right" id="Preview" order="5" visible="true" weight="0.2743553" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
     </layout>
   </component>
@@ -501,8 +556,8 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_ques.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vpapps/Foodaholic/FragmentHome.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vpapps/Foodaholic/MainActivity.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nanobit/Foodaholic/FragmentHome.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nanobit/Foodaholic/MainActivity.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_schedule.xml">
       <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor">
@@ -588,20 +643,6 @@
       <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2">
-          <caret line="21" column="53" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -625,14 +666,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="51" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
       <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-632">
-          <caret line="232" column="61" lean-forward="true" selection-start-line="232" selection-start-column="61" selection-end-line="232" selection-end-column="61" />
-          <folding>
-            <element signature="e#896#916#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-3829">
+          <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
         </state>
       </provider>
     </entry>
