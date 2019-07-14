@@ -10,16 +10,16 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/splash"
-        android:scaleType="fitXY"/>
+        android:scaleType="fitXY"
+        android:src="@drawable/splash" />
 
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="30dp"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="50dp"
         android:theme="@style/AppTheme.WhiteAccent" />
 
 </RelativeLayout>
