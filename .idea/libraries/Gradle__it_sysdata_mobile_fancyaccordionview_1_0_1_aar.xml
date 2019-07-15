@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: it.sysdata.mobile:fancyaccordionview:1.0.1@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/355cb32e9c7f62bec76bfab526bd137e/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/355cb32e9c7f62bec76bfab526bd137e/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0c8c55656582e090cda0a6ab63233da7/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0c8c55656582e090cda0a6ab63233da7/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
