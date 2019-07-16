@@ -32,7 +32,9 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name="com.nanobit.Foodaholic.RegisterActivity"
-            android:windowSoftInputMode="adjustPan" />
+            android:configChanges="screenSize|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name="com.nanobit.Foodaholic.MainActivity"
             android:label="@string/title_activity_main" />

@@ -127,7 +127,7 @@ public class AdapterOrderList extends RecyclerView.Adapter<AdapterOrderList.MyVi
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        if ((d.getTime() + 600000) < System.currentTimeMillis() || arrayList.get(holder.getAdapterPosition()).getStatus().equals(Constant.TAG_CANCEL)) {
+        if ((d.getTime() + 600000) < System.currentTimeMillis() || arrayList.get(holder.getAdapterPosition()).getStatus().equals(Constant.TAG_CANCEL) || arrayList.get(holder.getAdapterPosition()).getStatus().equals(Constant.TAG_COMPLETE) || arrayList.get(holder.getAdapterPosition()).getStatus().equals(Constant.TAG_PROCESS)) {
             holder.textView_cancel.setVisibility(View.GONE);
         }
 
