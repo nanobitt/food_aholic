@@ -5,6 +5,7 @@ import java.io.Serializable;
 public class ItemMenu implements Serializable {
 
     private String id, name,type, image, desc, price,restId, catID;
+    ItemRestaurant associatedRestaurant;
 
     public ItemMenu(String id, String name,String type, String image, String desc, String price, String restId, String catID) {
         this.id = id;
@@ -15,6 +16,19 @@ public class ItemMenu implements Serializable {
         this.restId = restId;
         this.catID = catID;
         this.type = type;
+    }
+
+    //This constructor is used for food of the day
+    public ItemMenu(String id, String name,String type, String image, String desc, String price, String restId, String catID, ItemRestaurant associatedRestaurant) {
+        this.id = id;
+        this.name = name;
+        this.image = image;
+        this.desc = desc;
+        this.price = price;
+        this.restId = restId;
+        this.catID = catID;
+        this.type = type;
+        this.associatedRestaurant = associatedRestaurant;
     }
 
     public String getId()
@@ -85,5 +99,9 @@ public class ItemMenu implements Serializable {
 
     public void setCatID(String catID) {
         this.catID = catID;
+    }
+
+    public ItemRestaurant getAssociatedRestaurant() {
+        return associatedRestaurant;
     }
 }

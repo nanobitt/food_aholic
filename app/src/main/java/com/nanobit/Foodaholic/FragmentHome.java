@@ -31,6 +31,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.makeramen.roundedimageview.RoundedImageView;
+import com.nanobit.adapter.AdapterFoodoftheday;
+import com.nanobit.asyncTask.LoadFoodoftheday;
+import com.nanobit.interfaces.FoodofthedayListener;
+import com.nanobit.items.ItemMenu;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 import com.tiagosantos.enchantedviewpager.EnchantedViewPager;
@@ -51,12 +55,13 @@ public class FragmentHome extends Fragment {
     private DBHelper dbHelper;
     private Methods methods;
     private AdapterLatestHome adapterLatestHome, adapterTopRatedHome;
+    private AdapterFoodoftheday adapterFoodoftheday;
     private ImagePagerAdapter pagerAdapter;
     private EnchantedViewPager viewPager_home;
-    private RecyclerView recyclerView_latest, recyclerView_toprated;
+    private RecyclerView recyclerView_latest, recyclerView_foodoftheday;
     private ArrayList<ItemRestaurant> arrayList_lat, arrayList_toprated, arrayList_feat;
     private TextView textView_latest_empty;
-    private TextView textView_toprated_empty;
+    private TextView textView_foodoftheday_empty;
     private AppCompatButton button_more_latest, button_more_toprated;
     private ProgressDialog progressDialog;
     private Menu menu;
@@ -109,7 +114,7 @@ public class FragmentHome extends Fragment {
         button_more_latest = rootView.findViewById(R.id.button_home_latest);
        // button_more_toprated = rootView.findViewById(R.id.button_home_toprated);
         textView_latest_empty = rootView.findViewById(R.id.textView_latest_empty);
-        //textView_toprated_empty = rootView.findViewById(R.id.textView_toprated_empty);
+        textView_foodoftheday_empty = rootView.findViewById(R.id.textView_foodoftheday_empty);
 
         TextView tv1 = rootView.findViewById(R.id.tv1);
         //TextView tv2 = rootView.findViewById(R.id.tv2);
@@ -121,14 +126,15 @@ public class FragmentHome extends Fragment {
         recyclerView_latest.setItemAnimator(new DefaultItemAnimator());
         recyclerView_latest.setHasFixedSize(true);
 
-//        LinearLayoutManager llm_toprated = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
-//        //recyclerView_toprated = rootView.findViewById(R.id.rv_home_toprated);
-//        recyclerView_toprated.setLayoutManager(llm_toprated);
-//        recyclerView_toprated.setItemAnimator(new DefaultItemAnimator());
-//        recyclerView_toprated.setHasFixedSize(true);
+        LinearLayoutManager llm_toprated = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
+        recyclerView_foodoftheday = rootView.findViewById(R.id.rv_home_foodoftheday);
+        recyclerView_foodoftheday.setLayoutManager(llm_toprated);
+        recyclerView_foodoftheday.setItemAnimator(new DefaultItemAnimator());
+        recyclerView_foodoftheday.setHasFixedSize(true);
 
         if (methods.isNetworkAvailable()) {
             loadHomeApi();
+            loadFoodofthedayApi();
         } else {
             Toast.makeText(getActivity(), getResources().getString(R.string.net_not_conn), Toast.LENGTH_SHORT).show();
         }
@@ -301,6 +307,34 @@ public class FragmentHome extends Fragment {
         });
 
         loadHome.execute(Constant.URL_HOME);
+    }
+
+    private void loadFoodofthedayApi()
+    {
+        LoadFoodoftheday loadFoodoftheday = new LoadFoodoftheday(new FoodofthedayListener() {
+            @Override
+            public void onStart() {
+                progressDialog.show();
+            }
+
+            @Override
+            public void onEnd(String success, ArrayList<ItemMenu> arrayList_food_of_the_day) {
+                if(progressDialog.isShowing())
+                {
+                    progressDialog.dismiss();
+                }
+                adapterFoodoftheday = new AdapterFoodoftheday(getActivity(), arrayList_food_of_the_day);
+                recyclerView_foodoftheday.setAdapter(adapterFoodoftheday);
+
+                if (arrayList_toprated.size() > 0) {
+                    textView_foodoftheday_empty.setVisibility(View.GONE);
+                } else {
+                    textView_foodoftheday_empty.setVisibility(View.VISIBLE);
+                }
+
+            }
+        });
+        loadFoodoftheday.execute(Constant.URL_FOOD_OF_THE_DAY);
     }
 
 //    private void loadTopRatedApi() {
