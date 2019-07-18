@@ -326,7 +326,7 @@ public class FragmentHome extends Fragment {
                 adapterFoodoftheday = new AdapterFoodoftheday(getActivity(), arrayList_food_of_the_day);
                 recyclerView_foodoftheday.setAdapter(adapterFoodoftheday);
 
-                if (arrayList_toprated.size() > 0) {
+                if (arrayList_food_of_the_day.size() > 0) {
                     textView_foodoftheday_empty.setVisibility(View.GONE);
                 } else {
                     textView_foodoftheday_empty.setVisibility(View.VISIBLE);
