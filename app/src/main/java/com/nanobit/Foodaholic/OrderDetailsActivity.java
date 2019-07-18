@@ -204,7 +204,7 @@ public class OrderDetailsActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         if(textView_cancel != null) {
-            if ((d.getTime() + 600000) < System.currentTimeMillis() || Constant.itemOrderList.getStatus().equals(Constant.TAG_CANCEL)) {
+            if ((d.getTime() + 600000) < System.currentTimeMillis() || Constant.itemOrderList.getStatus().equals(Constant.TAG_CANCEL) || Constant.itemOrderList.getStatus().equals(Constant.TAG_COMPLETE) || Constant.itemOrderList.getStatus().equals(Constant.TAG_PROCESS)) {
                 textView_cancel.setVisibility(View.GONE);
             } else {
                 textView_cancel.setVisibility(View.VISIBLE);

@@ -44,6 +44,7 @@ public class LoadAbout extends AsyncTask<String, String, String> {
                 String email = c.getString("app_email");
                 String website = c.getString("app_website");
                 String privacy = c.getString("app_privacy_policy");
+                String terms_and_conditins = c.getString("app_terms_conditions");
                 String developedby = c.getString("app_developed_by");
 
                 Constant.ad_banner_id = c.getString("banner_ad_id");
@@ -53,7 +54,7 @@ public class LoadAbout extends AsyncTask<String, String, String> {
                 Constant.ad_publisher_id = c.getString("publisher_id");
                 Constant.adShow = Integer.parseInt(c.getString("interstital_ad_click"));
 
-                Constant.itemAbout = new ItemAbout(appname, applogo, desc, appversion, appauthor, appcontact, email, website, privacy, developedby);
+                Constant.itemAbout = new ItemAbout(appname, applogo, desc, appversion, appauthor, appcontact, email, website, privacy, terms_and_conditins, developedby);
             }
             return "1";
         } catch (Exception ee) {

@@ -94,11 +94,11 @@ public class DBHelper extends SQLiteOpenHelper {
     public void addtoAbout() {
         try {
             dml("delete from about");
-            dml("insert into about (name,logo,version,author,contact,email,website,desc,developed,privacy, ad_pub, ad_banner, ad_inter, isbanner, isinter, click) values (" +
+            dml("insert into about (name,logo,version,author,contact,email,website,desc,developed,privacy, terms_and_conditions, ad_pub, ad_banner, ad_inter, isbanner, isinter, click) values (" +
                     "'" + Constant.itemAbout.getAppName() + "','" + Constant.itemAbout.getAppLogo() + "','" + Constant.itemAbout.getAppVersion() + "'" +
                     ",'" + Constant.itemAbout.getAuthor() + "','" + Constant.itemAbout.getContact() + "','" + Constant.itemAbout.getEmail() + "'" +
                     ",'" + Constant.itemAbout.getWebsite() + "','" + Constant.itemAbout.getAppDesc() + "','" + Constant.itemAbout.getDevelopedby() + "'" +
-                    ",'" + Constant.itemAbout.getPrivacy() + "','" + Constant.ad_publisher_id + "','" + Constant.ad_banner_id + "','" + Constant.ad_inter_id + "'" +
+                    ",'" + Constant.itemAbout.getPrivacy() + "','" + Constant.itemAbout.getTerms_and_conditions() + "','" + "','" + Constant.ad_publisher_id + "','" + Constant.ad_banner_id + "','" + Constant.ad_inter_id + "'" +
                     ",'" + Constant.isBannerAd + "','" + Constant.isInterAd + "','" + Constant.adShow + "')");
         } catch (Exception e) {
             e.printStackTrace();
@@ -122,6 +122,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 String email = c.getString(c.getColumnIndex("email"));
                 String website = c.getString(c.getColumnIndex("website"));
                 String privacy = c.getString(c.getColumnIndex("privacy"));
+                String terms_and_condtions = c.getString(c.getColumnIndex("terms_and_conditions"));
                 String developedby = c.getString(c.getColumnIndex("developed"));
 
                 Constant.ad_banner_id = c.getString(c.getColumnIndex("ad_banner"));
@@ -131,7 +132,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 Constant.ad_publisher_id = c.getString(c.getColumnIndex("ad_pub"));
                 Constant.adShow = Integer.parseInt(c.getString(c.getColumnIndex("click")));
 
-                Constant.itemAbout = new ItemAbout(appname, applogo, desc, appversion, appauthor, appcontact, email, website, privacy, developedby);
+                Constant.itemAbout = new ItemAbout(appname, applogo, desc, appversion, appauthor, appcontact, email, website, privacy, terms_and_condtions, developedby);
             }
             c.close();
             return true;

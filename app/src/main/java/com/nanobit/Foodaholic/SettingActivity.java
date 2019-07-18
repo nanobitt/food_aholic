@@ -37,8 +37,7 @@ public class SettingActivity extends AppCompatActivity {
     LinearLayout ll_consent, ll_adView;
     SwitchCompat switch_consent, switch_noti;
     Boolean isNoti = true, isLoaded = false;
-    TextView textView_privacy, textView_about, textView_moreapp, textView_Faq;
-    View view_settings;
+    TextView textView_privacy, textView_about, textView_Faq, textView_terms_and_conditions;
 
     @Override
     protected void attachBaseContext(Context newBase) {
@@ -78,6 +77,7 @@ public class SettingActivity extends AppCompatActivity {
         ll_adView = findViewById(R.id.ll_adView_settings);
         //view_settings = findViewById(R.id.view_settings);
         textView_Faq = findViewById(R.id.textView_faq);
+        textView_terms_and_conditions = findViewById(R.id.textView_termsandconditions);
         methods.showBannerAd(ll_adView);
 
         if (adConsent.isUserFromEEA()) {
@@ -122,6 +122,13 @@ public class SettingActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 openPrivacyDialog();
+            }
+        });
+
+        textView_terms_and_conditions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openTermsConditionsDialog();
             }
         });
 
@@ -194,6 +201,38 @@ public class SettingActivity extends AppCompatActivity {
                     + "</style></head>"
                     + "<body>"
                     + Constant.itemAbout.getPrivacy()
+                    + "</body></html>";
+
+            webview.loadData(text, mimeType, encoding);
+        }
+
+        dialog.show();
+        Window window = dialog.getWindow();
+        window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
+    }
+
+    public void openTermsConditionsDialog() {
+        Dialog dialog;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            dialog = new Dialog(SettingActivity.this, android.R.style.Theme_Material_Light_Dialog_Alert);
+        } else {
+            dialog = new Dialog(SettingActivity.this);
+        }
+
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.layout_terms_and_conditions);
+
+        WebView webview = dialog.findViewById(R.id.webview);
+        webview.getSettings().setJavaScriptEnabled(true);
+        String mimeType = "text/html;charset=UTF-8";
+        String encoding = "utf-8";
+
+        if (Constant.itemAbout != null) {
+            String text = "<html><head>"
+                    + "<style> body{color: #000 !important;text-align:left}"
+                    + "</style></head>"
+                    + "<body>"
+                    + Constant.itemAbout.getTerms_and_conditions()
                     + "</body></html>";
 
             webview.loadData(text, mimeType, encoding);
