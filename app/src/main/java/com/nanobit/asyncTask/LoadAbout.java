@@ -46,7 +46,9 @@ public class LoadAbout extends AsyncTask<String, String, String> {
                 String privacy = c.getString("app_privacy_policy");
                 String terms_and_conditins = c.getString("app_terms_conditions");
                 String developedby = c.getString("app_developed_by");
+                String service_charge = c.getString("service_charge");
 
+                Constant.is_service_charge_applicable = Boolean.parseBoolean(service_charge);
                 Constant.ad_banner_id = c.getString("banner_ad_id");
                 Constant.ad_inter_id = c.getString("interstital_ad_id");
                 Constant.isBannerAd = Boolean.parseBoolean(c.getString("banner_ad"));

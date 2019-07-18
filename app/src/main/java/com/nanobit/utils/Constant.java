@@ -165,6 +165,9 @@ public class Constant implements Serializable{
 	public static Boolean isLogged = false;
 	public static Boolean isCartRefresh = false;
 	public static Boolean isFromCheckOut = false;
+	public static Boolean is_service_charge_applicable = false;
+	public static final String SERVICE_CHARGE_APPLICABLE = "*Service charge applicable";
+	public static final String SERVICE_CHARGE_NOT_APPLICABLE = "*Service charge not applicable";
 
 	public static ItemAbout itemAbout;
 	public static ArrayList<ItemRestaurant> arrayList_latest = new ArrayList<>();

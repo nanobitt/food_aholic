@@ -43,7 +43,7 @@ public class CheckOut extends AppCompatActivity {
     ProgressDialog progressDialog;
     private AppCompatButton button_checkout;
     private EditText editText_address, editText_comment;
-    private TextView textView_total, textView_hotel_name, textView_currency;
+    private TextView textView_total, textView_hotel_name, textView_currency, textView_serviceCharge;
     private String comment, address, cart_ids, total, rest_name = "", from = "";
     CardView cardView_edit;
     RecyclerView recyclerView;
@@ -79,6 +79,7 @@ public class CheckOut extends AppCompatActivity {
         textView_hotel_name = findViewById(R.id.tv_checkout_hotel_name);
         textView_total = findViewById(R.id.tv_checkout_total);
         textView_currency = findViewById(R.id.tv);
+        textView_serviceCharge = findViewById(R.id.tvServiceCharge);
         button_checkout = findViewById(R.id.button_checkout);
 
         recyclerView = findViewById(R.id.rv_checkout);
@@ -118,7 +119,18 @@ public class CheckOut extends AppCompatActivity {
                 finish();
             }
         });
+
+
+        if(Constant.is_service_charge_applicable)
+        {
+            textView_serviceCharge.setText(Constant.SERVICE_CHARGE_APPLICABLE);
+        }
+        else
+        {
+            textView_serviceCharge.setText(Constant.SERVICE_CHARGE_NOT_APPLICABLE);
+        }
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
