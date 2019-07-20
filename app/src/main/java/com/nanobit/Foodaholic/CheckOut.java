@@ -95,7 +95,7 @@ public class CheckOut extends AppCompatActivity {
         textView_hotel_name.setText(rest_name);
         textView_hotel_name.setTypeface(textView_hotel_name.getTypeface(), Typeface.BOLD);
         textView_total.setTypeface(textView_hotel_name.getTypeface(), Typeface.BOLD);
-        textView_total.setText(total);
+
         editText_address.setText(Constant.itemUser.getAddress());
 
         button_checkout.setOnClickListener(new View.OnClickListener() {
@@ -120,14 +120,17 @@ public class CheckOut extends AppCompatActivity {
             }
         });
 
+        //Toast.makeText(this, Constant.is_service_charge_applicable + "", Toast.LENGTH_LONG).show();
 
         if(Constant.is_service_charge_applicable)
         {
             textView_serviceCharge.setText(Constant.SERVICE_CHARGE_APPLICABLE);
+            textView_total.setText(total + "++");
         }
         else
         {
             textView_serviceCharge.setText(Constant.SERVICE_CHARGE_NOT_APPLICABLE);
+            textView_total.setText(total);
         }
     }
 
