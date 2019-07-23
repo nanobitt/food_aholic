@@ -178,7 +178,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
-                    android:text="@string/password"
+                    android:text="@string/old_password"
                     android:layout_marginTop="10dp"
                     android:textSize="12sp"/>
 
@@ -189,7 +189,7 @@
                     android:maxLines="1"
                     android:inputType="textPassword"
                     android:textColor="@color/black"
-                    android:hint="@string/password"
+                    android:hint="@string/old_password"
                     android:textSize="16sp"
                     android:paddingTop="5dp"
                     android:paddingBottom="5dp"
@@ -222,7 +222,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
-                    android:text="@string/cpassword"
+                    android:text="@string/new_password"
                     android:layout_marginTop="10dp"
                     android:textSize="12sp"/>
 
@@ -233,7 +233,7 @@
                     android:maxLines="1"
                     android:inputType="textPassword"
                     android:textColor="@color/black"
-                    android:hint="@string/cpassword"
+                    android:hint="@string/new_password"
                     android:textSize="16sp"
                     android:paddingTop="5dp"
                     android:paddingBottom="5dp"

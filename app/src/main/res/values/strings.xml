@@ -169,4 +169,6 @@
     <string name="faq">FAQ</string>
     <string name="FoodAholic">Food-aholic</string>
     <string name="food_of_the_day">Food(s) of the day</string>
+    <string name="old_password">Old Password</string>
+    <string name="new_password">New Password</string>
 </resources>
