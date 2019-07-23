@@ -1,8 +1,10 @@
 package com.nanobit.adapter;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.widget.CardView;
+
+import androidx.cardview.widget.CardView;
+import androidx.fragment.app.FragmentActivity;
+
 import android.view.View;
 import android.widget.ImageView;
 
@@ -18,8 +20,8 @@ import java.util.ArrayList;
 
 public class AdapterFoodoftheday extends BaseQuickAdapter<ItemMenu, BaseViewHolder> {
 
-    private Activity activity;
-    public AdapterFoodoftheday(Activity activity, ArrayList<ItemMenu> food_of_the_days) {
+    private FragmentActivity activity;
+    public AdapterFoodoftheday(FragmentActivity activity, ArrayList<ItemMenu> food_of_the_days) {
 
         super(R.layout.layout_food_of_the_day, food_of_the_days);
         this.activity = activity;

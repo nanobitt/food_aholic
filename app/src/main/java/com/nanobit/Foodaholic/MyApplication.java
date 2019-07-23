@@ -20,6 +20,12 @@ public class MyApplication extends Application {
                 .setFontAttrId(R.attr.fontPath)
                 .build());
 
+        /***
+        OneSignal.startInit(this)
+                .inFocusDisplaying(OneSignal.OSInFocusDisplayOption.Notification)
+                .unsubscribeWhenNotificationsAreDisabled(true)
+                .init();
+         ***/
         OneSignal.startInit(getApplicationContext()).init();
 
         DBHelper dbHelper = new DBHelper(getApplicationContext());

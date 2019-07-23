@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleType="fitXY"
-        android:src="@drawable/splash2" />
+        app:srcCompat="@drawable/splash2" />
 
     <ProgressBar
         android:id="@+id/progressBar"

@@ -8,9 +8,9 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.AppCompatButton;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
@@ -20,7 +20,6 @@ import android.widget.Toast;
 
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.nanobit.sharedPref.SharePref;
-import com.nanobit.utils.SharedPref;
 import com.squareup.picasso.Picasso;
 import com.nanobit.asyncTask.LoadProfileUpdate;
 import com.nanobit.interfaces.LoginListener;
@@ -57,7 +56,7 @@ public class ProfileEditActivity extends AppCompatActivity {
         methods = new Methods(this);
         methods.forceRTLIfSupported(getWindow());
         LinearLayout ll_adView = findViewById(R.id.ll_adView_profedit);
-        methods.showBannerAd(ll_adView);
+
 
         progressDialog = new ProgressDialog(ProfileEditActivity.this);
         progressDialog.setMessage(getResources().getString(R.string.updating));

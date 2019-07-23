@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/bg">
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_proedit"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
@@ -59,7 +59,7 @@
                     android:id="@+id/iv_edit_pro_ic"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:src="@drawable/edit_pro_pic"
+                    app:srcCompat="@drawable/edit_pro_pic"
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"
@@ -342,7 +342,7 @@
 
             <!--</LinearLayout>-->
 
-            <android.support.v7.widget.AppCompatButton
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button_prof_update"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

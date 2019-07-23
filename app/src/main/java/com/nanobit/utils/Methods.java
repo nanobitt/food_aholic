@@ -1,7 +1,6 @@
 package com.nanobit.utils;
 
 import android.annotation.TargetApi;
-import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -13,29 +12,22 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Build;
-import android.os.Bundle;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.Toolbar;
+import androidx.core.view.MenuItemCompat;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.ads.consent.ConsentInformation;
-import com.google.ads.consent.ConsentStatus;
-import com.google.ads.mediation.admob.AdMobAdapter;
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdSize;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.InterstitialAd;
+
 import com.nanobit.Foodaholic.CartActivity;
 import com.nanobit.Foodaholic.LoginActivity;
 import com.nanobit.Foodaholic.R;
@@ -50,7 +42,7 @@ import java.util.Calendar;
 public class Methods {
 
     private Context _context;
-    private InterstitialAd mInterstitial;
+
     private InterAdListener interAdListener;
 
     public Methods(Context context) {
@@ -59,7 +51,7 @@ public class Methods {
 
     public Methods(Context context, InterAdListener interAdListener) {
         this._context = context;
-        loadInter();
+        //loadInter();
         this.interAdListener = interAdListener;
     }
 
@@ -91,7 +83,7 @@ public class Methods {
         context.startActivity(intent);
     }
 
-    private void logout(Activity activity) {
+    private void logout(AppCompatActivity activity) {
         changeRemPass();
         Constant.isLogged = false;
         Constant.itemUser = new ItemUser("", "", "", "", "", "");
@@ -104,8 +96,8 @@ public class Methods {
 
     public void clickLogin() {
         if (Constant.isLogged) {
-            logout((Activity) _context);
-            ((Activity) _context).finish();
+            logout((AppCompatActivity) _context);
+            ((AppCompatActivity) _context).finish();
             Toast.makeText(_context, _context.getResources().getString(R.string.logout_success), Toast.LENGTH_SHORT).show();
         } else {
             openLogin(_context);
@@ -136,7 +128,7 @@ public class Methods {
     }
 
     public void changeCart(Menu menu) {
-        View cart = menu.findItem(R.id.menu_cart_search).getActionView();
+        View cart = MenuItemCompat.getActionView(menu.findItem(R.id.menu_cart_search));
         if (Constant.isLogged) {
             TextView textView = cart.findViewById(R.id.textView_menu_no);
             textView.setTypeface(textView.getTypeface(), Typeface.BOLD);
@@ -283,6 +275,7 @@ public class Methods {
         return ids;
     }
 
+    /***
     private void showPersonalizedAds(LinearLayout linearLayout) {
         if (Constant.isBannerAd) {
             AdView adView = new AdView(_context);
@@ -309,6 +302,7 @@ public class Methods {
         }
     }
 
+
     public void showBannerAd(LinearLayout linearLayout) {
         if (isNetworkAvailable()) {
             if (ConsentInformation.getInstance(_context).getConsentStatus() == ConsentStatus.NON_PERSONALIZED) {
@@ -318,6 +312,7 @@ public class Methods {
             }
         }
     }
+
 
     private void loadInter() {
         mInterstitial = new InterstitialAd(_context);
@@ -336,24 +331,13 @@ public class Methods {
             mInterstitial.loadAd(adRequest);
         }
     }
+     ***/
 
     public void showInterAd(final int pos, final String type) {
         Constant.adCount = Constant.adCount + 1;
         if (Constant.adCount % Constant.adShow == 0) {
-            mInterstitial.setAdListener(new AdListener() {
+            interAdListener.onClick(pos, type);
 
-                @Override
-                public void onAdClosed() {
-                    interAdListener.onClick(pos, type);
-                    super.onAdClosed();
-                }
-            });
-            if (mInterstitial.isLoaded()) {
-                mInterstitial.show();
-            } else {
-                interAdListener.onClick(pos, type);
-            }
-            loadInter();
         } else {
             interAdListener.onClick(pos, type);
         }

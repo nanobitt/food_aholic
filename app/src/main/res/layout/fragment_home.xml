@@ -82,7 +82,7 @@
                 android:textColor="@color/black70"
                 android:textSize="16sp" />
 
-            <android.support.v7.widget.RecyclerView
+            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_home_foodoftheday"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
@@ -118,7 +118,7 @@
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 
-            <android.support.v7.widget.AppCompatButton
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button_home_latest"
                 android:layout_width="wrap_content"
                 android:layout_height="45dp"
@@ -146,7 +146,7 @@
                 android:textColor="@color/black70"
                 android:textSize="16sp" />
 
-            <android.support.v7.widget.RecyclerView
+            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_home_latest"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />

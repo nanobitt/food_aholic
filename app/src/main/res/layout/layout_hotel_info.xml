@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
@@ -28,7 +29,7 @@
             android:layout_height="match_parent"
             android:layout_marginRight="5dp"
             android:layout_marginLeft="5dp"
-            android:src="@mipmap/close"
+            app:srcCompat="@mipmap/close"
             android:padding="6dp"/>
 
     </LinearLayout>
@@ -104,7 +105,7 @@
             android:id="@+id/iv_info_view"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@drawable/eye"
+            app:srcCompat="@drawable/eye"
             android:layout_marginEnd="5dp"
             android:layout_marginRight="5dp"
             android:padding="5dp"

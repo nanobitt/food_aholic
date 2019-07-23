@@ -49,7 +49,7 @@
     </style>
 
     <style name="ThemeDialog" parent="@style/Theme.AppCompat.Light.NoActionBar">
-        <item name="android:windowNoTitle">true</item>
+        <item name="windowNoTitle">true</item>
         <item name="android:windowIsFloating">true</item>
     </style>
 

@@ -5,16 +5,16 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
-import android.support.v4.view.MenuItemCompat;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v7.widget.AppCompatButton;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SearchView;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.core.view.MenuItemCompat;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.SearchView;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -32,21 +32,21 @@ import android.widget.Toast;
 
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.nanobit.adapter.AdapterFoodoftheday;
-import com.nanobit.asyncTask.LoadFoodoftheday;
-import com.nanobit.interfaces.FoodofthedayListener;
-import com.nanobit.items.ItemMenu;
-import com.squareup.picasso.Callback;
-import com.squareup.picasso.Picasso;
-import com.tiagosantos.enchantedviewpager.EnchantedViewPager;
 import com.nanobit.adapter.AdapterLatestHome;
+import com.nanobit.asyncTask.LoadFoodoftheday;
 import com.nanobit.asyncTask.LoadHome;
 import com.nanobit.interfaces.ClickListener;
+import com.nanobit.interfaces.FoodofthedayListener;
 import com.nanobit.interfaces.HomeListener;
 import com.nanobit.interfaces.InterAdListener;
+import com.nanobit.items.ItemMenu;
 import com.nanobit.items.ItemRestaurant;
 import com.nanobit.utils.Constant;
 import com.nanobit.utils.DBHelper;
 import com.nanobit.utils.Methods;
+import com.squareup.picasso.Callback;
+import com.squareup.picasso.Picasso;
+import com.tiagosantos.enchantedviewpager.EnchantedViewPager;
 
 import java.util.ArrayList;
 
@@ -204,10 +204,10 @@ public class FragmentHome extends Fragment {
         final MenuItem item_filter = menu.findItem(R.id.menu_filter).setIcon(R.mipmap.filter);
 
         MenuItemCompat.setShowAsAction(item_search, MenuItemCompat.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW | MenuItemCompat.SHOW_AS_ACTION_ALWAYS);
-        searchView = (SearchView) menu.findItem(R.id.menu_search).getActionView();
+        searchView = (SearchView) MenuItemCompat.getActionView(menu.findItem(R.id.menu_search));
         searchView.setOnQueryTextListener(queryTextListener);
 
-        item_search.setOnActionExpandListener(new MenuItem.OnActionExpandListener() {
+        MenuItemCompat.setOnActionExpandListener(item_search, new MenuItemCompat.OnActionExpandListener() {
             @Override
             public boolean onMenuItemActionCollapse(MenuItem item) {
                 item_filter.setVisible(false);

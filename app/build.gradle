@@ -1,18 +1,33 @@
 apply plugin: 'com.android.application'
+buildscript {
+    repositories {
+        maven { url 'https://plugins.gradle.org/m2/'}
+    }
+    dependencies {
+        classpath 'gradle.plugin.com.onesignal:onesignal-gradle-plugin:[0.11.0, 0.99.99]'
+    }
+}
+apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
 
+repositories {
+    maven { url 'https://maven.google.com' }
+}
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
     defaultConfig {
-        applicationId "com.vpapps.fooddelivery"
+        applicationId "com.foodaholic.app"
         minSdkVersion 17
-        targetSdkVersion 27
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        manifestPlaceholders = [onesignal_app_id               : "asd789as-8s89-adew-7694-64as6d48q4e",
-                                // Project number pulled from dashboard, local value is ignored.
-                                onesignal_google_project_number: "REMOTE"]
+        manifestPlaceholders = [
+                onesignal_app_id: '0561770a-305d-4bdc-85d5-d1b51a464487',
+                // Project number pulled from dashboard, local value is ignored.
+                onesignal_google_project_number: 'REMOTE'
+        ]
 
     }
     buildTypes {
@@ -28,28 +43,27 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     testImplementation 'junit:junit:4.12'
     implementation project(path: ':checkbox')
     implementation project(path: ':IRBottomNavigationLib')
-    implementation 'com.android.support:appcompat-v7:27.1.0'
-    implementation 'com.android.support:recyclerview-v7:27.1.0'
-    implementation 'com.android.support:design:27.1.0'
-    implementation 'com.android.support:cardview-v7:27.1.0'
-    implementation 'com.google.android.gms:play-services-ads:15.0.1'
-    implementation 'com.google.android.gms:play-services-gcm:15.0.1'
-    implementation 'com.google.firebase:firebase-core:16.0.0'
-    implementation 'com.google.android.ads.consent:consent-library:1.0.6'
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.google.android.gms:play-services-gcm:17.0.0'
+    implementation 'com.google.firebase:firebase-core:17.0.1'
     implementation 'com.squareup.okhttp3:okhttp:3.11.0'
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'
     implementation 'uk.co.chrisjenx:calligraphy:2.3.0'
     implementation 'com.makeramen:roundedimageview:2.3.0'
     implementation 'com.tiagosantos:enchantedviewpager:1.1.0'
-    implementation 'com.onesignal:OneSignal:3.9.1'
+    implementation 'com.onesignal:OneSignal:[3.9.1, 3.99.99]'
+
     implementation 'com.github.castorflex.smoothprogressbar:library-circular:1.3.0'
     implementation 'com.romandanylyk:pageindicatorview:1.0.1@aar'
     implementation 'com.thoughtbot:expandablerecyclerview:1.3'
@@ -58,3 +72,4 @@ dependencies {
     compile 'com.github.chathuralakmal:AndroidImagePopup:1.2.1'
 }
 apply plugin: 'com.google.gms.google-services'
+

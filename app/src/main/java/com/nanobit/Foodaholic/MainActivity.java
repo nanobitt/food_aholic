@@ -8,18 +8,18 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.NavigationView;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import androidx.annotation.NonNull;
+import com.google.android.material.navigation.NavigationView;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.core.content.ContextCompat;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -31,8 +31,7 @@ import com.irfaan008.irbottomnavigation.SpaceNavigationView;
 import com.irfaan008.irbottomnavigation.SpaceOnClickListener;
 import com.nanobit.asyncTask.LoadAbout;
 import com.nanobit.interfaces.AboutListener;
-import com.nanobit.interfaces.AdConsentListener;
-import com.nanobit.utils.AdConsent;
+
 import com.nanobit.utils.Constant;
 import com.nanobit.utils.DBHelper;
 import com.nanobit.utils.Methods;
@@ -44,7 +43,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public Toolbar toolbar;
     DBHelper dbHelper;
     LoadAbout loadAbout;
-    AdConsent adConsent;
     Methods methods;
     DrawerLayout drawer;
     TextView textView_header_message;
@@ -81,13 +79,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         methods.setStatusColor(getWindow(), toolbar);
         methods.forceRTLIfSupported(getWindow());
 
-//        ll_adView_main = findViewById(R.id.ll_adView_main);
-        adConsent = new AdConsent(this, new AdConsentListener() {
-            @Override
-            public void onConsentUpdate() {
-//                methods.showBannerAd(ll_adView_main);
-            }
-        });
 
         spaceNavigationView = findViewById(R.id.space);
         //spaceNavigationView.initWithSaveInstanceState(savedInstanceState);
@@ -142,7 +133,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (methods.isNetworkAvailable()) {
             loadAboutTask();
         } else {
-            adConsent.checkForConsent();
+
             dbHelper.getAbout();
             methods.showToast(getString(R.string.net_not_conn));
         }
@@ -283,7 +274,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     pbar.dismiss();
                 }
 
-                adConsent.checkForConsent();
                 dbHelper.addtoAbout();
             }
         });

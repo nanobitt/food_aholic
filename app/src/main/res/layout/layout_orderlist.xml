@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/ll_orderlist"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -118,7 +119,7 @@
                     android:layout_marginRight="4dp"
                     android:paddingBottom="2dp"
                     android:paddingTop="2dp"
-                    android:src="@mipmap/location" />
+                    app:srcCompat="@mipmap/location" />
 
                 <TextView
                     android:id="@+id/tv_orderlist_address"
@@ -143,7 +144,7 @@
                     android:layout_marginRight="4dp"
                     android:paddingBottom="3dp"
                     android:paddingTop="3dp"
-                    android:src="@mipmap/date" />
+                    app:srcCompat="@mipmap/date" />
 
                 <TextView
                     android:id="@+id/tv_orderlist_date"
@@ -161,7 +162,7 @@
                     android:layout_marginStart="7dp"
                     android:paddingBottom="2dp"
                     android:paddingTop="2dp"
-                    android:src="@mipmap/time" />
+                    app:srcCompat="@mipmap/time" />
 
                 <TextView
                     android:id="@+id/tv_orderlist_time"

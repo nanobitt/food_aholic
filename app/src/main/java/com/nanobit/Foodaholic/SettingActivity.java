@@ -5,9 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.SwitchCompat;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
@@ -17,13 +14,14 @@ import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.nanobit.interfaces.AdConsentListener;
-import com.nanobit.utils.AdConsent;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
+import androidx.appcompat.widget.Toolbar;
+
+
 import com.nanobit.utils.Constant;
 import com.nanobit.utils.Methods;
 import com.nanobit.utils.SharedPref;
-import com.google.ads.consent.ConsentInformation;
-import com.google.ads.consent.ConsentStatus;
 import com.onesignal.OneSignal;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
@@ -33,7 +31,7 @@ public class SettingActivity extends AppCompatActivity {
     Toolbar toolbar;
     SharedPref sharedPref;
     Methods methods;
-    AdConsent adConsent;
+
     LinearLayout ll_consent, ll_adView;
     SwitchCompat switch_consent, switch_noti;
     Boolean isNoti = true, isLoaded = false;
@@ -61,12 +59,7 @@ public class SettingActivity extends AppCompatActivity {
         this.setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        adConsent = new AdConsent(this, new AdConsentListener() {
-            @Override
-            public void onConsentUpdate() {
-                setConsentSwitch();
-            }
-        });
+
 
         ll_consent = findViewById(R.id.ll_consent);
         switch_noti = findViewById(R.id.switch_noti);
@@ -78,13 +71,10 @@ public class SettingActivity extends AppCompatActivity {
         //view_settings = findViewById(R.id.view_settings);
         textView_Faq = findViewById(R.id.textView_faq);
         textView_terms_and_conditions = findViewById(R.id.textView_termsandconditions);
-        methods.showBannerAd(ll_adView);
 
-        if (adConsent.isUserFromEEA()) {
-            setConsentSwitch();
-        } else {
-            ll_consent.setVisibility(View.GONE);
-        }
+
+        ll_consent.setVisibility(View.GONE);
+
         if (isNoti) {
             switch_noti.setChecked(true);
         } else {
@@ -99,16 +89,6 @@ public class SettingActivity extends AppCompatActivity {
             }
         });
 
-        switch_consent.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    ConsentInformation.getInstance(SettingActivity.this).setConsentStatus(ConsentStatus.PERSONALIZED);
-                } else {
-                    ConsentInformation.getInstance(SettingActivity.this).setConsentStatus(ConsentStatus.NON_PERSONALIZED);
-                }
-            }
-        });
 
         textView_about.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -151,7 +131,7 @@ public class SettingActivity extends AppCompatActivity {
         ll_consent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                adConsent.requestConsent();
+
             }
         });
 
@@ -171,13 +151,6 @@ public class SettingActivity extends AppCompatActivity {
         return true;
     }
 
-    private void setConsentSwitch() {
-        if (ConsentInformation.getInstance(this).getConsentStatus() == ConsentStatus.PERSONALIZED) {
-            switch_consent.setChecked(true);
-        } else {
-            switch_consent.setChecked(false);
-        }
-    }
 
     public void openPrivacyDialog() {
         Dialog dialog;

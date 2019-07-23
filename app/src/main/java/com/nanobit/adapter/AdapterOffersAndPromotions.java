@@ -1,7 +1,7 @@
 package com.nanobit.adapter;
 
-import android.app.Activity;
 import android.content.Intent;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -9,17 +9,17 @@ import android.widget.ImageView;
 import com.ceylonlabs.imageviewpopup.ImagePopup;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.squareup.picasso.Picasso;
 import com.nanobit.Foodaholic.HotelDetailsActivity;
 import com.nanobit.Foodaholic.R;
 import com.nanobit.items.ItemOfferAndPromotion;
 import com.nanobit.utils.Constant;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
 public class AdapterOffersAndPromotions extends BaseQuickAdapter<ItemOfferAndPromotion, BaseViewHolder> {
-    private Activity activity;
-    public AdapterOffersAndPromotions(Activity activity, ArrayList<ItemOfferAndPromotion> promotions) {
+    private AppCompatActivity activity;
+    public AdapterOffersAndPromotions(AppCompatActivity activity, ArrayList<ItemOfferAndPromotion> promotions) {
 
         super(R.layout.layout_offer_and_promotion, promotions);
         this.activity = activity;

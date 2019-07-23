@@ -11,7 +11,9 @@ import android.graphics.Color;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
-import android.support.v4.app.NotificationCompat;
+import android.util.Log;
+
+import androidx.core.app.NotificationCompat;
 
 import com.onesignal.NotificationExtenderService;
 import com.onesignal.OSNotificationReceivedResult;
@@ -32,6 +34,7 @@ public class NotificationExtenderExample extends NotificationExtenderService {
     @Override
     protected boolean onNotificationProcessing(OSNotificationReceivedResult receivedResult) {
 
+        Log.d("--------", "noti done");
         title = receivedResult.payload.title;
         message = receivedResult.payload.body;
         bigpicture = receivedResult.payload.bigPicture;
@@ -95,6 +98,7 @@ public class NotificationExtenderExample extends NotificationExtenderService {
 
     }
 
+    /***
     private int getNotificationIcon(NotificationCompat.Builder notificationBuilder) {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -103,6 +107,13 @@ public class NotificationExtenderExample extends NotificationExtenderService {
         } else {
             return R.mipmap.app_icon;
         }
+    }
+     ***/
+    private int getNotificationIcon(NotificationCompat.Builder notificationBuilder) {
+
+
+            return R.mipmap.app_icon;
+
     }
 
     private int getColour() {

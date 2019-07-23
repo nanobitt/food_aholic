@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/white">
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_forgostpass"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
@@ -61,16 +61,16 @@
                 android:layout_marginBottom="7dp"
                 android:layout_marginEnd="5dp"
                 android:layout_marginRight="5dp"
-                android:src="@mipmap/email_black" />
+                app:srcCompat="@mipmap/email_black" />
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColorHint="@color/black90"
                 android:theme="@style/TextLabel_Grey"
                 app:backgroundTint="@color/black90">
 
-                <android.support.v7.widget.AppCompatEditText
+                <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/et_forgot_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -82,7 +82,7 @@
                     android:textColor="@color/black"
                     android:textSize="16sp" />
 
-            </android.support.design.widget.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
 
