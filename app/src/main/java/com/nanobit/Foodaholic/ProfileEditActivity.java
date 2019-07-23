@@ -19,6 +19,8 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.makeramen.roundedimageview.RoundedImageView;
+import com.nanobit.sharedPref.SharePref;
+import com.nanobit.utils.SharedPref;
 import com.squareup.picasso.Picasso;
 import com.nanobit.asyncTask.LoadProfileUpdate;
 import com.nanobit.interfaces.LoginListener;
@@ -35,7 +37,7 @@ public class ProfileEditActivity extends AppCompatActivity {
     Toolbar toolbar;
     Methods methods;
     private LoadProfileUpdate loadProfileUpdate;
-    private EditText editText_name, editText_email, editText_phone, editText_pass, editText_cpass, editText_address;
+    private EditText editText_name, editText_email, editText_phone, editText_oldpass, editText_newpass, editText_address;
     private AppCompatButton button_update;
     private RoundedImageView imageView_profile;
     private ImageView imageView_editpropic;
@@ -72,8 +74,8 @@ public class ProfileEditActivity extends AppCompatActivity {
         editText_email = findViewById(R.id.et_prof_edit_email);
         editText_phone = findViewById(R.id.et_prof_edit_mobile);
         editText_address = findViewById(R.id.et_prof_edit_address);
-        editText_pass = findViewById(R.id.et_prof_edit_pass);
-        editText_cpass = findViewById(R.id.et_prof_edit_cpass);
+        editText_oldpass = findViewById(R.id.et_prof_edit_oldpass);
+        editText_newpass = findViewById(R.id.et_prof_edit_newpass);
 
         setProfileVar();
 
@@ -145,9 +147,12 @@ public class ProfileEditActivity extends AppCompatActivity {
     }
 
     private Boolean validate() {
+        SharePref sharedPref;
+        sharedPref = new SharePref(this);
         editText_name.setError(null);
         editText_email.setError(null);
-        editText_cpass.setError(null);
+        editText_oldpass.setError(null);
+        editText_newpass.setError(null);
         View focusView;
         if (editText_name.getText().toString().trim().isEmpty()) {
             Toast.makeText(ProfileEditActivity.this, getResources().getString(R.string.name_empty), Toast.LENGTH_SHORT).show();
@@ -161,10 +166,10 @@ public class ProfileEditActivity extends AppCompatActivity {
             focusView = editText_email;
             focusView.requestFocus();
             return false;
-        } else if (!editText_pass.getText().toString().trim().equals(editText_cpass.getText().toString().trim())) {
-            Toast.makeText(ProfileEditActivity.this, getResources().getString(R.string.pass_nomatch), Toast.LENGTH_SHORT).show();
-            editText_cpass.setError(getString(R.string.pass_nomatch));
-            focusView = editText_cpass;
+        } else if (!editText_oldpass.getText().toString().trim().equals(sharedPref.getPassword())) {
+            Toast.makeText(ProfileEditActivity.this, getResources().getString(R.string.old_pass_not_match), Toast.LENGTH_SHORT).show();
+            editText_oldpass.setError(getString(R.string.old_pass_not_match));
+            focusView = editText_oldpass;
             focusView.requestFocus();
             return false;
         } else {
@@ -176,7 +181,7 @@ public class ProfileEditActivity extends AppCompatActivity {
         name = editText_name.getText().toString();
         email = editText_email.getText().toString();
         phone = editText_phone.getText().toString();
-        password = editText_pass.getText().toString();
+        password = editText_newpass.getText().toString();
         address = editText_address.getText().toString();
 
         if (!password.equals("")) {

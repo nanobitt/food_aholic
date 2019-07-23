@@ -171,4 +171,5 @@
     <string name="food_of_the_day">Food(s) of the day</string>
     <string name="old_password">Old Password</string>
     <string name="new_password">New Password</string>
+    <string name="old_pass_not_match">Old Password not matched</string>
 </resources>
