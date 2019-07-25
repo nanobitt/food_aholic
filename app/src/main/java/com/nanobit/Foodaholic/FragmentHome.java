@@ -15,6 +15,8 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.widget.SearchView;
+
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -266,10 +268,33 @@ public class FragmentHome extends Fragment {
         super.onResume();
     }
 
+    Handler h = new Handler();
+    int delay = 2000;
+    Runnable runnable;
+    private int[] pagerIndex = {-1};
+
+
     private void loadHomeApi() {
         LoadHome loadHome = new LoadHome(new HomeListener() {
             @Override
             public void onStart() {
+
+                h.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        pagerIndex[0]++;
+                        if (pagerIndex[0]>=pagerAdapter.getCount()){
+                            pagerIndex[0]=0;
+                        }
+                        viewPager_home.setCurrentItem(pagerIndex[0]);
+                        runnable=this;
+                        h.postDelayed(runnable,delay);
+                    }
+                },delay);
+
+                FragmentHome.super.onStart();
+
+
                 progressDialog.show();
             }
 
