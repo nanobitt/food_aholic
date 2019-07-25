@@ -62,13 +62,23 @@
                         android:layout_height="wrap_content"
                         android:textColor="@color/text_menu_price"
                         android:textSize="14sp"
+                        android:text="0.00"
                         android:lineSpacingMultiplier="0.8"/>
+                    <TextView
+                        android:id="@+id/tv_menu_discount_price"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_menu_price"
+                        android:textSize="14sp"
+                        android:layout_marginStart="5dp"
+                        android:text="0.00"
+                        android:lineSpacingMultiplier="0.8"/>
+
 
                     <ImageView
                         android:id="@+id/iv_menu_type"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:layout_marginLeft="10dp"
                         android:layout_marginStart="10dp"
                         android:padding="2dp"
                         app:srcCompat="@mipmap/veg" />

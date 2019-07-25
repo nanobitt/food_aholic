@@ -4,10 +4,10 @@ import java.io.Serializable;
 
 public class ItemMenu implements Serializable {
 
-    private String id, name,type, image, desc, price,restId, catID;
+    private String id, name,type, image, desc, price,restId, catID, previous_price;
     ItemRestaurant associatedRestaurant;
 
-    public ItemMenu(String id, String name,String type, String image, String desc, String price, String restId, String catID) {
+    public ItemMenu(String id, String name,String type, String image, String desc, String price, String previousPrice, String restId, String catID) {
         this.id = id;
         this.name = name;
         this.image = image;
@@ -16,6 +16,7 @@ public class ItemMenu implements Serializable {
         this.restId = restId;
         this.catID = catID;
         this.type = type;
+        this.previous_price = previousPrice;
     }
 
     //This constructor is used for food of the day
@@ -103,5 +104,9 @@ public class ItemMenu implements Serializable {
 
     public ItemRestaurant getAssociatedRestaurant() {
         return associatedRestaurant;
+    }
+
+    public String getPrevious_price() {
+        return previous_price;
     }
 }

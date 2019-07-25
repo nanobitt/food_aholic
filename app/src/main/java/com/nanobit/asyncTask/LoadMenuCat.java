@@ -55,11 +55,12 @@ public class LoadMenuCat extends AsyncTask<String, String, Boolean> {
                         String menu_type = jsonObject.getString(Constant.TAG_MENU_TYPE);
                         String desc = jsonObject.getString(Constant.TAG_MENU_DESC);
                         String price = jsonObject.getString(Constant.TAG_MENU_PRICE);
+                        String previousPrice = jsonObject.getString(Constant.TAG_MENU_PREVIOUS_PRICE);
                         String image = jsonObject.getString(Constant.TAG_MENU_IMAGE);
                         String cat_id = jsonObject.getString(Constant.TAG_MENU_CAT);
                         String res_id = jsonObject.getString(Constant.TAG_MENU_REST_ID);
 
-                        ItemMenu itemMenu = new ItemMenu(menu_id, menu_name, menu_type, image, desc, price, res_id, cat_id);
+                        ItemMenu itemMenu = new ItemMenu(menu_id, menu_name, menu_type, image, desc, price, previousPrice, res_id, cat_id);
                         arrayListMenu.add(itemMenu);
                     }
                 }

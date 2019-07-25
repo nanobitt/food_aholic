@@ -105,9 +105,9 @@ public class FragmentHome extends Fragment {
 
         pagerAdapter = new ImagePagerAdapter();
 
-        viewPager_home = rootView.findViewById(R.id.vp_home);
-        viewPager_home.removeAlpha();
+        viewPager_home = rootView.findViewById(R.id.vp_home);viewPager_home.removeAlpha();
         viewPager_home.removeScale();
+        viewPager_home.removeAlpha();
 
         LinearLayoutManager llm_latest = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
 
@@ -184,6 +184,7 @@ public class FragmentHome extends Fragment {
 
             }
         });
+
 
         setHasOptionsMenu(true);
         return rootView;

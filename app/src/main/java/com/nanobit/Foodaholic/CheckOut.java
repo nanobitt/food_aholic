@@ -3,6 +3,7 @@ package com.nanobit.Foodaholic;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import androidx.appcompat.app.AlertDialog;
@@ -27,7 +28,9 @@ import android.widget.Toast;
 
 import com.nanobit.adapter.AdapterCheckOut;
 import com.nanobit.asyncTask.LoadCheckOut;
+import com.nanobit.asyncTask.LoadRestServiceCharge;
 import com.nanobit.interfaces.LoginListener;
+import com.nanobit.interfaces.RestServiceChargeListener;
 import com.nanobit.utils.Constant;
 import com.nanobit.utils.Methods;
 
@@ -121,17 +124,37 @@ public class CheckOut extends AppCompatActivity {
         });
 
         //Toast.makeText(this, Constant.is_service_charge_applicable + "", Toast.LENGTH_LONG).show();
+        loadRestServiceChargeApi();
 
-        if(Constant.is_service_charge_applicable)
-        {
-            textView_serviceCharge.setText(Constant.SERVICE_CHARGE_APPLICABLE);
-            textView_total.setText(total + "++");
-        }
-        else
-        {
-            textView_serviceCharge.setText(Constant.SERVICE_CHARGE_NOT_APPLICABLE);
-            textView_total.setText(total);
-        }
+
+    }
+
+    private void loadRestServiceChargeApi()
+    {
+        LoadRestServiceCharge loadRestServiceCharge = new LoadRestServiceCharge(new RestServiceChargeListener() {
+            @Override
+            public void onStart() {
+                progressDialog.show();
+            }
+
+            @Override
+            public void onEnd(String success, String resp) {
+                progressDialog.dismiss();
+                if(resp.equals("1"))
+                {
+                    textView_serviceCharge.setText(Constant.SERVICE_CHARGE_APPLICABLE);
+                    textView_total.setText(total + "++*");
+                    textView_serviceCharge.setTextColor(Color.RED);
+                }
+                else
+                {
+                    textView_serviceCharge.setText(Constant.SERVICE_CHARGE_NOT_APPLICABLE);
+                    textView_total.setText(total);
+                }
+
+            }
+        });
+        loadRestServiceCharge.execute(Constant.URL_REST_SERVICE_CHARGE + Constant.arrayList_cart.get(0).getRestId());
     }
 
 

@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -97,7 +98,7 @@ public class AdapterMenuExpandable extends ExpandableRecyclerViewAdapter<Adapter
     }
 
     class MenuItemViewHolder extends ChildViewHolder {
-        private TextView textView_title, textView_desc, textView_price, textView_incart, tv_currency;
+        private TextView textView_title, textView_desc, textView_price, textView_discounted_price, textView_incart, tv_currency;
         private LinearLayout linearLayout;
         private ImageView imageView, imageView_incart, imageView_type;
 
@@ -106,6 +107,7 @@ public class AdapterMenuExpandable extends ExpandableRecyclerViewAdapter<Adapter
             textView_title = view.findViewById(R.id.tv_menu_name);
             textView_desc = view.findViewById(R.id.tv_menu_desc);
             textView_price = view.findViewById(R.id.tv_menu_price);
+            textView_discounted_price = view.findViewById(R.id.tv_menu_discount_price);
             textView_incart = view.findViewById(R.id.tv_menu_incart);
             linearLayout = view.findViewById(R.id.ll_menu);
             imageView = view.findViewById(R.id.iv_menu_image);
@@ -169,7 +171,20 @@ public class AdapterMenuExpandable extends ExpandableRecyclerViewAdapter<Adapter
         holder.textView_title.setText(itemMenu.getName());
         holder.textView_desc.setText(itemMenu.getDesc());
 
-        holder.textView_price.setText(" " + itemMenu.getPrice());
+        if(!itemMenu.getPrevious_price().equals("0"))
+        {
+            holder.textView_price.setText(" " + itemMenu.getPrevious_price());
+            holder.textView_price.setPaintFlags(holder.textView_price.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+            holder.textView_discounted_price.setVisibility(View.VISIBLE);
+            holder.textView_discounted_price.setText(" " + itemMenu.getPrice());
+        }
+        else
+        {
+            holder.textView_price.setText(" " + itemMenu.getPrice());
+            holder.textView_discounted_price.setVisibility(View.INVISIBLE);
+        }
+
+
 
         Picasso.get()
                 .load(itemMenu.getImage())
