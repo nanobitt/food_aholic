@@ -52,6 +52,7 @@ import com.tiagosantos.enchantedviewpager.EnchantedViewPager;
 
 import java.util.ArrayList;
 
+
 public class FragmentHome extends Fragment {
 
     private DBHelper dbHelper;
@@ -68,6 +69,11 @@ public class FragmentHome extends Fragment {
     private ProgressDialog progressDialog;
     private Menu menu;
     private SearchView searchView;
+
+    private Handler h;
+    private int delay = 5000;
+    private int pagerIndex = -1;
+
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -134,6 +140,8 @@ public class FragmentHome extends Fragment {
         recyclerView_foodoftheday.setItemAnimator(new DefaultItemAnimator());
         recyclerView_foodoftheday.setHasFixedSize(true);
 
+        h = new Handler();
+
         if (methods.isNetworkAvailable()) {
             loadHomeApi();
             loadFoodofthedayApi();
@@ -167,6 +175,7 @@ public class FragmentHome extends Fragment {
         viewPager_home.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                pagerIndex = position;
 
             }
 
@@ -190,6 +199,22 @@ public class FragmentHome extends Fragment {
 
         setHasOptionsMenu(true);
         return rootView;
+    }
+
+    void startScrollig()
+    {
+
+        h.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                pagerIndex++;
+                if (pagerIndex>=pagerAdapter.getCount()){
+                    pagerIndex=0;
+                }
+                viewPager_home.setCurrentItem(pagerIndex);
+                h.postDelayed(this,delay);
+            }
+        },delay);
     }
 
 
@@ -268,10 +293,6 @@ public class FragmentHome extends Fragment {
         super.onResume();
     }
 
-    Handler h = new Handler();
-    int delay = 2000;
-    Runnable runnable;
-    private int[] pagerIndex = {-1};
 
 
     private void loadHomeApi() {
@@ -279,18 +300,6 @@ public class FragmentHome extends Fragment {
             @Override
             public void onStart() {
 
-                h.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        pagerIndex[0]++;
-                        if (pagerIndex[0]>=pagerAdapter.getCount()){
-                            pagerIndex[0]=0;
-                        }
-                        viewPager_home.setCurrentItem(pagerIndex[0]);
-                        runnable=this;
-                        h.postDelayed(runnable,delay);
-                    }
-                },delay);
 
                 FragmentHome.super.onStart();
 
@@ -326,6 +335,7 @@ public class FragmentHome extends Fragment {
                     } else {
                         textView_latest_empty.setVisibility(View.VISIBLE);
                     }
+                    startScrollig();
 
                     //loadTopRatedApi();
                 }
@@ -363,44 +373,6 @@ public class FragmentHome extends Fragment {
         loadFoodoftheday.execute(Constant.URL_FOOD_OF_THE_DAY);
     }
 
-//    private void loadTopRatedApi() {
-//        LoadHotel loadHotel = new LoadHotel(new HomeListener() {
-//            @Override
-//            public void onStart() {
-//                progressDialog.show();
-//            }
-//
-//            @Override
-//            public void onEnd(String success, ArrayList<ItemRestaurant> arrayList_latest, ArrayList<ItemRestaurant> arrayList_featured) {
-//                if (getActivity() != null) {
-//                    if (progressDialog.isShowing()) {
-//                        progressDialog.dismiss();
-//                    }
-//
-//                    if (success.equals("true")) {
-//                        arrayList_toprated.addAll(arrayList_latest);
-//                        adapterTopRatedHome = new AdapterLatestHome(getActivity(), arrayList_toprated, new ClickListener() {
-//                            @Override
-//                            public void onClick(int position) {
-//                                methods.showInterAd(position, "top");
-//                            }
-//                        });
-//                        recyclerView_toprated.setAdapter(adapterTopRatedHome);
-//                    } else {
-//                        Toast.makeText(getActivity(), getString(R.string.error_server), Toast.LENGTH_SHORT).show();
-//                    }
-//
-//                    if (arrayList_toprated.size() > 0) {
-//                        textView_toprated_empty.setVisibility(View.GONE);
-//                    } else {
-//                        textView_toprated_empty.setVisibility(View.VISIBLE);
-//                    }
-//                }
-//            }
-//        });
-//
-//        loadHotel.execute(Constant.URL_TOP_RATED);
-//    }
 
     private class ImagePagerAdapter extends PagerAdapter {
 
