@@ -95,7 +95,6 @@
     <string name="select_rating_msg">Please enter rating as well as message</string>
     <string name="price">Price:</string>
     <string name="cart">Cart</string>
-    <string name="confirm_order">Confirm Order</string>
     <string name="total">Total :-</string>
     <string name="checkout">Checkout</string>
     <string name="comment">Comment</string>
@@ -150,7 +149,7 @@
     <string name="cannot_add_menu_diff_restaurant">Cannot add menu from different restaurant, do you want to clear previous items?</string>
     <string name="clear">Clear</string>
     <string name="clearing_cart">Clearing Cart</string>
-    <string name="procced_pay">Procced to Pay</string>
+    <string name="confirm_order">Confirm Order</string>
     <string name="order_place_success">Thank you for ordering food, Your order has been successfully placed</string>
     <string name="close">Close</string>
     <string name="favourites">Favourites</string>
