@@ -5,3 +5,5 @@ local.properties
 food_aholic.iml
 .DS_Store
 IRBottomNavigationLib/IRBottomNavigationLib.iml
+app/release/output.json
+app/release/app-release.apk

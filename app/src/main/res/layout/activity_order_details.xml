@@ -8,7 +8,7 @@
     android:background="@color/bg"
     android:focusableInTouchMode="true"
     android:orientation="vertical"
-    tools:context="com.nanobit.Foodaholic.OrderDetailsActivity">
+    tools:context="com.foodaholic.main.OrderDetailsActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_orderdetails"

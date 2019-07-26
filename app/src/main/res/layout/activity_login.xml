@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:background="@drawable/bg_login"
     android:fillViewport="true"
-    tools:context="com.nanobit.Foodaholic.LoginActivity">
+    tools:context="com.foodaholic.main.LoginActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
