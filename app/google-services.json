@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "612821641949",
+    "firebase_url": "https://food-aholic-5351d.firebaseio.com",
+    "project_id": "food-aholic-5351d",
+    "storage_bucket": "food-aholic-5351d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:612821641949:android:9621295aa3f6098a",
+        "android_client_info": {
+          "package_name": "com.foodaholic.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "612821641949-se22thv4g91ovu0gph6cimmortq8dqna.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.foodaholic.android",
+            "certificate_hash": "37faab81e5d882fdec7eaf17d78551bf3a87acb9"
+          }
+        },
+        {
+          "client_id": "612821641949-kihbf2laprf89csnuhihavrgu0iq52ql.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2mpQBmHZzNv1mB7vuAcFRIj7UCt-xDt4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "612821641949-kihbf2laprf89csnuhihavrgu0iq52ql.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

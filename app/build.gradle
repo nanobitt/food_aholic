@@ -1,7 +1,6 @@
-
 buildscript {
     repositories {
-        maven { url 'https://plugins.gradle.org/m2/'}
+        maven { url 'https://plugins.gradle.org/m2/' }
     }
     dependencies {
         classpath 'gradle.plugin.com.onesignal:onesignal-gradle-plugin:[0.11.0, 0.99.99]'
@@ -9,6 +8,8 @@ buildscript {
 }
 apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
 apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+apply plugin: 'com.google.gms.google-services'
 repositories {
     maven { url 'https://maven.google.com' }
 }
@@ -24,7 +25,7 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         manifestPlaceholders = [
-                onesignal_app_id: '0561770a-305d-4bdc-85d5-d1b51a464487',
+                onesignal_app_id               : '0561770a-305d-4bdc-85d5-d1b51a464487',
                 // Project number pulled from dashboard, local value is ignored.
                 onesignal_google_project_number: 'REMOTE'
         ]
@@ -75,5 +76,5 @@ dependencies {
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.46'
     implementation 'it.sysdata.mobile:fancyaccordionview:1.0.1'
     implementation 'com.github.chathuralakmal:AndroidImagePopup:1.2.1'
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.10.1'
 }
-

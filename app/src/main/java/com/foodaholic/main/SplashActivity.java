@@ -22,14 +22,14 @@ public class SplashActivity extends AppCompatActivity {
     LoadLoginLocal loadLoginLocal;
     Methods methods;
 
-    private FirebaseAnalytics mFirebaseAnalytics;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+
 
         sharePref = new SharePref(this);
         methods = new Methods(SplashActivity.this);
