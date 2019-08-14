@@ -13,7 +13,7 @@ public class LoadRestServiceCharge extends AsyncTask<String, String, Boolean> {
 
 
     private RestServiceChargeListener serviceChargeListener;
-    String service_charge_status;
+    String[] status;
     public LoadRestServiceCharge(RestServiceChargeListener serviceChargeListener)
     {
         this.serviceChargeListener = serviceChargeListener;
@@ -31,10 +31,12 @@ public class LoadRestServiceCharge extends AsyncTask<String, String, Boolean> {
 
         String url = strings[0];
         String json = JsonUtils.okhttpGET(url);
+        status = new String[2];
         try {
             JSONObject jOb = new JSONObject(json);
             JSONArray jsonArray = jOb.getJSONArray(Constant.TAG_ROOT);
-            service_charge_status = jsonArray.getJSONObject(0).getString(Constant.TAG_REST_SERVICE_CHARGE_STATUS);
+            status[0] = jsonArray.getJSONObject(0).getString(Constant.TAG_REST_SERVICE_CHARGE_STATUS);
+            status[1] = jsonArray.getJSONObject(0).getString(Constant.TAG_REST_OPEN_STATUS);
 
             return true;
         }
@@ -47,7 +49,7 @@ public class LoadRestServiceCharge extends AsyncTask<String, String, Boolean> {
 
     @Override
     protected void onPostExecute(Boolean aBoolean) {
-        serviceChargeListener.onEnd(String.valueOf(aBoolean), service_charge_status);
+        serviceChargeListener.onEnd(String.valueOf(aBoolean), status);
         super.onPostExecute(aBoolean);
     }
 }

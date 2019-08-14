@@ -479,6 +479,7 @@ public class FragmentHome extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        handler.removeCallbacks(runnable);
+        if(handler != null && runnable!=null)
+         handler.removeCallbacks(runnable);
     }
 }

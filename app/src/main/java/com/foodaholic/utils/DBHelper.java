@@ -94,12 +94,11 @@ public class DBHelper extends SQLiteOpenHelper {
     public void addtoAbout() {
         try {
             dml("delete from about");
-            dml("insert into about (name,logo,version,author,contact,email,website,desc,developed,privacy, terms_and_conditions, ad_pub, ad_banner, ad_inter, isbanner, isinter, click) values (" +
+            dml("insert into about (name,logo,version,author,contact,email,website,desc,developed,privacy, terms_and_conditions, facebook_link) values (" +
                     "'" + Constant.itemAbout.getAppName() + "','" + Constant.itemAbout.getAppLogo() + "','" + Constant.itemAbout.getAppVersion() + "'" +
                     ",'" + Constant.itemAbout.getAuthor() + "','" + Constant.itemAbout.getContact() + "','" + Constant.itemAbout.getEmail() + "'" +
                     ",'" + Constant.itemAbout.getWebsite() + "','" + Constant.itemAbout.getAppDesc() + "','" + Constant.itemAbout.getDevelopedby() + "'" +
-                    ",'" + Constant.itemAbout.getPrivacy() + "','" + Constant.itemAbout.getTerms_and_conditions() + "','" + "','" + Constant.ad_publisher_id + "','" + Constant.ad_banner_id + "','" + Constant.ad_inter_id + "'" +
-                    ",'" + Constant.isBannerAd + "','" + Constant.isInterAd + "','" + Constant.adShow + "')");
+                    ",'" + Constant.itemAbout.getPrivacy() + "','" + Constant.itemAbout.getTerms_and_conditions() + "','" + Constant.itemAbout.getFacebook_link() +  "')");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -124,15 +123,11 @@ public class DBHelper extends SQLiteOpenHelper {
                 String privacy = c.getString(c.getColumnIndex("privacy"));
                 String terms_and_condtions = c.getString(c.getColumnIndex("terms_and_conditions"));
                 String developedby = c.getString(c.getColumnIndex("developed"));
+                String facebooklink = c.getString(c.getColumnIndex("facebook_link"));
 
-                Constant.ad_banner_id = c.getString(c.getColumnIndex("ad_banner"));
-                Constant.ad_inter_id = c.getString(c.getColumnIndex("ad_inter"));
-                Constant.isBannerAd = Boolean.parseBoolean(c.getString(c.getColumnIndex("isbanner")));
-                Constant.isInterAd = Boolean.parseBoolean(c.getString(c.getColumnIndex("isinter")));
-                Constant.ad_publisher_id = c.getString(c.getColumnIndex("ad_pub"));
-                Constant.adShow = Integer.parseInt(c.getString(c.getColumnIndex("click")));
 
-                Constant.itemAbout = new ItemAbout(appname, applogo, desc, appversion, appauthor, appcontact, email, website, privacy, terms_and_condtions, developedby);
+
+                Constant.itemAbout = new ItemAbout(appname, applogo, desc, appversion, appauthor, appcontact, email, website, privacy, terms_and_condtions, developedby, facebooklink);
             }
             c.close();
             return true;

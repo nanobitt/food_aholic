@@ -171,4 +171,6 @@
     <string name="old_password">Old Password</string>
     <string name="new_password">New Password</string>
     <string name="old_pass_not_match">Old Password not matched</string>
+    <string name="facebook_page">Facebook Page</string>
+    <string name="call_us">Call Us</string>
 </resources>

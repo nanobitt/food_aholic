@@ -10,7 +10,6 @@ import android.os.Build;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 
-import com.crashlytics.android.Crashlytics;
 import com.google.android.material.navigation.NavigationView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -240,11 +239,37 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_login:
                 methods.clickLogin();
                 break;
+            case R.id.facebook:
+                openFacebookPage();
+                break;
+            case R.id.call_us:
+                call_us();
+                break;
+
+
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void openFacebookPage() {
+
+        try {
+            getPackageManager().getPackageInfo("com.facebook.katana", 0);
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("fb://page/690429794442099")));
+        } catch (Exception e) {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(Constant.itemAbout.getFacebook_link())));
+        }
+    }
+
+    private void call_us()
+    {
+        Intent intent = new Intent(Intent.ACTION_CALL);
+
+        intent.setData(Uri.parse("tel:" + Constant.itemAbout.getContact()));
+        startActivity(intent);
     }
 
     public void loadFrag(Fragment f1, String name, FragmentManager fm) {
@@ -288,9 +313,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     public void checkPer() {
-        if ((ContextCompat.checkSelfPermission(MainActivity.this, "android.permission.WRITE_EXTERNAL_STORAGE") != PackageManager.PERMISSION_GRANTED)) {
+        if ((ContextCompat.checkSelfPermission(MainActivity.this, "android.permission.WRITE_EXTERNAL_STORAGE") != PackageManager.PERMISSION_GRANTED) || ContextCompat.checkSelfPermission(MainActivity.this, "android.permission.CALL_PHONE") != PackageManager.PERMISSION_GRANTED) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                requestPermissions(new String[]{"android.permission.WRITE_EXTERNAL_STORAGE"}, 1);
+                requestPermissions(new String[]{"android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.CALL_PHONE"}, 1);
             }
         }
     }

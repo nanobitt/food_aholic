@@ -334,13 +334,9 @@ public class Methods {
      ***/
 
     public void showInterAd(final int pos, final String type) {
-        Constant.adCount = Constant.adCount + 1;
-        if (Constant.adCount % Constant.adShow == 0) {
-            interAdListener.onClick(pos, type);
 
-        } else {
-            interAdListener.onClick(pos, type);
-        }
+        interAdListener.onClick(pos, type);
+
     }
 
     public void openSearchFilter() {

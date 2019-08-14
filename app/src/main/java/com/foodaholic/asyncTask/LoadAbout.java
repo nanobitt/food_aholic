@@ -46,17 +46,9 @@ public class LoadAbout extends AsyncTask<String, String, String> {
                 String privacy = c.getString("app_privacy_policy");
                 String terms_and_conditins = c.getString("app_terms_conditions");
                 String developedby = c.getString("app_developed_by");
-                String service_charge = c.getString("service_charge");
+                String facebook_link = c.getString("app_facebook_link");
 
-                Constant.is_service_charge_applicable = Boolean.parseBoolean(service_charge);
-                Constant.ad_banner_id = c.getString("banner_ad_id");
-                Constant.ad_inter_id = c.getString("interstital_ad_id");
-                Constant.isBannerAd = Boolean.parseBoolean(c.getString("banner_ad"));
-                Constant.isInterAd = Boolean.parseBoolean(c.getString("interstital_ad"));
-                Constant.ad_publisher_id = c.getString("publisher_id");
-                Constant.adShow = Integer.parseInt(c.getString("interstital_ad_click"));
-
-                Constant.itemAbout = new ItemAbout(appname, applogo, desc, appversion, appauthor, appcontact, email, website, privacy, terms_and_conditins, developedby);
+                Constant.itemAbout = new ItemAbout(appname, applogo, desc, appversion, appauthor, appcontact, email, website, privacy, terms_and_conditins, developedby, facebook_link);
             }
             return "1";
         } catch (Exception ee) {

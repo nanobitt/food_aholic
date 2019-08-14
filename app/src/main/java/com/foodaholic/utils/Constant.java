@@ -151,6 +151,7 @@ public class Constant implements Serializable{
 	public static final String TAG_FAQ_ANS = "faq_ans";
 
 	public static final String TAG_REST_SERVICE_CHARGE_STATUS = "charge_status";
+	public static final String TAG_REST_OPEN_STATUS = "rest_open_status";
 
 
 	public static final String SHARED_PREF_LOGIN="login";
@@ -170,7 +171,6 @@ public class Constant implements Serializable{
 	public static Boolean isLogged = false;
 	public static Boolean isCartRefresh = false;
 	public static Boolean isFromCheckOut = false;
-	public static Boolean is_service_charge_applicable = false;
 	public static final String SERVICE_CHARGE_APPLICABLE = "*Service charge applicable";
 	public static final String SERVICE_CHARGE_NOT_APPLICABLE = "*Service charge not applicable";
 
@@ -181,7 +181,6 @@ public class Constant implements Serializable{
 	public static ItemRestaurant itemRestaurant;
 	public static ItemOrderList itemOrderList;
 
-	public static Boolean isBannerAd = true, isInterAd = true;
 
 	public static String search_text = "", search_type = "Restaurant";
 	public static String[] search_type_array = {"Restaurant","Menu"};
@@ -193,14 +192,9 @@ public class Constant implements Serializable{
 	public static final String TAG_CANCEL = "Cancel";
 	public static Boolean isCancelOrder = false;
 
-	public static String ad_publisher_id = "";
-	public static String ad_banner_id = "";
-	public static String ad_inter_id = "";
 
-	public static int adCount = 0;
 	public static int menuCount = 0;
 
-	public static int adShow = 3;
 
 
 }

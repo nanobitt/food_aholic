@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.widget.Toolbar;
+
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -50,6 +52,7 @@ public class CheckOut extends AppCompatActivity {
     private String comment, address, cart_ids, total, rest_name = "", from = "";
     CardView cardView_edit;
     RecyclerView recyclerView;
+    boolean isOpen = false;
 
     @Override
     protected void attachBaseContext(Context newBase) {
@@ -107,7 +110,12 @@ public class CheckOut extends AppCompatActivity {
                 if (validate()) {
                     address = URLEncoder.encode(editText_address.getText().toString());
                     comment = URLEncoder.encode(editText_comment.getText().toString());
-                    loadCheckOutApi();
+                    if (isOpen) {
+                        loadCheckOutApi();
+                    } else {
+                        openErrorDialog("Restaurant is closed now. So can't take order right now. But your cart is saved. Try again later.");
+                    }
+
                 }
             }
         });
@@ -129,8 +137,7 @@ public class CheckOut extends AppCompatActivity {
 
     }
 
-    private void loadRestServiceChargeApi()
-    {
+    private void loadRestServiceChargeApi() {
         LoadRestServiceCharge loadRestServiceCharge = new LoadRestServiceCharge(new RestServiceChargeListener() {
             @Override
             public void onStart() {
@@ -138,18 +145,21 @@ public class CheckOut extends AppCompatActivity {
             }
 
             @Override
-            public void onEnd(String success, String resp) {
+            public void onEnd(String success, String resp[]) {
                 progressDialog.dismiss();
-                if(resp.equals("1"))
-                {
+                if (resp[0].equals("1")) {
                     textView_serviceCharge.setText(Constant.SERVICE_CHARGE_APPLICABLE);
                     textView_total.setText(total + "++*");
                     textView_serviceCharge.setTextColor(Color.RED);
-                }
-                else
-                {
+                } else {
                     textView_serviceCharge.setText(Constant.SERVICE_CHARGE_NOT_APPLICABLE);
                     textView_total.setText(total);
+                }
+
+                if (resp[1].equals("1")) {
+                    isOpen = true;
+                } else {
+                    isOpen = false;
                 }
 
             }
