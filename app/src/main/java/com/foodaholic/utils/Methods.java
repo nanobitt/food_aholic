@@ -275,63 +275,7 @@ public class Methods {
         return ids;
     }
 
-    /***
-    private void showPersonalizedAds(LinearLayout linearLayout) {
-        if (Constant.isBannerAd) {
-            AdView adView = new AdView(_context);
-            AdRequest adRequest = new AdRequest.Builder().build();
-            adView.setAdUnitId(Constant.ad_banner_id);
-            adView.setAdSize(AdSize.SMART_BANNER);
-            linearLayout.addView(adView);
-            adView.loadAd(adRequest);
-        }
-    }
 
-    private void showNonPersonalizedAds(LinearLayout linearLayout) {
-        Bundle extras = new Bundle();
-        extras.putString("npa", "1");
-        if (Constant.isBannerAd) {
-            AdView adView = new AdView(_context);
-            AdRequest adRequest = new AdRequest.Builder()
-                    .addNetworkExtrasBundle(AdMobAdapter.class, extras)
-                    .build();
-            adView.setAdUnitId(Constant.ad_banner_id);
-            adView.setAdSize(AdSize.SMART_BANNER);
-            linearLayout.addView(adView);
-            adView.loadAd(adRequest);
-        }
-    }
-
-
-    public void showBannerAd(LinearLayout linearLayout) {
-        if (isNetworkAvailable()) {
-            if (ConsentInformation.getInstance(_context).getConsentStatus() == ConsentStatus.NON_PERSONALIZED) {
-                showNonPersonalizedAds(linearLayout);
-            } else {
-                showPersonalizedAds(linearLayout);
-            }
-        }
-    }
-
-
-    private void loadInter() {
-        mInterstitial = new InterstitialAd(_context);
-        if (Constant.isInterAd) {
-            AdRequest adRequest;
-            if (ConsentInformation.getInstance(_context).getConsentStatus() == ConsentStatus.PERSONALIZED) {
-                adRequest = new AdRequest.Builder().build();
-            } else {
-                Bundle extras = new Bundle();
-                extras.putString("npa", "1");
-                adRequest = new AdRequest.Builder()
-                        .addNetworkExtrasBundle(AdMobAdapter.class, extras)
-                        .build();
-            }
-            mInterstitial.setAdUnitId(Constant.ad_inter_id);
-            mInterstitial.loadAd(adRequest);
-        }
-    }
-     ***/
 
     public void showInterAd(final int pos, final String type) {
 

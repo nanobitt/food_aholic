@@ -17,8 +17,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/app_icon_round"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.foodaholic.main.FaqActivity"></activity>
+        <activity android:name="com.foodaholic.main.FaqActivity"/>
         <activity android:name="com.foodaholic.main.OffersAndPromotionsActivity" />
         <activity android:name="com.foodaholic.main.SplashActivity">
             <intent-filter>
@@ -43,7 +44,9 @@
         <activity android:name="com.foodaholic.main.AboutActivity" />
         <activity
             android:name="com.foodaholic.main.ProfileEditActivity"
-            android:windowSoftInputMode="adjustPan" />
+            android:configChanges="screenSize|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"  />
         <activity android:name="com.foodaholic.main.HotelByCatActivity" />
         <activity android:name="com.foodaholic.main.HotelDetailsActivity" />
         <activity android:name="com.foodaholic.main.CartActivity" />
