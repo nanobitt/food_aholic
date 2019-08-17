@@ -1,11 +1,13 @@
 package com.foodaholic.main;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.core.view.MenuItemCompat;
 import androidx.viewpager.widget.PagerAdapter;
@@ -32,6 +34,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.foodaholic.adapter.AdapterOffersAndPromotions;
+import com.foodaholic.asyncTask.LoadOfferAndPromotions;
+import com.foodaholic.interfaces.OfferAndPromotionListener;
+import com.foodaholic.items.ItemOfferAndPromotion;
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.foodaholic.adapter.AdapterFoodoftheday;
 import com.foodaholic.adapter.AdapterLatestHome;
@@ -57,12 +63,12 @@ public class FragmentHome extends Fragment {
 
     private DBHelper dbHelper;
     private Methods methods;
-    private AdapterLatestHome adapterLatestHome, adapterTopRatedHome;
-    private AdapterFoodoftheday adapterFoodoftheday;
+    private AdapterLatestHome adapterLatestHome;
+    private AdapterOffersAndPromotions adapterOffersAndPromotions;
     private ImagePagerAdapter pagerAdapter;
     private EnchantedViewPager viewPager_home;
     private RecyclerView recyclerView_latest, recyclerView_foodoftheday;
-    private ArrayList<ItemRestaurant> arrayList_lat, arrayList_toprated, arrayList_feat;
+    private ArrayList<ItemRestaurant> arrayList_lat, arrayList_feat;
     private TextView textView_latest_empty;
     private TextView textView_foodoftheday_empty;
     private AppCompatButton button_more_latest, button_more_toprated;
@@ -74,6 +80,8 @@ public class FragmentHome extends Fragment {
     private Runnable runnable;
     private int delay = 5000;
     private int pagerIndex = -1;
+
+    private Context thisContext;
 
 
     @Override
@@ -136,7 +144,7 @@ public class FragmentHome extends Fragment {
         recyclerView_latest.setHasFixedSize(true);
 
         LinearLayoutManager llm_toprated = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
-        recyclerView_foodoftheday = rootView.findViewById(R.id.rv_home_foodoftheday);
+        recyclerView_foodoftheday = rootView.findViewById(R.id.rv_offer_and_promotions);
         recyclerView_foodoftheday.setLayoutManager(llm_toprated);
         recyclerView_foodoftheday.setItemAnimator(new DefaultItemAnimator());
         recyclerView_foodoftheday.setHasFixedSize(true);
@@ -346,24 +354,33 @@ public class FragmentHome extends Fragment {
         loadHome.execute(Constant.URL_HOME);
     }
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+
+        thisContext = context;
+
+    }
+
+
     private void loadFoodofthedayApi()
     {
-        LoadFoodoftheday loadFoodoftheday = new LoadFoodoftheday(new FoodofthedayListener() {
+        LoadOfferAndPromotions loadFoodoftheday = new LoadOfferAndPromotions(new OfferAndPromotionListener() {
             @Override
             public void onStart() {
                 progressDialog.show();
             }
 
             @Override
-            public void onEnd(String success, ArrayList<ItemMenu> arrayList_food_of_the_day) {
+            public void onEnd(String success,  ArrayList<ItemOfferAndPromotion> arrayListOfferandPromotions) {
                 if(progressDialog.isShowing())
                 {
                     progressDialog.dismiss();
                 }
-                adapterFoodoftheday = new AdapterFoodoftheday(getActivity(), arrayList_food_of_the_day);
-                recyclerView_foodoftheday.setAdapter(adapterFoodoftheday);
+                adapterOffersAndPromotions  = new AdapterOffersAndPromotions((AppCompatActivity) thisContext, arrayListOfferandPromotions);
+                recyclerView_foodoftheday.setAdapter(adapterOffersAndPromotions);
 
-                if (arrayList_food_of_the_day.size() > 0) {
+                if (arrayListOfferandPromotions.size() > 0) {
                     textView_foodoftheday_empty.setVisibility(View.GONE);
                 } else {
                     textView_foodoftheday_empty.setVisibility(View.VISIBLE);
@@ -371,7 +388,7 @@ public class FragmentHome extends Fragment {
 
             }
         });
-        loadFoodoftheday.execute(Constant.URL_FOOD_OF_THE_DAY);
+        loadFoodoftheday.execute(Constant.URL_OFFER_AND_PROMOTIONS);
     }
 
 

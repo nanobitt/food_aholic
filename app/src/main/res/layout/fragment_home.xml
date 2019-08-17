@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
-                android:text="@string/food_of_the_day"
+                android:text="@string/offer_and_promotions"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 
@@ -83,7 +83,7 @@
                 android:textSize="16sp" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_home_foodoftheday"
+                android:id="@+id/rv_offer_and_promotions"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
