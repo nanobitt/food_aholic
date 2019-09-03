@@ -256,10 +256,11 @@ public class AdapterMenuExpandable extends ExpandableRecyclerViewAdapter<Adapter
                             openClearDialg(itemMenu, tv_count.getText().toString(), pos);
                         }
                     } else {
-                        Toast.makeText(context, context.getString(R.string.not_log), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, context.getString(R.string.net_not_conn), Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    Toast.makeText(context, context.getString(R.string.net_not_conn), Toast.LENGTH_SHORT).show();
+
+                    Toast.makeText(context, context.getString(R.string.not_log), Toast.LENGTH_SHORT).show();
                 }
             }
         });
