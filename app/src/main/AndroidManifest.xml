@@ -57,7 +57,7 @@
         <activity android:name="com.foodaholic.main.SettingActivity" />
         <activity android:name="com.foodaholic.main.ForgotPasswordActivity" />
         <activity android:name="com.foodaholic.main.HotelByLatestActivity" />
-        <activity android:name="com.foodaholic.main.HotelBySearchActivity" />
+        <activity android:name="com.foodaholic.main.SearchActivity" />
         <activity android:name="com.foodaholic.main.FavouriteActivity" />
 
         <meta-data

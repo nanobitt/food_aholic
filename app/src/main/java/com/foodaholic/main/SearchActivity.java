@@ -6,7 +6,6 @@ import androidx.core.view.MenuItemCompat;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.widget.SearchView;
@@ -17,7 +16,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.foodaholic.adapter.AdapterHotelList;
 import com.foodaholic.adapter.AdapterMenubysearch;
@@ -36,7 +34,7 @@ import java.util.ArrayList;
 
 import fr.castorflex.android.circularprogressbar.CircularProgressBar;
 
-public class HotelBySearchActivity extends AppCompatActivity {
+public class SearchActivity extends AppCompatActivity {
 
     Toolbar toolbar;
     private Methods methods;
@@ -59,7 +57,7 @@ public class HotelBySearchActivity extends AppCompatActivity {
         methods = new Methods(this, new InterAdListener() {
             @Override
             public void onClick(int position, String type) {
-                Intent intent = new Intent(HotelBySearchActivity.this, HotelDetailsActivity.class);
+                Intent intent = new Intent(SearchActivity.this, HotelDetailsActivity.class);
                 Constant.itemRestaurant = arrayList_hotel.get(getPosition(Integer.parseInt(adapterHotelList.getID(position))));
                 startActivity(intent);
             }
@@ -80,7 +78,7 @@ public class HotelBySearchActivity extends AppCompatActivity {
 
         progressBar = findViewById(R.id.pb_bycat);
         recyclerView = findViewById(R.id.rv_hotel_bycat);
-        recyclerView.setLayoutManager(new LinearLayoutManager(HotelBySearchActivity.this));
+        recyclerView.setLayoutManager(new LinearLayoutManager(SearchActivity.this));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
        
 
@@ -162,7 +160,7 @@ public class HotelBySearchActivity extends AppCompatActivity {
                 onBackPressed();
                 break;
             case R.id.menu_cart_search:
-                Intent intent = new Intent(HotelBySearchActivity.this, CartActivity.class);
+                Intent intent = new Intent(SearchActivity.this, CartActivity.class);
                 startActivity(intent);
                 break;
             case R.id.menu_filter:
@@ -200,11 +198,11 @@ public class HotelBySearchActivity extends AppCompatActivity {
                 @Override
                 public void onEnd(String success, ArrayList<ItemMenu> menuList) {
 
-                    recyclerView.setLayoutManager(new LinearLayoutManager(HotelBySearchActivity.this));
+                    recyclerView.setLayoutManager(new LinearLayoutManager(SearchActivity.this));
                     recyclerView.setItemAnimator(new DefaultItemAnimator());
                     recyclerView.setHasFixedSize(true);
 
-                    AdapterMenubysearch adapterMenubysearch = new AdapterMenubysearch(menuList);
+                    AdapterMenubysearch adapterMenubysearch = new AdapterMenubysearch(SearchActivity.this, menuList);
                     recyclerView.setAdapter(adapterMenubysearch);
                     progressBar.setVisibility(View.GONE);
                     setMenuLayoutEmpty(menuList.size());
@@ -254,9 +252,10 @@ public class HotelBySearchActivity extends AppCompatActivity {
         }
     }
 
-    private void setRestaurantBySearchAdapter() {
+    private void setRestaurantBySearchAdapter()
+    {
 
-        adapterHotelList = new AdapterHotelList(HotelBySearchActivity.this, arrayList_hotel, new ClickListener() {
+        adapterHotelList = new AdapterHotelList(SearchActivity.this, arrayList_hotel, new ClickListener() {
             @Override
             public void onClick(int position) {
                 methods.showInterAd(position, "");

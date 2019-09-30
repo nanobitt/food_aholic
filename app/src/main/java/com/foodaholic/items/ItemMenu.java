@@ -122,6 +122,10 @@ public class ItemMenu implements Serializable {
         return associatedRestaurant;
     }
 
+    public void setAssociatedRestaurant(ItemRestaurant associatedRestaurant) {
+        this.associatedRestaurant = associatedRestaurant;
+    }
+
     public String getPrevious_price() {
         return previous_price;
     }

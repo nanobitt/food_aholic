@@ -1,6 +1,5 @@
 package com.foodaholic.main;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -39,15 +38,11 @@ import com.foodaholic.asyncTask.LoadOfferAndPromotions;
 import com.foodaholic.interfaces.OfferAndPromotionListener;
 import com.foodaholic.items.ItemOfferAndPromotion;
 import com.makeramen.roundedimageview.RoundedImageView;
-import com.foodaholic.adapter.AdapterFoodoftheday;
 import com.foodaholic.adapter.AdapterLatestHome;
-import com.foodaholic.asyncTask.LoadFoodoftheday;
 import com.foodaholic.asyncTask.LoadHome;
 import com.foodaholic.interfaces.ClickListener;
-import com.foodaholic.interfaces.FoodofthedayListener;
 import com.foodaholic.interfaces.HomeListener;
 import com.foodaholic.interfaces.InterAdListener;
-import com.foodaholic.items.ItemMenu;
 import com.foodaholic.items.ItemRestaurant;
 import com.foodaholic.utils.Constant;
 import com.foodaholic.utils.DBHelper;
@@ -268,7 +263,7 @@ public class FragmentHome extends Fragment {
         @Override
         public boolean onQueryTextSubmit(String s) {
             Constant.search_text = s;
-            Intent intent = new Intent(getActivity(), HotelBySearchActivity.class);
+            Intent intent = new Intent(getActivity(), SearchActivity.class);
             startActivity(intent);
             return true;
         }
