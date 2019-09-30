@@ -5,7 +5,6 @@
     android:layout_height="wrap_content"
     android:layout_marginBottom="3dp"
     android:layout_marginEnd="5dp"
-    android:layout_marginRight="3dp"
     app:cardBackgroundColor="@color/bg_news_list"
     app:cardCornerRadius="5dp"
     app:cardElevation="3dp"

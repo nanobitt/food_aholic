@@ -21,7 +21,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 public class RegisterActivity extends AppCompatActivity {
 
     LoadRegister loadRegister;
-    EditText editText_name, editText_email, editText_pass, editText_cpass, editText_phone;
+    EditText editText_name, editText_email, editText_pass, editText_cpass, editText_phone, editText_address;
     TextView textView_signin;
     Button button_register;
     ProgressDialog progressDialog;
@@ -51,6 +51,7 @@ public class RegisterActivity extends AppCompatActivity {
         editText_pass = findViewById(R.id.et_regis_password);
         editText_cpass = findViewById(R.id.et_regis_cpassword);
         editText_phone = findViewById(R.id.et_regis_phone);
+        editText_address = findViewById(R.id.et_regis_address);
 
         TextView tv_welcome = findViewById(R.id.tv);
 
@@ -112,7 +113,14 @@ public class RegisterActivity extends AppCompatActivity {
             editText_phone.setError(getResources().getString(R.string.enter_phone));
             editText_phone.requestFocus();
             return false;
-        } else {
+        }
+        else if(editText_address.getText().toString().trim().isEmpty())
+        {
+            editText_address.setError(getResources().getString(R.string.enter_address));
+            editText_address.requestFocus();
+            return false;
+        }
+        else {
             return true;
         }
     }
@@ -147,6 +155,6 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
-        loadRegister.execute(editText_name.getText().toString(), editText_email.getText().toString(), editText_pass.getText().toString(), editText_phone.getText().toString());
+        loadRegister.execute(editText_name.getText().toString(), editText_email.getText().toString(), editText_pass.getText().toString(), editText_phone.getText().toString(), editText_address.getText().toString());
     }
 }

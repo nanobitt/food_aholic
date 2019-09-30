@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
@@ -80,7 +81,8 @@ public class HotelByLatestActivity extends AppCompatActivity {
 
         progressBar = findViewById(R.id.pb_bycat);
         recyclerView = findViewById(R.id.rv_hotel_bycat);
-        recyclerView.setLayoutManager(new GridLayoutManager(HotelByLatestActivity.this, 2));
+        //recyclerView.setLayoutManager(new GridLayoutManager(HotelByLatestActivity.this, 2));
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setHasFixedSize(true);
 

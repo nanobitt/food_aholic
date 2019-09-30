@@ -30,6 +30,7 @@
     <string name="error_invalid_email">Invalid Email</string>
     <string name="enter_password">Enter Password</string>
     <string name="enter_cpassword">Enter Confirm Password</string>
+    <string name="enter_address">Enter Address</string>
     <string name="pass_nomatch">Password not matched</string>
     <string name="enter_phone">Enter Phone</string>
     <string name="net_not_conn">Internet not connected</string>

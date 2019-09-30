@@ -266,7 +266,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void call_us()
     {
-        Intent intent = new Intent(Intent.ACTION_CALL);
+        Intent intent = new Intent(Intent.ACTION_DIAL);
 
         intent.setData(Uri.parse("tel:" + Constant.itemAbout.getContact()));
         startActivity(intent);
@@ -313,11 +313,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     public void checkPer() {
-        if ((ContextCompat.checkSelfPermission(MainActivity.this, "android.permission.WRITE_EXTERNAL_STORAGE") != PackageManager.PERMISSION_GRANTED) || ContextCompat.checkSelfPermission(MainActivity.this, "android.permission.CALL_PHONE") != PackageManager.PERMISSION_GRANTED) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                requestPermissions(new String[]{"android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.CALL_PHONE"}, 1);
-            }
-        }
+//        if ((ContextCompat.checkSelfPermission(MainActivity.this, "android.permission.WRITE_EXTERNAL_STORAGE") != PackageManager.PERMISSION_GRANTED) || ContextCompat.checkSelfPermission(MainActivity.this, "android.permission.CALL_PHONE") != PackageManager.PERMISSION_GRANTED) {
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//                requestPermissions(new String[]{"android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.CALL_PHONE"}, 1);
+//            }
+//        }
     }
 
     @Override
@@ -326,24 +326,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         spaceNavigationView.changeCurrentItem(lastClick);
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-
-        boolean canUseExternalStorage = false;
-
-        switch (requestCode) {
-            case 1: {
-                if (grantResults.length > 0
-                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    canUseExternalStorage = true;
-                }
-
-                if (!canUseExternalStorage) {
-                    Toast.makeText(MainActivity.this, getResources().getString(R.string.cannot_use_save), Toast.LENGTH_SHORT).show();
-                }
-            }
-        }
-    }
+//    @Override
+//    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+//
+//        boolean canUseExternalStorage = false;
+//
+//        switch (requestCode) {
+//            case 1: {
+//                if (grantResults.length > 0
+//                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+//                    canUseExternalStorage = true;
+//                }
+//
+//                if (!canUseExternalStorage) {
+//                    Toast.makeText(MainActivity.this, getResources().getString(R.string.cannot_use_save), Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        }
+//    }
 
     @Override
     public void onBackPressed() {

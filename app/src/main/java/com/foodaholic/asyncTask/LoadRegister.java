@@ -35,6 +35,7 @@ public class LoadRegister extends AsyncTask<String, String, String> {
         String email = strings[1];
         String pass = strings[2];
         String phone = strings[3];
+        String address = strings[4];
 
         RequestBody requestBody = new MultipartBody.Builder()
                 .setType(MultipartBody.FORM)
@@ -43,6 +44,7 @@ public class LoadRegister extends AsyncTask<String, String, String> {
                 .addFormDataPart("password", pass)
                 .addFormDataPart("phone", phone)
                 .addFormDataPart("user_image", "")
+                .addFormDataPart("address", address)
                 .build();
 
         try {
