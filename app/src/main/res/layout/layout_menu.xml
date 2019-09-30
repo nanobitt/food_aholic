@@ -85,7 +85,7 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/tv_menu_desc"
+                    android:id="@+id/tv_menu_rest"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ellipsize="end"

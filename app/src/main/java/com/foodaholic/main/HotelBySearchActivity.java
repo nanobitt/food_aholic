@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
@@ -16,12 +17,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.foodaholic.adapter.AdapterHotelList;
+import com.foodaholic.adapter.AdapterMenubysearch;
 import com.foodaholic.asyncTask.LoadHotel;
+import com.foodaholic.asyncTask.LoadMenuBySearch;
 import com.foodaholic.interfaces.ClickListener;
 import com.foodaholic.interfaces.HomeListener;
 import com.foodaholic.interfaces.InterAdListener;
+import com.foodaholic.interfaces.MenubysearchListener;
+import com.foodaholic.items.ItemMenu;
 import com.foodaholic.items.ItemRestaurant;
 import com.foodaholic.utils.Constant;
 import com.foodaholic.utils.Methods;
@@ -74,19 +80,23 @@ public class HotelBySearchActivity extends AppCompatActivity {
 
         progressBar = findViewById(R.id.pb_bycat);
         recyclerView = findViewById(R.id.rv_hotel_bycat);
-        recyclerView.setLayoutManager(new GridLayoutManager(HotelBySearchActivity.this, 2));
+        recyclerView.setLayoutManager(new LinearLayoutManager(HotelBySearchActivity.this));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setHasFixedSize(true);
+       
 
-        loadHotelApi();
+        loadSearchQuery();
+
+       
 
         button_try.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loadHotelApi();
+                loadSearchQuery();
             }
         });
     }
+
+ 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -135,7 +145,7 @@ public class HotelBySearchActivity extends AppCompatActivity {
         public boolean onQueryTextSubmit(String s) {
             Constant.search_text = s;
             getSupportActionBar().setTitle(Constant.search_text);
-            loadHotelApi();
+            loadSearchQuery();
             return true;
         }
 
@@ -162,11 +172,63 @@ public class HotelBySearchActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void loadHotelApi() {
+    private void loadSearchQuery()
+    {
+        if(Constant.search_type.equals("Restaurant"))
+        {
+            loadHotelApi();
+        }
+        else
+        {
+            loadMenuApi();
+        }
+
+    }
+
+    private void loadMenuApi()
+    {
+        if (methods.isNetworkAvailable()) {
+            LoadMenuBySearch loadHotel = new LoadMenuBySearch(new MenubysearchListener() {
+                @Override
+                public void onStart() {
+                    arrayList_hotel.clear();
+                    progressBar.setVisibility(View.VISIBLE);
+                    recyclerView.setVisibility(View.GONE);
+                    ll_empty.setVisibility(View.GONE);
+                }
+
+                @Override
+                public void onEnd(String success, ArrayList<ItemMenu> menuList) {
+
+                    recyclerView.setLayoutManager(new LinearLayoutManager(HotelBySearchActivity.this));
+                    recyclerView.setItemAnimator(new DefaultItemAnimator());
+                    recyclerView.setHasFixedSize(true);
+
+                    AdapterMenubysearch adapterMenubysearch = new AdapterMenubysearch(menuList);
+                    recyclerView.setAdapter(adapterMenubysearch);
+                    progressBar.setVisibility(View.GONE);
+                    setMenuLayoutEmpty(menuList.size());
+
+
+                }
+            });
+
+            loadHotel.execute(Constant.URL_SEARCH_HOTEL_LIST + Constant.search_type + "&search_text=" + Constant.search_text.replace(" ", "%20"));
+        } else {
+            errr_msg = getString(R.string.net_not_conn);
+            progressBar.setVisibility(View.GONE);
+            setMenuLayoutEmpty(0);
+        }
+    }
+
+
+    private void loadHotelApi()
+    {
         if (methods.isNetworkAvailable()) {
             LoadHotel loadHotel = new LoadHotel(new HomeListener() {
                 @Override
                 public void onStart() {
+
                     arrayList_hotel.clear();
                     progressBar.setVisibility(View.VISIBLE);
                     recyclerView.setVisibility(View.GONE);
@@ -181,18 +243,19 @@ public class HotelBySearchActivity extends AppCompatActivity {
                     } else {
                         errr_msg = getString(R.string.error_server);
                     }
-                    setAdapter();
+                    setRestaurantBySearchAdapter();
                 }
             });
 
             loadHotel.execute(Constant.URL_SEARCH_HOTEL_LIST + Constant.search_type + "&search_text=" + Constant.search_text.replace(" ", "%20"));
         } else {
             errr_msg = getString(R.string.net_not_conn);
-            setAdapter();
+            setRestaurantBySearchAdapter();
         }
     }
 
-    private void setAdapter() {
+    private void setRestaurantBySearchAdapter() {
+
         adapterHotelList = new AdapterHotelList(HotelBySearchActivity.this, arrayList_hotel, new ClickListener() {
             @Override
             public void onClick(int position) {
@@ -201,11 +264,21 @@ public class HotelBySearchActivity extends AppCompatActivity {
         });
         recyclerView.setAdapter(adapterHotelList);
         progressBar.setVisibility(View.GONE);
-        setEmpty();
+        setHotelLayoutEmpty();
     }
 
-    public void setEmpty() {
+    public void setHotelLayoutEmpty() {
         if (arrayList_hotel.size() > 0) {
+            recyclerView.setVisibility(View.VISIBLE);
+            ll_empty.setVisibility(View.GONE);
+        } else {
+            textView_empty.setText(errr_msg);
+            recyclerView.setVisibility(View.GONE);
+            ll_empty.setVisibility(View.VISIBLE);
+        }
+    }
+    public void setMenuLayoutEmpty(int size) {
+        if (size > 0) {
             recyclerView.setVisibility(View.VISIBLE);
             ll_empty.setVisibility(View.GONE);
         } else {

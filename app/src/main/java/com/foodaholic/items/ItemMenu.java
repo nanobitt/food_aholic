@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class ItemMenu implements Serializable {
 
-    private String id, name,type, image, desc, price,restId, catID, previous_price;
+    private String id, name,type, image, desc, price,restId, catID, previous_price, rest_name;
     ItemRestaurant associatedRestaurant;
 
     public ItemMenu(String id, String name,String type, String image, String desc, String price, String previousPrice, String restId, String catID) {
@@ -30,6 +30,22 @@ public class ItemMenu implements Serializable {
         this.catID = catID;
         this.type = type;
         this.associatedRestaurant = associatedRestaurant;
+    }
+
+    //Constructor is used for menu by search
+    public ItemMenu(String id, String name,String type, String image, String price, String restId,  String rest_name) {
+        this.id = id;
+        this.name = name;
+        this.image = image;
+        this.price = price;
+        this.restId = restId;
+
+        this.type = type;
+        this.rest_name = rest_name;
+    }
+
+    public String getRest_name() {
+        return rest_name;
     }
 
     public String getId()
