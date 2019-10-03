@@ -153,6 +153,12 @@ public class SearchActivity extends AppCompatActivity {
         }
     };
 
+    public void changeMenu() {
+        if (toolbar != null && menu != null && menu.findItem(R.id.menu_cart_search) != null) {
+            methods.changeCart(menu);
+        }
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
