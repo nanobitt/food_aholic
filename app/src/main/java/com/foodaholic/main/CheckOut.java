@@ -22,17 +22,22 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.OvershootInterpolator;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.foodaholic.adapter.AdapterCheckOut;
 import com.foodaholic.asyncTask.LoadCheckOut;
+import com.foodaholic.asyncTask.LoadPromoCode;
 import com.foodaholic.asyncTask.LoadRestServiceCharge;
 import com.foodaholic.interfaces.LoginListener;
+import com.foodaholic.interfaces.PromoCodeListener;
 import com.foodaholic.interfaces.RestServiceChargeListener;
+import com.foodaholic.items.ItemPromo;
 import com.foodaholic.utils.Constant;
 import com.foodaholic.utils.Methods;
 
@@ -47,12 +52,17 @@ public class CheckOut extends AppCompatActivity {
     Methods methods;
     ProgressDialog progressDialog;
     private AppCompatButton button_checkout;
-    private EditText editText_address, editText_comment;
-    private TextView textView_total, textView_hotel_name, textView_currency, textView_serviceCharge;
+    private EditText editText_address, editText_comment, editText_promoCode;
+    private TextView textView_total, textView_hotel_name, textView_currency, textView_serviceCharge, textView_discountAmount, textView_PromoName, textView_SubTotalAmount;
     private String comment, address, cart_ids, total, rest_name = "", from = "";
+
+    private LinearLayout ll_discount, ll_promo_code, ll_subtotal;
+
     CardView cardView_edit;
     RecyclerView recyclerView;
     boolean isOpen = false;
+
+    String promo_id;
 
     @Override
     protected void attachBaseContext(Context newBase) {
@@ -87,6 +97,19 @@ public class CheckOut extends AppCompatActivity {
         textView_currency = findViewById(R.id.tv);
         textView_serviceCharge = findViewById(R.id.tvServiceCharge);
         button_checkout = findViewById(R.id.button_checkout);
+
+
+        ll_discount = findViewById(R.id.ll_discount);
+        ll_promo_code = findViewById(R.id.ll_promo_code);
+        ll_subtotal = findViewById(R.id.ll_subtotal);
+        editText_promoCode = findViewById(R.id.et_promo_code);
+        textView_PromoName = findViewById(R.id.tv_promo_name);
+        textView_discountAmount = findViewById(R.id.tv_discount_amount);
+        textView_SubTotalAmount = findViewById(R.id.tv_subtotal_amount);
+
+        ll_discount.setVisibility(View.GONE);
+        ll_subtotal.setVisibility(View.GONE);
+        promo_id = "0";
 
         recyclerView = findViewById(R.id.rv_checkout);
         recyclerView.setLayoutManager(new LinearLayoutManager(CheckOut.this));
@@ -134,6 +157,62 @@ public class CheckOut extends AppCompatActivity {
         //Toast.makeText(this, Constant.is_service_charge_applicable + "", Toast.LENGTH_LONG).show();
         loadRestServiceChargeApi();
 
+
+    }
+
+    public void applyPromo(View view)
+    {
+        final String promoCode = editText_promoCode.getText().toString().trim();
+        String userId = Constant.itemUser.getId();
+
+        LoadPromoCode loadPromoCode = new LoadPromoCode(new PromoCodeListener() {
+            @Override
+            public void onStart() {
+                progressDialog.show();
+
+            }
+
+            @Override
+            public void onEnd(String success, String result, String msg, ItemPromo promo) {
+
+                progressDialog.dismiss();
+                InputMethodManager inputManager = (InputMethodManager)
+                        getSystemService(Context.INPUT_METHOD_SERVICE);
+
+                inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
+                        InputMethodManager.HIDE_NOT_ALWAYS);
+
+
+                if(result.equals("0"))
+                {
+                    openErrorDialog(msg);
+
+                }
+                else if(promo.getMinimum_order() > Double.parseDouble(total))
+                {
+                    openErrorDialog("Minimum order amount must be " + promo.getMinimum_order() + " to avail this promo.");
+
+                }
+                else
+                {
+                    textView_discountAmount.setText("-" + promo.getDiscount(total));
+                    textView_SubTotalAmount.setText(promo.amountAfterDiscount(total));
+                    textView_PromoName.setText("Promo(" + promo.getCode() + "):");
+
+                    ll_subtotal.setVisibility(View.VISIBLE);
+                    ll_discount.setVisibility(View.VISIBLE);
+                    ll_promo_code.setVisibility(View.GONE);
+
+
+
+                }
+
+
+
+            }
+        });
+
+        loadPromoCode.execute(Constant.URL_PROMO_CODE + "promo_code=" + promoCode + "&user_id=" + userId);
 
     }
 

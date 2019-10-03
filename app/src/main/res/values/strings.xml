@@ -174,4 +174,7 @@
     <string name="old_pass_not_match">Old Password not matched</string>
     <string name="facebook_page">Facebook Page</string>
     <string name="call_us">Call Us</string>
+    <string name="sub_total">Sub Total</string>
+    <string name="promo_code">Promo Code</string>
+    <string name="apply_promo">Apply</string>
 </resources>

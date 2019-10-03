@@ -68,6 +68,8 @@ public class Constant implements Serializable{
 
 	public static final String URL_REST_SERVICE_CHARGE = SERVER_URL + "api_rest_service_charge.php?rest_id=";
 
+	public static final String URL_PROMO_CODE = SERVER_URL + "api_promocode.php?";
+
 	public static final String TAG_ROOT = "FOOD_APP";
 	public static final String TAG_FEATURED_REST = "featured_restaurant";
 	public static final String TAG_LATEST_REST = "latest_restaurant";
@@ -152,6 +154,13 @@ public class Constant implements Serializable{
 
 	public static final String TAG_REST_SERVICE_CHARGE_STATUS = "charge_status";
 	public static final String TAG_REST_OPEN_STATUS = "rest_open_status";
+
+	public static final String TAG_PROMO_CODE = "code";
+	public static final String TAG_PROMO_VALUE = "value";
+	public static final String TAG_PROMO_TYPE = "type";
+	public static final String TAG_MINIMUM_ORDER = "minimum_order";
+	public static final String TAG_PROMO = "promo";
+	public static final String TAG_PROMO_RESULT = "result";
 
 
 	public static final String SHARED_PREF_LOGIN="login";
