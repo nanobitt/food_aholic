@@ -203,6 +203,8 @@ public class CheckOut extends AppCompatActivity {
                     ll_discount.setVisibility(View.VISIBLE);
                     ll_promo_code.setVisibility(View.GONE);
 
+                    promo_id = promo.getId();
+
 
 
                 }
@@ -293,7 +295,7 @@ public class CheckOut extends AppCompatActivity {
                     }
                 }
             });
-            loadCheckOut.execute(Constant.URL_CHECKOUT_1 + Constant.itemUser.getId() + Constant.URL_CHECKOUT_2 + address + Constant.URL_CHECKOUT_3 + comment + Constant.URL_CHECKOUT_4 + cart_ids);
+            loadCheckOut.execute(Constant.URL_CHECKOUT_1 + Constant.itemUser.getId() + Constant.URL_CHECKOUT_2 + address + Constant.URL_CHECKOUT_3 + comment + Constant.URL_CHECKOUT_4 + cart_ids + Constant.URL_CHECKOUT_5 + promo_id);
         } else {
             openErrorDialog(getString(R.string.net_not_conn));
         }

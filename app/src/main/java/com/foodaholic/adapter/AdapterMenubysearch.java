@@ -279,12 +279,20 @@ public class AdapterMenubysearch extends BaseQuickAdapter<ItemMenu, BaseViewHold
                                 Constant.arrayList_cart.get(i).setMenuQty(menu_count);
                                 break;
                             } else if (i == (Constant.arrayList_cart.size() - 1)) {
-                                loadCartApi();
+                                //loadCartApi();
+                                Constant.itemRestaurant = itemMenu.getAssociatedRestaurant();
+                                Intent intent = new Intent(activity, HotelDetailsActivity.class);
+                                activity.startActivity(intent);
+                                activity.finish();
 //                                Constant.arrayList_cart.add(new ItemCart("", itemMenu.getRestId(), restName, itemMenu.getId(), itemMenu.getName(), itemMenu.getImage(), menu_count, itemMenu.getPrice(), menu_count));
                             }
                         }
                     } else {
-                        loadCartApi();
+                        Constant.itemRestaurant = itemMenu.getAssociatedRestaurant();
+                        Intent intent = new Intent(activity, HotelDetailsActivity.class);
+                        activity.startActivity(intent);
+                        activity.finish();
+                        //loadCartApi();
 //                        Constant.arrayList_cart.add(new ItemCart("", itemMenu.getRestId(), restName, itemMenu.getId(), itemMenu.getName(), itemMenu.getImage(), menu_count, itemMenu.getPrice(), menu_count));
                     }
                 } else {

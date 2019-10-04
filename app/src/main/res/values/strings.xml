@@ -177,4 +177,5 @@
     <string name="sub_total">Sub Total</string>
     <string name="promo_code">Promo Code</string>
     <string name="apply_promo">Apply</string>
+    <string name="email_or_phone">E-Mail or Phone</string>
 </resources>

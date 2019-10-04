@@ -3,6 +3,7 @@ package com.foodaholic.main;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import androidx.appcompat.app.AlertDialog;
@@ -38,7 +39,7 @@ public class OrderDetailsActivity extends AppCompatActivity {
     LinearLayout ll_comment;
     private SimpleDateFormat dateFormat;
     TextView textView_hotelname, textView_unqid, textView_date, textView_address, textView_comment, textView_qty,
-            textView_price, textView_status, textView_time, textView_currency, textView_cancel;
+            textView_price,textView_totalprice_after_discount, textView_status, textView_time, textView_currency, textView_cancel;
     private ProgressDialog progressDialog;
     Date d;
 
@@ -77,7 +78,22 @@ public class OrderDetailsActivity extends AppCompatActivity {
         textView_cancel = findViewById(R.id.tv_orderlist_cancel);
         textView_currency = findViewById(R.id.tv);
 
-        textView_price.setTypeface(textView_price.getTypeface(), Typeface.BOLD);
+        textView_totalprice_after_discount = findViewById(R.id.tv_orderlist_total_after_discount);
+
+        if(Constant.itemOrderList.getHas_promo().equals("1"))
+        {
+            textView_totalprice_after_discount.setTypeface(textView_totalprice_after_discount.getTypeface(), Typeface.BOLD);
+            textView_price.setPaintFlags(textView_price.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+            textView_totalprice_after_discount.setText(Constant.itemOrderList.getPromo().amountAfterDiscount(Constant.itemOrderList.getTotalBill()));
+        }
+        else
+        {
+            textView_totalprice_after_discount.setVisibility(View.GONE);
+            textView_price.setTypeface(textView_price.getTypeface(), Typeface.BOLD);
+        }
+
+
+
         textView_unqid.setTypeface(textView_unqid.getTypeface(), Typeface.BOLD);
         textView_currency.setTypeface(null, Typeface.BOLD);
 
@@ -112,6 +128,7 @@ public class OrderDetailsActivity extends AppCompatActivity {
 
         textView_qty.setText(getString(R.string.qty) + " " + Constant.itemOrderList.getTotalQuantity());
         textView_price.setText(Constant.itemOrderList.getTotalBill());
+
 
         textView_date.setText(Constant.itemOrderList.getDate().split(" ")[0]);
         textView_time.setText(Constant.itemOrderList.getDate().split(" ")[1]);

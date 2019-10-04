@@ -43,12 +43,13 @@ public class LoadPromoCode extends AsyncTask<String, String, Boolean> {
             if(result.equals("1"))
             {
                 JSONObject mainObj = jOb.getJSONObject(Constant.TAG_ROOT).getJSONObject(Constant.TAG_PROMO);
+                String id = mainObj.getString(Constant.TAG_ID);
                 String code = mainObj.getString(Constant.TAG_PROMO_CODE);
                 String value = mainObj.getString(Constant.TAG_PROMO_VALUE);
                 String type = mainObj.getString(Constant.TAG_PROMO_TYPE);
                 String minimum_order = mainObj.getString(Constant.TAG_MINIMUM_ORDER);
 
-                promo = new ItemPromo(code, value, type, minimum_order);
+                promo = new ItemPromo(id, code, value, type, minimum_order);
             }
 
             return true;

@@ -137,10 +137,6 @@ public class LoginActivity extends AppCompatActivity {
             editText_email.setError(getString(R.string.error_field_required));
             focusView = editText_email;
             cancel = true;
-        } else if (!methods.isEmailValid(email)) {
-            editText_email.setError(getString(R.string.error_invalid_email));
-            focusView = editText_email;
-            cancel = true;
         }
 
         if (cancel) {

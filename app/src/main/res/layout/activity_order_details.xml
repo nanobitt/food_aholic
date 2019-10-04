@@ -64,7 +64,6 @@
                         android:layout_height="wrap_content"
                         android:layout_alignBaseline="@+id/tv_orderdetails_uniqueid"
                         android:layout_below="@+id/tv_orderdetails_hotelname"
-                        android:layout_marginLeft="5dp"
                         android:layout_marginStart="5dp"
                         android:ellipsize="end"
                         android:maxLines="2"
@@ -76,10 +75,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/tv_orderdetails_hotelname"
-                        android:layout_marginLeft="5dp"
                         android:layout_marginStart="5dp"
                         android:layout_toEndOf="@+id/tv_1"
-                        android:layout_toRightOf="@+id/tv_1"
                         android:ellipsize="end"
                         android:lineSpacingMultiplier="0.9"
                         android:maxLines="2"
@@ -100,7 +97,6 @@
                             android:paddingBottom="3dp"
                             android:paddingTop="3dp"
                             android:layout_marginEnd="5dp"
-                            android:layout_marginRight="5dp"
                             app:srcCompat="@mipmap/date" />
 
                         <TextView
@@ -113,12 +109,10 @@
                         <ImageView
                             android:layout_width="17dp"
                             android:layout_height="17dp"
-                            android:layout_marginLeft="7dp"
                             android:layout_marginStart="7dp"
                             android:paddingBottom="2dp"
                             android:paddingTop="2dp"
                             android:layout_marginEnd="5dp"
-                            android:layout_marginRight="5dp"
                             app:srcCompat="@mipmap/time" />
 
                         <TextView
@@ -141,7 +135,6 @@
                             android:layout_width="17dp"
                             android:layout_height="17dp"
                             android:layout_marginEnd="5dp"
-                            android:layout_marginRight="5dp"
                             android:paddingBottom="1dp"
                             android:paddingTop="3dp"
                             app:srcCompat="@mipmap/location" />
@@ -166,7 +159,6 @@
                             android:layout_width="17dp"
                             android:layout_height="17dp"
                             android:layout_marginEnd="5dp"
-                            android:layout_marginRight="5dp"
                             android:paddingBottom="1dp"
                             android:paddingTop="3dp"
                             app:srcCompat="@mipmap/comment" />
@@ -232,7 +224,7 @@
                         android:layout_height="match_parent"
                         android:layout_gravity="end"
                         android:layout_marginEnd="3dp"
-                        android:layout_marginRight="3dp"
+
                         android:gravity="center_vertical|end"
                         android:orientation="horizontal">
 
@@ -253,6 +245,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:gravity="bottom"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                        <TextView
+                            android:id="@+id/tv_orderlist_total_after_discount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="bottom"
+                            android:layout_marginStart="3dp"
                             android:textColor="@color/black"
                             android:textSize="14sp" />
 

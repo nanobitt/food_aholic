@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Paint;
 import android.graphics.Typeface;
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
@@ -42,7 +43,7 @@ public class AdapterOrderList extends RecyclerView.Adapter<AdapterOrderList.MyVi
     private ProgressDialog progressDialog;
 
     class MyViewHolder extends RecyclerView.ViewHolder {
-        private TextView textView_hotename, textView_unique_id, textView_qty, textView_totalprice, textView_date, textView_address,
+        private TextView textView_hotename, textView_unique_id, textView_qty, textView_totalprice, textView_totalprice_after_discount, textView_date, textView_address,
                 textView_status, textView_time, textView_currency, textView_cancel;
         private LinearLayout ll;
 
@@ -52,6 +53,7 @@ public class AdapterOrderList extends RecyclerView.Adapter<AdapterOrderList.MyVi
             textView_unique_id = view.findViewById(R.id.tv_orderlist_uniqueid);
             textView_qty = view.findViewById(R.id.tv_orderlist_quantity);
             textView_totalprice = view.findViewById(R.id.tv_orderlist_total);
+            textView_totalprice_after_discount = view.findViewById(R.id.tv_orderlist_total_after_discount);
             textView_date = view.findViewById(R.id.tv_orderlist_date);
             textView_time = view.findViewById(R.id.tv_orderlist_time);
             textView_address = view.findViewById(R.id.tv_orderlist_address);
@@ -60,8 +62,10 @@ public class AdapterOrderList extends RecyclerView.Adapter<AdapterOrderList.MyVi
             textView_cancel = view.findViewById(R.id.tv_orderlist_cancel);
             ll = view.findViewById(R.id.ll_orderlist);
 
+            textView_totalprice_after_discount.setVisibility(View.GONE);
+
             textView_unique_id.setTypeface(textView_unique_id.getTypeface(), Typeface.BOLD);
-            textView_totalprice.setTypeface(textView_totalprice.getTypeface(), Typeface.BOLD);
+
             textView_currency.setTypeface(null, Typeface.BOLD);
         }
     }
@@ -104,6 +108,22 @@ public class AdapterOrderList extends RecyclerView.Adapter<AdapterOrderList.MyVi
 
         holder.textView_date.setText(arrayList.get(position).getDate().split(" ")[0]);
         holder.textView_time.setText(arrayList.get(position).getDate().split(" ")[1]);
+
+        //Has Promo
+        if(arrayList.get(position).getHas_promo().equals("1"))
+        {
+            holder.textView_totalprice_after_discount.setVisibility(View.VISIBLE);
+
+            holder.textView_totalprice.setText(arrayList.get(position).getTotalBill());
+            holder.textView_totalprice_after_discount.setText(arrayList.get(position).getPromo().amountAfterDiscount(arrayList.get(position).getTotalBill()));
+
+            holder.textView_totalprice.setPaintFlags(holder.textView_totalprice.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+            holder.textView_totalprice_after_discount.setTypeface(holder.textView_totalprice_after_discount.getTypeface(), Typeface.BOLD);
+        }
+        else
+        {
+            holder.textView_totalprice.setTypeface(holder.textView_totalprice.getTypeface(), Typeface.BOLD);
+        }
 
         switch (arrayList.get(position).getStatus()) {
 

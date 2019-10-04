@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import com.foodaholic.interfaces.OrderListListener;
 import com.foodaholic.items.ItemOrderList;
 import com.foodaholic.items.ItemOrderMenu;
+import com.foodaholic.items.ItemPromo;
 import com.foodaholic.utils.Constant;
 import com.foodaholic.utils.JsonUtils;
 
@@ -46,6 +47,20 @@ public class LoadOderList extends AsyncTask<String, String, Boolean> {
                 String comment = c.getString(Constant.TAG_ORDER_COMMENT);
                 String date = c.getString(Constant.TAG_ORDER_DATE);
                 String status = c.getString(Constant.TAG_ORDER_STATUS);
+                String has_promo = c.getString(Constant.TAG_HAS_PROMO);
+                ItemPromo promo = null;
+
+                if(has_promo.equals("1"))
+                {
+                    JSONObject mainObj = c.getJSONObject(Constant.TAG_PROMO);
+                    String promo_id = mainObj.getString(Constant.TAG_ID);
+                    String code = mainObj.getString(Constant.TAG_PROMO_CODE);
+                    String value = mainObj.getString(Constant.TAG_PROMO_VALUE);
+                    String type = mainObj.getString(Constant.TAG_PROMO_TYPE);
+                    String minimum_order = mainObj.getString(Constant.TAG_MINIMUM_ORDER);
+
+                    promo = new ItemPromo(promo_id, code, value, type, minimum_order);
+                }
 
                 JSONArray jA = c.getJSONArray(Constant.TAG_ORDER_ITEMS);
 
@@ -66,6 +81,7 @@ public class LoadOderList extends AsyncTask<String, String, Boolean> {
                     String menu_total_price = jO.getString(Constant.TAG_MENU_TOTAL_PRICE);
                     String menu_type = jO.getString(Constant.TAG_MENU_TYPE);
 
+
                     totalPrice = totalPrice + Float.parseFloat(menu_total_price);
                     totalQnt = totalQnt + Integer.parseInt(menu_qty);
 
@@ -73,7 +89,7 @@ public class LoadOderList extends AsyncTask<String, String, Boolean> {
                     arrayList_ordermenu.add(itemOrderMenu);
                 }
 
-                ItemOrderList itemOrderList = new ItemOrderList(id, unique_id, address, comment, date, String.valueOf(totalQnt), String.valueOf(totalPrice), status, arrayList_ordermenu);
+                ItemOrderList itemOrderList = new ItemOrderList(id, unique_id, address, comment, date, String.valueOf(totalQnt), String.valueOf(totalPrice), status, arrayList_ordermenu, has_promo, promo);
                 arrayList.add(itemOrderList);
             }
 

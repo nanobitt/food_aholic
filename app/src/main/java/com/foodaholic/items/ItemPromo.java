@@ -2,10 +2,11 @@ package com.foodaholic.items;
 
 public class ItemPromo {
 
-    private String code, value, type, minimum_order;
+    private String id, code, value, type, minimum_order;
 
-    public ItemPromo(String code, String value, String type, String minimum_order)
+    public ItemPromo(String id, String code, String value, String type, String minimum_order)
     {
+        this.id = id;
         this.code = code;
         this.value = value;
         this.type = type;
@@ -14,6 +15,10 @@ public class ItemPromo {
 
     public String getCode() {
         return code;
+    }
+
+    public String getId() {
+        return id;
     }
 
     public String getValue() {

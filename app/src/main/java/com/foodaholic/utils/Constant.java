@@ -59,6 +59,7 @@ public class Constant implements Serializable{
 	public static final String URL_CHECKOUT_2 = "&order_address=";
 	public static final String URL_CHECKOUT_3 = "&order_comment=";
 	public static final String URL_CHECKOUT_4 = "&cat_ids=";
+	public static final String URL_CHECKOUT_5 = "&promocode_id=";
 
 	public static final String URL_OFFER_AND_PROMOTIONS = SERVER_URL + "api_offer_and_promotion.php";
 
@@ -161,6 +162,7 @@ public class Constant implements Serializable{
 	public static final String TAG_MINIMUM_ORDER = "minimum_order";
 	public static final String TAG_PROMO = "promo";
 	public static final String TAG_PROMO_RESULT = "result";
+	public static final String TAG_HAS_PROMO = "has_promo";
 
 
 	public static final String SHARED_PREF_LOGIN="login";
