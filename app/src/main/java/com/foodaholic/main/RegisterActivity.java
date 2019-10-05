@@ -155,6 +155,6 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
-        loadRegister.execute(editText_name.getText().toString(), editText_email.getText().toString(), editText_pass.getText().toString(), editText_phone.getText().toString(), editText_address.getText().toString());
+        loadRegister.execute(editText_name.getText().toString(), editText_email.getText().toString(), editText_pass.getText().toString(), editText_phone.getText().toString().replace("+88", ""), editText_address.getText().toString());
     }
 }
