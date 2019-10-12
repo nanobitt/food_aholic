@@ -95,8 +95,8 @@ public class LoadOderList extends AsyncTask<String, String, Boolean> {
 
             return true;
         } catch (Exception ee) {
-            ee.printStackTrace();
-            return false;
+//            ee.printStackTrace();
+            return true;
         }
     }
 

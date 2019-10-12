@@ -214,7 +214,7 @@ public class CheckOut extends AppCompatActivity {
             }
         });
 
-        loadPromoCode.execute(Constant.URL_PROMO_CODE + "promo_code=" + promoCode + "&user_id=" + userId);
+        loadPromoCode.execute(Constant.URL_PROMO_CODE + "promo_code=" + promoCode + "&user_id=" + userId + "&rest_id=" + Constant.arrayList_cart.get(0).getRestId());
 
     }
 
