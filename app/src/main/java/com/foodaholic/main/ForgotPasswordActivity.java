@@ -128,7 +128,8 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         protected void onPostExecute(String s) {
             progressDialog.dismiss();
             if(!success.equals("2")) {
-                Toast.makeText(ForgotPasswordActivity.this, message, Toast.LENGTH_SHORT).show();
+                Toast.makeText(ForgotPasswordActivity.this, "Password reset instruction sent to your mail!", Toast.LENGTH_SHORT).show();
+                finish();
             } else {
                 Toast.makeText(ForgotPasswordActivity.this, getString(R.string.error_server), Toast.LENGTH_SHORT).show();
             }

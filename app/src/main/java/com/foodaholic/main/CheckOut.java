@@ -37,6 +37,7 @@ import com.foodaholic.asyncTask.LoadRestServiceCharge;
 import com.foodaholic.interfaces.LoginListener;
 import com.foodaholic.interfaces.PromoCodeListener;
 import com.foodaholic.interfaces.RestServiceChargeListener;
+import com.foodaholic.items.ItemCart;
 import com.foodaholic.items.ItemPromo;
 import com.foodaholic.utils.Constant;
 import com.foodaholic.utils.Methods;
@@ -120,6 +121,8 @@ public class CheckOut extends AppCompatActivity {
         AdapterCheckOut adapterCart = new AdapterCheckOut(CheckOut.this, Constant.arrayList_cart);
         recyclerView.setAdapter(adapterCart);
 
+        disablePromoIfOfferExists();
+
         textView_currency.setTypeface(null, Typeface.BOLD);
         textView_hotel_name.setText(rest_name);
         textView_hotel_name.setTypeface(textView_hotel_name.getTypeface(), Typeface.BOLD);
@@ -158,6 +161,19 @@ public class CheckOut extends AppCompatActivity {
         loadRestServiceChargeApi();
 
 
+    }
+
+    private void disablePromoIfOfferExists()
+    {
+        for (ItemCart menu: Constant.arrayList_cart)
+        {
+            if(menu.getMenuName().toLowerCase().contains("offer"))
+            {
+                ll_promo_code.setVisibility(View.GONE);
+
+            }
+
+        }
     }
 
     public void applyPromo(View view)
