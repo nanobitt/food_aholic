@@ -229,8 +229,9 @@ public class CheckOut extends AppCompatActivity {
 
             }
         });
+        Toast.makeText(this, Constant.URL_PROMO_CODE + "promo_code=" + promoCode + "&user_id=" + userId + "&rest_id=" + Constant.arrayList_cart.get(0).getRestId() + "&cat_ids=" + cart_ids, Toast.LENGTH_LONG).show();
 
-        loadPromoCode.execute(Constant.URL_PROMO_CODE + "promo_code=" + promoCode + "&user_id=" + userId + "&rest_id=" + Constant.arrayList_cart.get(0).getRestId());
+        loadPromoCode.execute(Constant.URL_PROMO_CODE + "promo_code=" + promoCode + "&user_id=" + userId + "&rest_id=" + Constant.arrayList_cart.get(0).getRestId() + "&cat_ids=" + cart_ids);
 
     }
 
@@ -242,7 +243,7 @@ public class CheckOut extends AppCompatActivity {
             }
 
             @Override
-            public void onEnd(String success, String resp[]) {
+            public void onEnd(String success, String[] resp) {
                 progressDialog.dismiss();
                 if (resp[0].equals("1")) {
                     textView_serviceCharge.setText(Constant.SERVICE_CHARGE_APPLICABLE);

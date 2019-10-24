@@ -110,7 +110,6 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
             app:srcCompat="@drawable/ic_menu_no"
             android:visibility="gone"/>
 
@@ -120,13 +119,11 @@
             android:layout_height="30dp"
             android:textColor="@color/white"
             android:paddingStart="5dp"
-            android:paddingLeft="5dp"
             android:paddingBottom="5dp"
-            android:textSize="11sp"
+            android:textSize="12sp"
             android:gravity="center"
             android:textStyle="bold"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true" />
+            android:layout_alignParentEnd="true" />
 
     </RelativeLayout>
 

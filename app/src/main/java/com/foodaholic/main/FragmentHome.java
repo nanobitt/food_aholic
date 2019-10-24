@@ -184,12 +184,16 @@ public class FragmentHome extends Fragment {
             @Override
             public void onPageSelected(int position) {
                 View v = viewPager_home.findViewWithTag(EnchantedViewPager.ENCHANTED_VIEWPAGER_POSITION + position);
-                ImageView ivBackground = v .findViewById(R.id.iv_fav_pager);
-                if (dbHelper.isFav(arrayList_feat.get(viewPager_home.getCurrentItem()).getId())) {
-                    ivBackground.setImageResource(R.mipmap.fav_hover);
-                } else {
-                    ivBackground.setImageResource(R.mipmap.fav);
+                if(v!=null)
+                {
+                    ImageView ivBackground = v.findViewById(R.id.iv_fav_pager);
+                    if (dbHelper.isFav(arrayList_feat.get(viewPager_home.getCurrentItem()).getId())) {
+                        ivBackground.setImageResource(R.mipmap.fav_hover);
+                    } else {
+                        ivBackground.setImageResource(R.mipmap.fav);
+                    }
                 }
+
             }
 
             @Override
@@ -357,6 +361,14 @@ public class FragmentHome extends Fragment {
 
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if(progressDialog!=null && progressDialog.isShowing())
+        {
+            progressDialog.dismiss();
+        }
+    }
 
     private void loadFoodofthedayApi()
     {
@@ -368,7 +380,7 @@ public class FragmentHome extends Fragment {
 
             @Override
             public void onEnd(String success,  ArrayList<ItemOfferAndPromotion> arrayListOfferandPromotions) {
-                if(progressDialog.isShowing())
+                if(progressDialog!=null && progressDialog.isShowing())
                 {
                     progressDialog.dismiss();
                 }

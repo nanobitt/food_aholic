@@ -302,7 +302,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             @Override
             public void onEnd(String success) {
-                if (pbar.isShowing()) {
+                if (pbar!=null && pbar.isShowing()) {
                     pbar.dismiss();
                 }
 
@@ -310,6 +310,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
         loadAbout.execute(Constant.URL_ABOUT);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (pbar!=null && pbar.isShowing()) {
+            pbar.dismiss();
+        }
     }
 
     public void checkPer() {

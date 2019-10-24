@@ -98,14 +98,14 @@ public class AdapterMenuExpandable extends ExpandableRecyclerViewAdapter<Adapter
     }
 
     class MenuItemViewHolder extends ChildViewHolder {
-        private TextView textView_title, textView_price, textView_discounted_price, textView_incart, tv_currency;
+        private TextView textView_title, textView_price, textView_discounted_price, textView_incart, tv_currency, textView_desc;
         private LinearLayout linearLayout;
         private ImageView imageView, imageView_incart, imageView_type;
 
         MenuItemViewHolder(View view) {
             super(view);
             textView_title = view.findViewById(R.id.tv_menu_name);
-            //textView_desc = view.findViewById(R.id.tv_menu_desc);
+            textView_desc = view.findViewById(R.id.tv_menu_rest);
             textView_price = view.findViewById(R.id.tv_menu_price);
             textView_discounted_price = view.findViewById(R.id.tv_menu_discount_price);
             textView_incart = view.findViewById(R.id.tv_menu_incart);
@@ -140,16 +140,16 @@ public class AdapterMenuExpandable extends ExpandableRecyclerViewAdapter<Adapter
 
         holder.textView_title.setTypeface(holder.textView_title.getTypeface(), Typeface.BOLD);
 
-//        holder.textView_desc.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (holder.textView_desc.getMaxLines() == 2) {
-//                    holder.textView_desc.setMaxLines(500);
-//                } else {
-//                    holder.textView_desc.setMaxLines(2);
-//                }
-//            }
-//        });
+        holder.textView_desc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (holder.textView_desc.getMaxLines() == 2) {
+                    holder.textView_desc.setMaxLines(500);
+                } else {
+                    holder.textView_desc.setMaxLines(2);
+                }
+            }
+        });
 
         holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -169,7 +169,7 @@ public class AdapterMenuExpandable extends ExpandableRecyclerViewAdapter<Adapter
         }
 
         holder.textView_title.setText(itemMenu.getName());
-        //holder.textView_desc.setText(itemMenu.getDesc());
+        holder.textView_desc.setText(itemMenu.getDesc());
 
         if(!itemMenu.getPrevious_price().equals("0"))
         {

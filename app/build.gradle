@@ -19,8 +19,8 @@ android {
         applicationId "com.foodaholic.android"
         minSdkVersion 17
         targetSdkVersion 28
-        versionCode 13
-        versionName "1.2.0"
+        versionCode 15
+        versionName "1.2.2"
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
