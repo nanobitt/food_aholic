@@ -128,6 +128,7 @@ public class CheckOut extends AppCompatActivity {
         textView_hotel_name.setTypeface(textView_hotel_name.getTypeface(), Typeface.BOLD);
         textView_total.setTypeface(textView_hotel_name.getTypeface(), Typeface.BOLD);
 
+
         editText_address.setText(Constant.itemUser.getAddress());
 
         button_checkout.setOnClickListener(new View.OnClickListener() {
@@ -229,8 +230,6 @@ public class CheckOut extends AppCompatActivity {
 
             }
         });
-        Toast.makeText(this, Constant.URL_PROMO_CODE + "promo_code=" + promoCode + "&user_id=" + userId + "&rest_id=" + Constant.arrayList_cart.get(0).getRestId() + "&cat_ids=" + cart_ids, Toast.LENGTH_LONG).show();
-
         loadPromoCode.execute(Constant.URL_PROMO_CODE + "promo_code=" + promoCode + "&user_id=" + userId + "&rest_id=" + Constant.arrayList_cart.get(0).getRestId() + "&cat_ids=" + cart_ids);
 
     }
@@ -245,14 +244,10 @@ public class CheckOut extends AppCompatActivity {
             @Override
             public void onEnd(String success, String[] resp) {
                 progressDialog.dismiss();
-                if (resp[0].equals("1")) {
-                    textView_serviceCharge.setText(Constant.SERVICE_CHARGE_APPLICABLE);
-                    textView_total.setText(total + "++*");
-                    textView_serviceCharge.setTextColor(Color.RED);
-                } else {
-                    textView_serviceCharge.setText(Constant.SERVICE_CHARGE_NOT_APPLICABLE);
-                    textView_total.setText(total);
-                }
+
+                    textView_serviceCharge.setText(resp[2]);
+                    double totalBill = Double.parseDouble(total) + Double.parseDouble(resp[2]);
+                    textView_total.setText(String.valueOf(totalBill));
 
                 if (resp[1].equals("1")) {
                     isOpen = true;

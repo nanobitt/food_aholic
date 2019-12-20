@@ -1,6 +1,7 @@
 package com.foodaholic.asyncTask;
 
 import android.os.AsyncTask;
+import android.util.Log;
 
 import com.foodaholic.interfaces.RestServiceChargeListener;
 import com.foodaholic.utils.Constant;
@@ -31,12 +32,14 @@ public class LoadRestServiceCharge extends AsyncTask<String, String, Boolean> {
 
         String url = strings[0];
         String json = JsonUtils.okhttpGET(url);
-        status = new String[2];
+        Log.d("-------------------", json);
+        status = new String[3];
         try {
             JSONObject jOb = new JSONObject(json);
             JSONArray jsonArray = jOb.getJSONArray(Constant.TAG_ROOT);
             status[0] = jsonArray.getJSONObject(0).getString(Constant.TAG_REST_SERVICE_CHARGE_STATUS);
             status[1] = jsonArray.getJSONObject(0).getString(Constant.TAG_REST_OPEN_STATUS);
+            status[2] = jsonArray.getJSONObject(0).getString(Constant.TAG_REST_SERVICE_CHARGE);
 
             return true;
         }

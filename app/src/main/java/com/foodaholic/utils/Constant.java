@@ -155,6 +155,7 @@ public class Constant implements Serializable{
 
 	public static final String TAG_REST_SERVICE_CHARGE_STATUS = "charge_status";
 	public static final String TAG_REST_OPEN_STATUS = "rest_open_status";
+	public static final String TAG_REST_SERVICE_CHARGE = "charge";
 
 	public static final String TAG_PROMO_CODE = "code";
 	public static final String TAG_PROMO_VALUE = "value";
@@ -182,7 +183,7 @@ public class Constant implements Serializable{
 	public static Boolean isLogged = false;
 	public static Boolean isCartRefresh = false;
 	public static Boolean isFromCheckOut = false;
-	public static final String SERVICE_CHARGE_APPLICABLE = "*30 Taka Service charge applicable";
+	public static final String SERVICE_CHARGE_APPLICABLE = "BDT Service charge applicable";
 	public static final String SERVICE_CHARGE_NOT_APPLICABLE = "*Service charge not applicable";
 
 	public static ItemAbout itemAbout;
@@ -194,7 +195,7 @@ public class Constant implements Serializable{
 
 
 	public static String search_text = "", search_type = "Restaurant";
-	public static String[] search_type_array = {"Restaurant","Menu"};
+	public static String[] search_type_array = {"Menu", "Restaurant"};
 	public static int search_type_pos = 0;
 
 	public static final String TAG_PENDING = "Pending";

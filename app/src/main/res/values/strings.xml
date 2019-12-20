@@ -178,4 +178,5 @@
     <string name="promo_code">Promo Code</string>
     <string name="apply_promo">Apply</string>
     <string name="email_or_phone">E-Mail or Phone</string>
+    <string name="service_charge">Service Charge</string>
 </resources>

@@ -14,7 +14,7 @@ import org.json.JSONObject;
 public class LoadCheckOut extends AsyncTask<String, String, Boolean> {
 
     private Context context;
-    private String suc = "0";
+    private String suc = "1";
     private String msg = "";
     private LoginListener loginListener;
 

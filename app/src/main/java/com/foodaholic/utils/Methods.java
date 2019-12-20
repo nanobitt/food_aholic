@@ -14,10 +14,12 @@ import android.net.Uri;
 import android.os.Build;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
+
 import androidx.core.view.MenuItemCompat;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
 import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -276,7 +278,6 @@ public class Methods {
     }
 
 
-
     public void showInterAd(final int pos, final String type) {
 
         interAdListener.onClick(pos, type);
@@ -291,11 +292,12 @@ public class Methods {
                 .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
                         dialog.dismiss();
-                        Constant.search_type_pos = ((AlertDialog)dialog).getListView().getCheckedItemPosition();
-                        if(Constant.search_type_pos == 0) {
-                            Constant.search_type = "Restaurant";
-                        } else {
+                        Constant.search_type_pos = ((AlertDialog) dialog).getListView().getCheckedItemPosition();
+                        if (Constant.search_type_pos == 0) {
                             Constant.search_type = "menu";
+                        } else {
+
+                            Constant.search_type = "Restaurant";
                         }
                     }
                 })
