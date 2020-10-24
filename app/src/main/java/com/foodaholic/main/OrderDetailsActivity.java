@@ -54,7 +54,7 @@ public class OrderDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_order_details);
 
         toolbar = findViewById(R.id.toolbar_orderdetails);
-        toolbar.setTitle(Constant.itemOrderList.getUniqueId());
+        toolbar.setTitle(getString(R.string.app_name));
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

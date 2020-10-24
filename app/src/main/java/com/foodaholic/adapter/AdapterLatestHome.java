@@ -36,6 +36,7 @@ public class AdapterLatestHome extends RecyclerView.Adapter<AdapterLatestHome.My
         ImageView imageView, imageView_type, imageView_fav;
         RatingBar rating;
         LinearLayout ll_home_main;
+        TextView tv_rest_closed;
 
         MyViewHolder(View view) {
             super(view);
@@ -47,6 +48,7 @@ public class AdapterLatestHome extends RecyclerView.Adapter<AdapterLatestHome.My
             imageView_fav = view.findViewById(R.id.iv_home_fav);
             rating = view.findViewById(R.id.rating_home_latest);
             ll_home_main = view.findViewById(R.id.ll_home_main);
+            tv_rest_closed = view.findViewById(R.id.tv_rest_closed);
         }
     }
 
@@ -103,6 +105,12 @@ public class AdapterLatestHome extends RecyclerView.Adapter<AdapterLatestHome.My
                 }
             }
         });
+
+        if(!arrayList.get(position).isOpen())
+        {
+            holder.tv_rest_closed.setVisibility(View.VISIBLE);
+            holder.ll_home_main.setEnabled(false);
+        }
 
         holder.ll_home_main.setOnClickListener(new View.OnClickListener() {
             @Override

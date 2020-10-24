@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cv_layout_hotel"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -29,12 +30,23 @@
                 app:riv_corner_radius_top_left="5dp"
                 app:riv_corner_radius_top_right="5dp" />
 
+            <TextView
+                android:id="@+id/tv_rest_closed"
+                android:text="Closed"
+                android:textSize="18dp"
+                android:padding="7dp"
+                android:layout_margin="10dp"
+                android:background="#f54260"
+                android:visibility="invisible"
+                android:textColor="@android:color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
             <com.makeramen.roundedimageview.RoundedImageView
                 android:id="@+id/iv_fav"
                 android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
                 android:layout_margin="10dp"
                 android:src="@mipmap/fav"
                 app:riv_corner_radius="50dp"

@@ -55,10 +55,12 @@ public class LoadMenuBySearch extends AsyncTask<String, String, Boolean> {
                 int total_rate = jsonObject.getInt(Constant.TAG_REST_TOTAL_RATE);
                 String cat_name = "";
 
+                String open = jsonObject.getString(Constant.TAG_REST_OPEN);
+
                 String rest_address = jsonObject.getString(Constant.TAG_REST_ADDRESS);
 
 
-                ItemRestaurant itemRestaurant = new ItemRestaurant(res_id, rest_name, rest_image, rest_type, rest_address, avg_Rate, total_rate, cat_name);
+                ItemRestaurant itemRestaurant = new ItemRestaurant(res_id, rest_name, rest_image, rest_type, rest_address, avg_Rate, total_rate, cat_name, open);
 
                 ItemMenu itemMenu = new ItemMenu(menu_id, menu_name, menu_type, menu_image, price, res_id, rest_name);
 

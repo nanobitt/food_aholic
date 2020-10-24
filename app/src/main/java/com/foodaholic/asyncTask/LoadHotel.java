@@ -50,8 +50,9 @@ public class LoadHotel extends AsyncTask<String,String,Boolean> {
                 if(c.has(Constant.TAG_CAT_NAME)) {
                     cat_name = c.getString(Constant.TAG_CAT_NAME);
                 }
+                String open = c.getString(Constant.TAG_REST_OPEN);
 
-                ItemRestaurant itemRestaurant = new ItemRestaurant(id,name,image,type,address,avg_Rate,total_rate, cat_name);
+                ItemRestaurant itemRestaurant = new ItemRestaurant(id,name,image,type,address,avg_Rate,total_rate, cat_name, open);
                 arrayList.add(itemRestaurant);
             }
 

@@ -60,6 +60,7 @@ public class Constant implements Serializable{
 	public static final String URL_CHECKOUT_3 = "&order_comment=";
 	public static final String URL_CHECKOUT_4 = "&cat_ids=";
 	public static final String URL_CHECKOUT_5 = "&promocode_id=";
+	public static final String URL_CHECKOUT_6 = "&charge=";
 
 	public static final String URL_OFFER_AND_PROMOTIONS = SERVER_URL + "api_offer_and_promotion.php";
 
@@ -156,6 +157,7 @@ public class Constant implements Serializable{
 	public static final String TAG_REST_SERVICE_CHARGE_STATUS = "charge_status";
 	public static final String TAG_REST_OPEN_STATUS = "rest_open_status";
 	public static final String TAG_REST_SERVICE_CHARGE = "charge";
+	public static final String TAG_REST_OPEN = "open";
 
 	public static final String TAG_PROMO_CODE = "code";
 	public static final String TAG_PROMO_VALUE = "value";
@@ -201,7 +203,7 @@ public class Constant implements Serializable{
 	public static final String TAG_PENDING = "Pending";
 	public static final String TAG_PROCESS = "Process";
 	public static final String TAG_COMPLETE = "Complete";
-	public static final String TAG_CANCEL = "Cancel";
+	public static final String TAG_CANCEL = "Cancelled";
 	public static Boolean isCancelOrder = false;
 
 

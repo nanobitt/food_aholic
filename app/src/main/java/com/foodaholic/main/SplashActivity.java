@@ -1,6 +1,7 @@
 package com.foodaholic.main;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -9,7 +10,10 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import com.crowdfire.cfalertdialog.CFAlertDialog;
+import com.foodaholic.asyncTask.LoadAbout;
 import com.foodaholic.asyncTask.LoadLoginLocal;
+import com.foodaholic.interfaces.AboutListener;
 import com.foodaholic.interfaces.LoginListener;
 import com.foodaholic.sharedPref.SharePref;
 import com.foodaholic.utils.Constant;
@@ -22,15 +26,73 @@ public class SplashActivity extends AppCompatActivity {
     LoadLoginLocal loadLoginLocal;
     Methods methods;
 
+    LoadAbout loadAbout;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+        loadAboutTask();
 
 
+    }
 
+    private void loadAboutTask() {
+        loadAbout = new LoadAbout(new AboutListener() {
+            @Override
+            public void onStart() {
+
+            }
+
+            @Override
+            public void onEnd(String success)
+            {
+                if(success.equals("1"))
+                {
+                    if (!Constant.itemAbout.getAppVersion().equals(BuildConfig.VERSION_NAME))
+                    {
+                        CFAlertDialog.Builder builder = new CFAlertDialog.Builder(SplashActivity.this)
+                                .setDialogStyle(CFAlertDialog.CFAlertStyle.ALERT)
+                                .setTitle("Update available!")
+                                .setMessage("Please update your app to continue")
+                                .addButton("UPGRADE", -1, -1, CFAlertDialog.CFAlertActionStyle.POSITIVE, CFAlertDialog.CFAlertActionAlignment.CENTER, (dialog, which) -> {
+                                            final String appName = getPackageName();//your application package name i.e play store application url
+                                    try {
+                                                startActivity(new Intent(Intent.ACTION_VIEW,
+                                                        Uri.parse("market://details?id="
+                                                                + appName)));
+                                            } catch (android.content.ActivityNotFoundException anfe) {
+                                                startActivity(new Intent(
+                                                        Intent.ACTION_VIEW,
+                                                        Uri.parse("http://play.google.com/store/apps/details?id="
+                                                                + appName)));
+                                            }
+                                }
+                                )
+                                .addButton("EXIT", -1, -1, CFAlertDialog.CFAlertActionStyle.NEGATIVE, CFAlertDialog.CFAlertActionAlignment.CENTER, (dialog, which) -> {
+                                finish();
+                            }
+                    );
+
+
+                        builder.show();
+
+                    }
+                    else
+                    {
+                        progressToLogin();
+                    }
+
+                }
+
+            }
+        });
+        loadAbout.execute(Constant.URL_ABOUT);
+    }
+
+    private void progressToLogin()
+    {
         sharePref = new SharePref(this);
         methods = new Methods(SplashActivity.this);
 

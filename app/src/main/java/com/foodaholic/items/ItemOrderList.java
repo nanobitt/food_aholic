@@ -5,11 +5,11 @@ import java.util.ArrayList;
 
 public class ItemOrderList implements Serializable {
 
-    private String id, uniqueId, address, comment, date, totalBill, totalQuantity, status, has_promo;
+    private String id, uniqueId, address, comment, date, totalBill, totalQuantity, status, has_promo, charge;
     private ArrayList<ItemOrderMenu> arrayListOrderMenu;
     private ItemPromo promo;
 
-    public ItemOrderList(String id, String uniqueId, String address, String comment, String date, String totalQuantity, String totalBill, String status, ArrayList<ItemOrderMenu> arrayListOrderMenu, String has_promo, ItemPromo promo) {
+    public ItemOrderList(String id, String uniqueId, String address, String comment, String date, String totalQuantity, String totalBill, String status, ArrayList<ItemOrderMenu> arrayListOrderMenu, String has_promo, ItemPromo promo, String charge) {
         this.id = id;
         this.uniqueId = uniqueId;
         this.address = address;
@@ -22,7 +22,12 @@ public class ItemOrderList implements Serializable {
 
         this.has_promo = has_promo;
         this.promo = promo;
+        this.charge = charge;
 
+    }
+
+    public String getCharge() {
+        return charge;
     }
 
     public ItemPromo getPromo() {
@@ -74,7 +79,8 @@ public class ItemOrderList implements Serializable {
     }
 
     public String getTotalBill() {
-        return totalBill;
+        float bill = Float.parseFloat(totalBill) + Float.parseFloat(charge);
+        return Float.toString(bill);
     }
 
     public void setTotalBill(String totalbill) {

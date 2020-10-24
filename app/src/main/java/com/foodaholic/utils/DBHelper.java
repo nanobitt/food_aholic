@@ -156,7 +156,8 @@ public class DBHelper extends SQLiteOpenHelper {
                 int totalRating = Integer.parseInt(c.getString(c.getColumnIndex(REST_TOTAL_RATING)));
                 String cname = c.getString(c.getColumnIndex(REST_CAT_NAME));
 
-                ItemRestaurant itemRestaurant = new ItemRestaurant(id,name,image,type,address,avgRating,totalRating,cname);
+
+                ItemRestaurant itemRestaurant = new ItemRestaurant(id,name,image,type,address,avgRating,totalRating,cname, "1");
                 arrayList.add(itemRestaurant);
 
                 c.moveToNext();

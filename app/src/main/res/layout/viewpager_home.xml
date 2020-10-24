@@ -114,6 +114,18 @@
                 app:srcCompat="@mipmap/veg"/>
 
         </LinearLayout>
+        <TextView
+            android:id="@+id/tv_rest_closed"
+            android:text="Closed"
+            android:textSize="16dp"
+            android:visibility="invisible"
+            android:padding="7dp"
+            android:layout_margin="10dp"
+            android:background="#f54260"
+            android:textColor="@android:color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
 
         <ImageView
             android:id="@+id/iv_fav_pager"

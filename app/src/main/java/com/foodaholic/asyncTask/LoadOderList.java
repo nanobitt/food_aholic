@@ -1,5 +1,6 @@
 package com.foodaholic.asyncTask;
 
+import android.nfc.Tag;
 import android.os.AsyncTask;
 
 import com.foodaholic.interfaces.OrderListListener;
@@ -48,6 +49,7 @@ public class LoadOderList extends AsyncTask<String, String, Boolean> {
                 String date = c.getString(Constant.TAG_ORDER_DATE);
                 String status = c.getString(Constant.TAG_ORDER_STATUS);
                 String has_promo = c.getString(Constant.TAG_HAS_PROMO);
+                String service_charge = c.getString(Constant.TAG_REST_SERVICE_CHARGE);
                 ItemPromo promo = null;
 
                 if(has_promo.equals("1"))
@@ -82,6 +84,7 @@ public class LoadOderList extends AsyncTask<String, String, Boolean> {
                     String menu_type = jO.getString(Constant.TAG_MENU_TYPE);
 
 
+
                     totalPrice = totalPrice + Float.parseFloat(menu_total_price);
                     totalQnt = totalQnt + Integer.parseInt(menu_qty);
 
@@ -89,7 +92,7 @@ public class LoadOderList extends AsyncTask<String, String, Boolean> {
                     arrayList_ordermenu.add(itemOrderMenu);
                 }
 
-                ItemOrderList itemOrderList = new ItemOrderList(id, unique_id, address, comment, date, String.valueOf(totalQnt), String.valueOf(totalPrice), status, arrayList_ordermenu, has_promo, promo);
+                ItemOrderList itemOrderList = new ItemOrderList(id, unique_id, address, comment, date, String.valueOf(totalQnt), String.valueOf(totalPrice), status, arrayList_ordermenu, has_promo, promo, service_charge);
                 arrayList.add(itemOrderList);
             }
 

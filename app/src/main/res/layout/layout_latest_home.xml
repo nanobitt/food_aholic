@@ -28,6 +28,17 @@
                 android:scaleType="centerCrop"
                 app:riv_corner_radius_top_left="5dp"
                 app:riv_corner_radius_top_right="5dp" />
+            <TextView
+                android:id="@+id/tv_rest_closed"
+                android:text="Closed"
+                android:textSize="14dp"
+                android:visibility="invisible"
+                android:padding="5dp"
+                android:layout_margin="7dp"
+                android:background="#f54260"
+                android:textColor="@android:color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
             <ImageView
                 android:id="@+id/iv_home_fav"

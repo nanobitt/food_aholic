@@ -52,7 +52,7 @@ public class AboutActivity extends AppCompatActivity {
         methods.setStatusColor(getWindow(), toolbar);
 
         toolbar = this.findViewById(R.id.toolbar_about);
-        toolbar.setTitle(getString(R.string.about));
+        toolbar.setTitle(getString(R.string.app_name));
         this.setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

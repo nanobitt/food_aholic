@@ -5,12 +5,12 @@ import java.util.ArrayList;
 
 public class ItemRestaurant implements Serializable{
 
- 	private String id, name, image, type, address, monday, tuesday, wednesday, thursday, friday, saturday, sunday, cid, cimage, cname;
+ 	private String id, name, image, type, address, monday, tuesday, wednesday, thursday, friday, saturday, sunday, cid, cimage, cname, open;
 	private int total_rating;
 	private float avgRatings;
 	private ArrayList<ItemReview> arrayList_review;
 
-	public ItemRestaurant(String id, String name, String image, String type, String address, float avgRatings, int total_rating, String cname) {
+	public ItemRestaurant(String id, String name, String image, String type, String address, float avgRatings, int total_rating, String cname, String open) {
 		this.id = id;
 		this.name = name;
 		this.image = image;
@@ -19,6 +19,7 @@ public class ItemRestaurant implements Serializable{
 		this.avgRatings = avgRatings;
 		this.cname = cname;
 		this.type = type;
+		this.open = open;
 	}
 
 	public String getId() {
@@ -163,5 +164,9 @@ public class ItemRestaurant implements Serializable{
 
 	public void setArrayListReview(ArrayList<ItemReview> arrayList_review) {
 		this.arrayList_review = arrayList_review;
+	}
+
+	public boolean isOpen() {
+		return open.equals("1");
 	}
 }

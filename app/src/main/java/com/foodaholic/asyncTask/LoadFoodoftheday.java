@@ -59,8 +59,9 @@ public class LoadFoodoftheday extends AsyncTask<String, String, Boolean> {
                 float avg_Rate = Float.parseFloat(rest_obj.getString(Constant.TAG_REST_AVG_RATE));
                 int total_rate = Integer.parseInt(rest_obj.getString(Constant.TAG_REST_TOTAL_RATE));
                 String cat_name = "";
+                String open = rest_obj.getString(Constant.TAG_REST_OPEN);
 
-                ItemRestaurant itemRestaurant = new ItemRestaurant(rest_id,name,rest_image,type,address,avg_Rate,total_rate, cat_name);
+                ItemRestaurant itemRestaurant = new ItemRestaurant(rest_id,name,rest_image,type,address,avg_Rate,total_rate, cat_name, open);
 
                 ItemMenu itemMenu = new ItemMenu(menu_id, menu_name, menu_type, menu_image, desc, price, res_id, cat_id, itemRestaurant);
                 foods.add(itemMenu);

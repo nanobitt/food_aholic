@@ -434,6 +434,7 @@ public class FragmentHome extends Fragment {
             TextView textView_tot_rating = imageLayout.findViewById(R.id.tv_pager_home_tot_rating);
             RelativeLayout rl = imageLayout.findViewById(R.id.rl_homepager);
             RatingBar rating = imageLayout.findViewById(R.id.rating_pager_home);
+            TextView tv_rest_closed = imageLayout.findViewById(R.id.tv_rest_closed);
 
             if(position == 0) {
                 if (dbHelper.isFav(arrayList_feat.get(viewPager_home.getCurrentItem()).getId())) {
@@ -453,6 +454,10 @@ public class FragmentHome extends Fragment {
             title.setText(arrayList_feat.get(position).getName());
             address.setText(arrayList_feat.get(position).getAddress());
             textView_tot_rating.setText("(" + String.valueOf(arrayList_feat.get(position).getTotalRating()) + ")");
+            if(!arrayList_feat.get(position).isOpen())
+            {
+                tv_rest_closed.setVisibility(View.VISIBLE);
+            }
 
             Picasso.get()
                     .load(arrayList_feat.get(position).getImage())

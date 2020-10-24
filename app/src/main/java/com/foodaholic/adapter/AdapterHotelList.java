@@ -2,6 +2,7 @@ package com.foodaholic.adapter;
 
 import android.content.Context;
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,6 +42,8 @@ public class AdapterHotelList extends RecyclerView.Adapter<AdapterHotelList.MyVi
         ImageView imageView_hotel_type, imageView_fav;
         RatingBar rating;
         LinearLayout ll_home_main;
+        CardView cv_layout_hotel;
+        TextView tv_rest_closed;
 
         MyViewHolder(View view) {
             super(view);
@@ -52,6 +55,8 @@ public class AdapterHotelList extends RecyclerView.Adapter<AdapterHotelList.MyVi
             rating = view.findViewById(R.id.rating_list_latest);
             ll_home_main = view.findViewById(R.id.ll_main);
             imageView_fav = view.findViewById(R.id.iv_fav);
+            cv_layout_hotel = view.findViewById(R.id.cv_layout_hotel);
+            tv_rest_closed = view.findViewById(R.id.tv_rest_closed);
         }
     }
 
@@ -108,6 +113,15 @@ public class AdapterHotelList extends RecyclerView.Adapter<AdapterHotelList.MyVi
                 }
             }
         });
+
+
+
+        if(!arrayList.get(position).isOpen())
+        {
+           holder.cv_layout_hotel.setEnabled(false);
+           holder.ll_home_main.setEnabled(false);
+           holder.tv_rest_closed.setVisibility(View.VISIBLE);
+        }
 
         holder.ll_home_main.setOnClickListener(new View.OnClickListener() {
             @Override

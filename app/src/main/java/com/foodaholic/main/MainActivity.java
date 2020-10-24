@@ -4,13 +4,15 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 
+import com.crowdfire.cfalertdialog.CFAlertDialog;
 import com.google.android.material.navigation.NavigationView;
+
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -21,6 +23,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -137,7 +140,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
 
         if (methods.isNetworkAvailable()) {
-            loadAboutTask();
+            //loadAboutTask();
         } else {
 
             dbHelper.getAbout();
@@ -264,8 +267,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
-    private void call_us()
-    {
+    private void call_us() {
         Intent intent = new Intent(Intent.ACTION_DIAL);
 
         intent.setData(Uri.parse("tel:" + Constant.itemAbout.getContact()));
@@ -293,29 +295,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
-    private void loadAboutTask() {
-        loadAbout = new LoadAbout(new AboutListener() {
-            @Override
-            public void onStart() {
-                pbar.show();
-            }
 
-            @Override
-            public void onEnd(String success) {
-                if (pbar!=null && pbar.isShowing()) {
-                    pbar.dismiss();
-                }
-
-                dbHelper.addtoAbout();
-            }
-        });
-        loadAbout.execute(Constant.URL_ABOUT);
-    }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (pbar!=null && pbar.isShowing()) {
+        if (pbar != null && pbar.isShowing()) {
             pbar.dismiss();
         }
     }
@@ -368,27 +353,80 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void exitDialog() {
-        AlertDialog.Builder alert;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            alert = new AlertDialog.Builder(MainActivity.this, R.style.ThemeDialog);
-        } else {
-            alert = new AlertDialog.Builder(MainActivity.this);
+
+        CFAlertDialog.Builder builder = new CFAlertDialog.Builder(this)
+                .setDialogStyle(CFAlertDialog.CFAlertStyle.ALERT)
+                .setTitle("Are you sure to exit?")
+
+                .addButton("EXIT", -1, -1, CFAlertDialog.CFAlertActionStyle.NEGATIVE, CFAlertDialog.CFAlertActionAlignment.JUSTIFIED, (dialog, which) -> {
+
+                    finish();
+                })
+                .addButton("CANCEL", -1, -1, CFAlertDialog.CFAlertActionStyle.DEFAULT, CFAlertDialog.CFAlertActionAlignment.JUSTIFIED, (dialog, which) -> {
+
+                    dialog.dismiss();
+                })
+                .addButton("RATE US", -1, -1, CFAlertDialog.CFAlertActionStyle.POSITIVE, CFAlertDialog.CFAlertActionAlignment.JUSTIFIED, (dialog, which) -> {
+                    final String appName = getPackageName();//your application package name i.e play store application url
+                    try {
+                        startActivity(new Intent(Intent.ACTION_VIEW,
+                                Uri.parse("market://details?id="
+                                        + appName)));
+                    } catch (android.content.ActivityNotFoundException anfe) {
+                        startActivity(new Intent(
+                                Intent.ACTION_VIEW,
+                                Uri.parse("http://play.google.com/store/apps/details?id="
+                                        + appName)));
+                    }
+                    dialog.dismiss();
+                });
+
+// Show the alert
+        builder.show();
+
+
+        /**
+         final AlertDialog.Builder alert;
+         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+         alert = new AlertDialog.Builder(MainActivity.this, R.style.ThemeDialog);
+         } else {
+         alert = new AlertDialog.Builder(MainActivity.this);
+         }
+
+
+         alert.setTitle(getString(R.string.sure_exit));
+         alert.setItems(new CharSequence[]
+         {"Exit", "Cancel", "Rate Us"},
+         new DialogInterface.OnClickListener() {
+         public void onClick(DialogInterface dialog, int which) {
+         // The 'which' argument contains the index position
+         // of the selected item
+         switch (which) {
+         case 0:
+         finish();
+         break;
+         case 1:
+         break;
+         case 2:
+         Toast.makeText(MainActivity.this, "clicked 3", Toast.LENGTH_SHORT).show();
+         break;
+
+         }
+         }
+         });
+
+         alert.setPositiveButton(getString(R.string.exit), new DialogInterface.OnClickListener() {
+        @Override public void onClick(DialogInterface dialogInterface, int i) {
+        finish();
         }
-
-        alert.setTitle(getString(R.string.exit));
-        alert.setMessage(getString(R.string.sure_exit));
-        alert.setPositiveButton(getString(R.string.exit), new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                finish();
-            }
         });
-        alert.setNegativeButton(getString(R.string.cancel), new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
+         alert.setNegativeButton(getString(R.string.cancel), new DialogInterface.OnClickListener() {
+        @Override public void onClick(DialogInterface dialogInterface, int i) {
 
-            }
+        }
         });
-        alert.show();
+
+         alert.show();
+         ***/
     }
 }
